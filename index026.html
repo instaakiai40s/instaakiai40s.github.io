@@ -364,6 +364,67 @@ footer{
   padding:40px 0 12px;
 }
 
+/* ===== 3ゾーン設計(役割ごとに背景の景色を切り替える) ===== */
+
+/* ゾーン1(受け取り):明るい基調+白カード=bodyの既定のまま */
+.zone-give .wrap{padding-bottom:10px;}
+
+/* ゾーン2(ストーリー):場面転換=ネイビー反転 */
+.zone-story{
+  margin-top:44px;
+  background:linear-gradient(180deg,#1B2640 0%,#1E2A44 55%,#243050 100%);
+  padding:56px 0 58px;
+}
+.zone-story .wrap{padding-bottom:0;}
+.story-title{
+  color:#FDFBF7;
+  font-size:20px;
+  line-height:1.6;
+  text-align:center;
+  margin-bottom:26px;
+  font-weight:800;
+}
+.story-title .gold{color:var(--gold-soft);}
+.zone-story p{color:#E9E4D8;font-size:15px;}
+.zone-story .story-close{
+  color:#FFFFFF;
+  font-size:16.5px;
+  font-weight:700;
+  margin-top:20px;
+}
+.story-close-sub{
+  font-weight:400;
+  color:#C6BFAE;
+}
+.zone-story .accordion-toggle{
+  border-color:var(--gold-soft);
+  color:var(--gold-soft);
+  background:transparent;
+}
+.zone-story .accordion-body{border-top-color:rgba(255,255,255,.16);}
+.zone-story .accordion-body h3{color:var(--gold-soft);}
+
+/* ゾーン3(本命CTA):ページで一番光っている場所 */
+.zone-cta{
+  background:
+    radial-gradient(circle at 50% 12%, rgba(255,246,215,.95) 0%, rgba(240,222,180,0) 60%),
+    linear-gradient(180deg,#F3E8CC 0%,#EDDDB9 55%,#E7D3A8 100%);
+  border-top:3px solid var(--gold);
+  padding:54px 0 8px;
+}
+.zone-cta .section:first-child{margin-top:0;}
+.zone-cta .main-cta{
+  background:linear-gradient(180deg,#FFFFFF 0%,#FFFCF4 100%);
+  border:2px solid var(--gold);
+  box-shadow:0 14px 40px rgba(150,110,50,.30);
+}
+.zone-cta .card{
+  background:rgba(255,255,255,.45);
+  box-shadow:none;
+  border:1px solid #D9C69C;
+}
+.zone-cta footer{color:#8A7852;}
+
 .visually-hidden{
   position:absolute;
   width:1px;height:1px;
@@ -376,6 +437,7 @@ footer{
 <!-- ここにアクセス解析タグ(Googleアナリティクス等)を貼り付け -->
 </head>
 <body>
+<div class="zone-give">
 <div class="wrap">
 
   <!-- ①ヘッダー(自動フォールバック方式:バナー未アップ時はテキスト見出しを自動表示。header026.PNGをアップすれば開き直すだけで画像に切り替わる) -->
@@ -891,15 +953,19 @@ OK / 注意点あり
     </div>
   </section>
 
-  <!-- ⑤ストーリーセクション(30秒版+折りたたみ全文) -->
-  <section class="section">
-    <div class="card">
-      <h2 class="sec-title">僕がこの発信を始めた、本当の理由</h2>
-      <p>数年前、僕は投資詐欺で家族にも言えない大きな失敗をしました。</p>
-      <p>子どもが「ディズニー行きたいね」と話すのに、「行こうね」の一言が言えない。そんな毎日でした。</p>
-      <p>転機は、同じどん底から立ち直った人の動画を、たまたま見た夜。</p>
-      <p>子どもが寝てからの1〜2時間、言われたことをやっただけで、投稿開始20日でフォロワー5,000人。</p>
-      <p class="story-close">あの日言えなかった「行こうね」を、今の僕は言えます。<br><span style="font-weight:400;color:var(--text);">同じ40代に、遠回りしてほしくない。だから、この特典を作りました。</span></p>
+  <!-- ⑤ストーリーの直前でゾーン1(受け取り)を閉じる -->
+</div>
+</div>
+
+<!-- ⑤ストーリーセクション(30秒版+折りたたみ全文)|ゾーン2:場面転換(ネイビー反転) -->
+<section class="zone-story">
+  <div class="wrap">
+    <h2 class="story-title">僕がこの発信を始めた、<span class="gold">本当の理由</span></h2>
+    <p>数年前、僕は投資詐欺で家族にも言えない大きな失敗をしました。</p>
+    <p>子どもが「ディズニー行きたいね」と話すのに、「行こうね」の一言が言えない。そんな毎日でした。</p>
+    <p>転機は、同じどん底から立ち直った人の動画を、たまたま見た夜。</p>
+    <p>子どもが寝てからの1〜2時間、言われたことをやっただけで、投稿開始20日でフォロワー5,000人。</p>
+    <p class="story-close">あの日言えなかった「行こうね」を、今の僕は言えます。<br><span class="story-close-sub">同じ40代に、遠回りしてほしくない。だから、この特典を作りました。</span></p>
 
       <button class="accordion-toggle" id="story-toggle" aria-expanded="false" aria-controls="story-full">▼ 僕の話の全文はこちら(2分)</button>
       <div class="accordion-body" id="story-full">
@@ -945,8 +1011,12 @@ OK / 注意点あり
         <p>僕と同じように、時間も体力もお金の余裕もない40代に、<br>遠回りしてほしくない。</p>
         <p>その一心で、この資料を作りました。</p>
       </div>
-    </div>
-  </section>
+  </div>
+</section>
+
+<!-- ゾーン3:本命CTA(ページで一番光っている場所) -->
+<div class="zone-cta">
+<div class="wrap">
 
   <!-- ⑥メインCTA -->
   <section class="section">
@@ -989,10 +1059,11 @@ OK / 注意点あり
   <footer>© あき</footer>
 
 </div>
+</div>
 
 <script>
 // ===== LINEリンク一元管理(ここを差し替えるだけで全導線に反映) =====
-const LINE_URL = "https://sub.aione.co.jp/line/open/MkR1IT8qt5S4?mtid=do4lxd608xWt"; // 全LP共通の固定URL(変更時はここ1箇所)
+const LINE_URL = "https://sub.aione.co.jp/p/ss6dW0WuKBch?ftid=wD2ezNjVRT9o"; // 全LP共通の固定URL(変更時はここ1箇所)
 
 document.querySelectorAll(".js-line").forEach(function(a){
   a.href = LINE_URL;
