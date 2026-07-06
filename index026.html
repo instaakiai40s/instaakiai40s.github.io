@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- 経路メモ:リール経由(1ページ1経路運用) -->
+<!-- ファイル管理:index026.html/header026.PNG(台本026対応) -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>海外で目を止める ショート動画生成プロンプト|保存版・無料特典</title>
+<meta property="og:title" content="海外で目を止める ショート動画生成プロンプト">
+<meta property="og:description" content="コピペで完成。英語圏向け5秒ループ動画の設計図を無料でお渡しします。">
+<meta property="og:image" content="https://instaakiai40s.github.io/header026.PNG">
+<meta property="og:type" content="website">
+<style>
+:root{
+  --bg:#F7F3EC;
+  --bg-soft:#EFE8DC;
+  --card:#FFFFFF;
+  --navy:#1E2A44;
+  --gold:#A9834A;
+  --gold-soft:#C9B08A;
+  --text:#3B3B3B;
+  --line-green:#06C755;
+  --danger:#B0533C;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background:linear-gradient(180deg,#FBF8F2 0%,var(--bg) 40%,#F3EDE2 100%);
+  color:var(--text);
+  font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
+  line-height:1.9;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:560px;margin:0 auto;padding:0 18px 48px;}
+
+/* ①ヘッダー(フェーズ1:テキスト見出し) */
+.hero{
+  text-align:center;
+  padding:44px 10px 34px;
+}
+.hero .badge{
+  display:inline-block;
+  background:var(--navy);
+  color:#FDFBF7;
+  font-size:12px;
+  letter-spacing:.18em;
+  padding:6px 16px;
+  border-radius:999px;
+  margin-bottom:18px;
+}
+.hero h1{
+  color:var(--navy);
+  font-size:27px;
+  line-height:1.5;
+  letter-spacing:.02em;
+  font-weight:800;
+}
+.hero h1 .accent{color:var(--gold);}
+.hero .sub{
+  margin-top:14px;
+  font-size:14.5px;
+  color:#6B5F4C;
+  letter-spacing:.04em;
+}
+.hero .rule{
+  width:56px;height:2px;background:var(--gold-soft);
+  margin:22px auto 0;border-radius:2px;
+}
+
+/* 共通 */
+.section{margin-top:34px;}
+.card{
+  background:var(--card);
+  border-radius:16px;
+  padding:26px 20px;
+  box-shadow:0 3px 14px rgba(30,42,68,.06);
+}
+h2.sec-title{
+  color:var(--navy);
+  font-size:20px;
+  line-height:1.5;
+  margin-bottom:16px;
+  padding-left:12px;
+  border-left:4px solid var(--gold);
+}
+h3.mini-title{
+  color:var(--navy);
+  font-size:16.5px;
+  margin:22px 0 8px;
+}
+p+p{margin-top:14px;}
+strong{color:var(--navy);}
+
+/* ②発信者ブロック */
+.profile{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:14px;
+}
+.profile img{
+  width:76px;height:76px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid var(--gold-soft);
+  flex-shrink:0;
+}
+.profile .name{
+  color:var(--navy);
+  font-weight:700;
+  font-size:15px;
+}
+.profile .name span{
+  display:block;
+  font-weight:400;
+  font-size:12.5px;
+  color:#8A7E68;
+  margin-top:2px;
+}
+
+/* ③上部CTA(小) */
+.btn-line-small{
+  display:block;
+  text-align:center;
+  background:var(--line-green);
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  font-size:14.5px;
+  padding:13px 16px;
+  border-radius:10px;
+  margin:18px auto 0;
+  max-width:340px;
+  box-shadow:0 3px 8px rgba(6,199,85,.28);
+  transition:transform .1s ease;
+}
+.btn-line-small:active{transform:translateY(2px);}
+.foreshadow{
+  margin-top:18px;
+  font-size:14px;
+  color:#6B5F4C;
+  background:var(--bg-soft);
+  border-radius:10px;
+  padding:14px 16px;
+}
+
+/* ④特典カード */
+.step-list{list-style:none;margin-top:6px;}
+.step-list li{
+  position:relative;
+  padding:12px 0 12px 44px;
+  border-bottom:1px dashed #E4DCCB;
+  font-size:15px;
+}
+.step-list li:last-child{border-bottom:none;}
+.step-list li .num{
+  position:absolute;
+  left:0;top:12px;
+  width:30px;height:30px;
+  background:var(--navy);
+  color:#FDFBF7;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;
+}
+.note-red{color:var(--danger);font-size:13.5px;}
+
+.prompt-box{
+  background:#20293D;
+  color:#EDEAE2;
+  border-radius:12px;
+  padding:16px 14px;
+  font-family:"SFMono-Regular",Menlo,Consolas,"Courier New",monospace;
+  font-size:12.5px;
+  line-height:1.75;
+  max-height:340px;
+  overflow-y:auto;
+  white-space:pre-wrap;
+  word-break:break-all;
+  margin-top:14px;
+}
+.copy-btn{
+  display:block;
+  width:100%;
+  margin-top:12px;
+  background:var(--navy);
+  color:#FDFBF7;
+  border:none;
+  border-radius:10px;
+  padding:14px;
+  font-size:15px;
+  font-weight:700;
+  cursor:pointer;
+  transition:opacity .15s ease,transform .1s ease;
+}
+.copy-btn:active{transform:translateY(2px);}
+.copy-btn.copied{background:var(--gold);}
+
+.tip-box{
+  background:var(--bg-soft);
+  border-radius:10px;
+  padding:14px 16px;
+  font-size:14px;
+  margin-top:14px;
+}
+
+/* ⑤ストーリー */
+.story-close{
+  font-size:16.5px;
+  color:var(--navy);
+  font-weight:700;
+  margin-top:18px;
+}
+.accordion-toggle{
+  display:block;
+  width:100%;
+  margin-top:20px;
+  background:transparent;
+  border:1.5px solid var(--gold);
+  color:var(--gold);
+  border-radius:10px;
+  padding:13px;
+  font-size:14.5px;
+  font-weight:700;
+  cursor:pointer;
+}
+.accordion-body{
+  display:none;
+  margin-top:18px;
+  border-top:1px solid #E4DCCB;
+  padding-top:18px;
+}
+.accordion-body.open{display:block;}
+.accordion-body h3{
+  color:var(--navy);
+  font-size:17px;
+  margin:26px 0 10px;
+  line-height:1.6;
+}
+.accordion-body h3:first-child{margin-top:0;}
+
+/* ⑥メインCTA */
+.main-cta{
+  background:var(--card);
+  border-radius:18px;
+  padding:28px 20px 30px;
+  box-shadow:0 4px 18px rgba(30,42,68,.09);
+  text-align:center;
+}
+.main-cta .lead{
+  font-size:15px;
+  text-align:left;
+}
+.line-banner{
+  display:block;
+  margin:20px 0 0;
+}
+.line-banner img{
+  width:100%;
+  border-radius:12px;
+  display:block;
+}
+.benefits{
+  text-align:left;
+  background:var(--bg-soft);
+  border-radius:12px;
+  padding:18px 16px;
+  margin-top:20px;
+  list-style:none;
+}
+.benefits li{
+  position:relative;
+  padding-left:26px;
+  font-size:14.5px;
+  margin-bottom:10px;
+}
+.benefits li:last-child{margin-bottom:0;}
+.benefits li::before{
+  content:"✔";
+  position:absolute;left:0;top:0;
+  color:var(--gold);
+  font-weight:700;
+}
+.limited{
+  margin-top:16px;
+  font-size:13px;
+  color:var(--danger);
+}
+.btn-line-main{
+  display:block;
+  width:100%;
+  background:var(--line-green);
+  color:#fff;
+  text-decoration:none;
+  font-weight:800;
+  font-size:17px;
+  padding:19px 14px;
+  border-radius:14px;
+  margin-top:14px;
+  box-shadow:0 5px 14px rgba(6,199,85,.35);
+  position:relative;
+  overflow:hidden;
+  transition:transform .1s ease,box-shadow .1s ease;
+}
+.btn-line-main:active{
+  transform:translateY(3px);
+  box-shadow:0 2px 6px rgba(6,199,85,.3);
+}
+.btn-line-main::after{
+  content:"";
+  position:absolute;
+  top:0;left:-70%;
+  width:40%;height:100%;
+  background:linear-gradient(100deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.35) 50%,rgba(255,255,255,0) 100%);
+  animation:shine 3.2s ease-in-out infinite;
+}
+@keyframes shine{
+  0%{left:-70%;}
+  55%{left:130%;}
+  100%{left:130%;}
+}
+@media (prefers-reduced-motion: reduce){
+  .btn-line-main::after{animation:none;}
+}
+
+/* ⑦向きません枠 */
+.ng-list{list-style:none;margin-top:6px;}
+.ng-list li{
+  position:relative;
+  padding:10px 0 10px 30px;
+  font-size:15px;
+}
+.ng-list li::before{
+  content:"×";
+  position:absolute;left:2px;top:10px;
+  color:var(--danger);
+  font-weight:800;
+}
+.ng-divider{
+  border:none;
+  border-top:1px solid #E4DCCB;
+  margin:16px 0;
+}
+.ng-positive{
+  font-size:14.5px;
+  color:var(--navy);
+}
+
+/* ⑧フッター */
+footer{
+  text-align:center;
+  font-size:12px;
+  color:#9A8F79;
+  padding:40px 0 12px;
+}
+
+.visually-hidden{
+  position:absolute;
+  width:1px;height:1px;
+  margin:-1px;padding:0;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  border:0;
+}
+</style>
+<!-- ここにアクセス解析タグ(Googleアナリティクス等)を貼り付け -->
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ①ヘッダー(フェーズ1:テキスト見出し版。バナー完成後にフェーズ2へ差し替え) -->
+  <header class="hero">
+    <span class="badge">保存版・無料特典</span>
+    <h1>海外で目を止める<br><span class="accent">ショート動画生成プロンプト</span></h1>
+    <p class="sub">コピペで完成|英語圏向け5秒ループ動画の設計図</p>
+    <div class="rule"></div>
+  </header>
+
+  <!-- ②発信者ブロック(定型・固定) -->
+  <section class="section">
+    <div class="card">
+      <div class="profile">
+        <img src="https://instaakiai40s.github.io/profile.JPG" alt="あきのプロフィール写真">
+        <p class="name">あき<span>40代・福祉職・3人の子どもの父</span></p>
+      </div>
+      <p>はじめまして、あきです。40代、福祉の仕事をしながら3人の子どもを育てています。</p>
+      <p>特別な才能はありません。使えたのは子どもが寝てからの1〜2時間だけ。それでも投稿開始20日でフォロワー5,000人という結果が出ました。</p>
+      <p>この特典は、時間も体力もお金の余裕もない、それでも家族のために何かを変えたい40代のために作りました。</p>
+    </div>
+  </section>
+
+  <!-- ③挨拶・お礼+上部CTA(小)+伏線 -->
+  <section class="section">
+    <div class="card">
+      <p>リールをご覧いただき、そして受け取っていただき、ありがとうございます。</p>
+      <p>今回の特典は、<strong>このすぐ下にまとめてあります。</strong>プロンプト本文から使い方まですべて、今日からそのまま使えます。</p>
+      <p>そして今、この特典とあわせて、さらに本格的に"もう一つの給料日"を作るための<strong>『AIマネタイズの教科書』</strong>も無料でお配りしています。</p>
+      <a class="btn-line-small js-line" href="#">AIマネタイズの教科書を無料で受け取る</a>
+      <p class="foreshadow">このページの最後に、僕がこの発信を始めた"本当の理由"を書きました。特典と合わせて、最後まで読んでもらえたら嬉しいです。</p>
+    </div>
+  </section>
+
+  <!-- ④特典カード群 -->
+  <section class="section">
+    <div class="card">
+      <h2 class="sec-title">これは何ができるプロンプト?</h2>
+      <p>Veoなどの動画生成AIと組み合わせて使う、<strong>「海外向け5秒ループ動画」の素材一式を作るためのプロンプト</strong>です。</p>
+      <p>AIチャットに貼って質問に答えていくだけで、英語のキャッチコピー・動画内テキスト・Veo用プロンプトまで、動画1本分の設計図が完成します。</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card">
+      <h2 class="sec-title">使い方(6ステップ)</h2>
+      <ol class="step-list">
+        <li><span class="num">1</span>下のプロンプトを「コピー」ボタンでコピーする</li>
+        <li><span class="num">2</span>ChatGPT・Gemini・ClaudeなどのAIチャットに貼る(どれでもOK)</li>
+        <li><span class="num">3</span>AIの質問に答えていく</li>
+        <li><span class="num">4</span>最後にAIが、Hook・動画内テキスト・Veo用プロンプトを作ってくれる<br><span class="note-red">(VeoというのはGeminiでの動画生成のことです。Gemini以外で作っても可)</span></li>
+        <li><span class="num">5</span>出力されたVeo用プロンプトで、Geminiなどで動画を生成する</li>
+        <li><span class="num">6</span>生成された動画・Hook・動画内テキストを使って、YouTubeショート等に投稿する</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card">
+      <h2 class="sec-title">プロンプト全文(コピーして使えます)</h2>
+      <p style="font-size:14px;">下のボタンひとつで全文コピーできます。そのままAIチャットに貼ってください。</p>
+      <button class="copy-btn" data-target="prompt-main">プロンプトをコピー</button>
+      <pre class="prompt-box" id="prompt-main">あなたは優秀な海外SNS(TikTok / YouTube Shorts)の動画プロデューサーです。
+
+あなたの役割は、英語圏の視聴者が思わず最後まで見てしまう、5秒ループ動画用の素材一式を作ることです。
+
+ただし、最初から自由にテーマを入力させてはいけません。
+
+このプロンプトの目的は、動画生成AIで破綻しにくく、それでいて海外ショート動画として成立しやすい動画を、初心者でも作れるようにすることです。
+
+ただし、すべてのテーマを同じ厳しさで扱ってはいけません。
+
+テーマ1「深海魚・深海生物」は、より魅力的な動画を作るために、映像生成の自由度を高めてください。
+テーマ2「異形の絶景」は、これまで通り、破綻しにくさと構図安定を優先してください。
+
+━━━━━━━━━━━━━━━━━━
+絶対遵守ルール
+━━━━━━━━━━━━━━━━━━
+
+このプロンプトで扱うテーマは、原則として実在する生物・自然現象・地形・場所・科学的事実・歴史的事実に限定してください。
+
+架空の生物、創作設定、未確認生物、都市伝説、陰謀論、事実確認できない話題を積極的に提案してはいけません。
+
+エンタメ性を高める場合でも、事実そのものを捏造してはいけません。
+
+「未知」「異形」「地球のバグ」「不気味」などの表現は、視聴者が受ける印象を表す言葉として使ってください。
+実在しないものを、実在するかのように扱ってはいけません。
+
+事実に自信がない場合は、断言せず、より確実に実在が確認されている対象へ変更してください。
+
+━━━━━━━━━━━━━━━━━━
+最初の質問
+━━━━━━━━━━━━━━━━━━
+
+最初に、必ず以下の質問だけをしてください。
+
+どのジャンルの5秒ループ動画を作りますか?
+
+1. 見た目が未知感のある、実在の不気味な深海魚・深海生物
+おすすめ度:★★★★★
+理由:
+・見た目だけで「何これ?」と思わせやすい
+・動きがゆっくりでも成立しやすい
+・暗い深海背景と相性が良い
+・被写体が1体でも映像が成立しやすい
+・海外ショート動画で不気味さ、雑学、視覚インパクトを出しやすい
+
+2. 地球のバグが生み出した実在する異形の絶景
+おすすめ度:★★★★★
+理由:
+・実在する風景なのに非現実感を出しやすい
+・被写体を動かさず、カメラワークだけで映像にできる
+・人物や複雑な動きが不要なので破綻しにくい
+・言語がわからなくても視覚で伝わりやすい
+
+3. その他
+おすすめ度:★★☆☆☆
+注意:
+その他のテーマも作成できますが、難易度は上がります。
+人物、群衆、戦闘、都市の複雑な動き、複数の生物の接触、細かい物理現象などは動画生成AIで破綻しやすくなります。
+その他を選ぶ場合は、できるだけ「被写体が1つ」「動きが少ない」「実在する」「5秒で見た目の違和感が伝わる」テーマにしてください。
+
+ユーザーが番号を選ぶまで、最終出力は作らないでください。
+
+━━━━━━━━━━━━━━━━━━
+ジャンル選択後の進め方
+━━━━━━━━━━━━━━━━━━
+
+ユーザーが1を選んだ場合は、次に「実在する深海魚・深海生物」の具体候補を3つ提示してください。
+
+このとき、単に名前だけを出してはいけません。
+必ず「なぜ見た目が面白いのか」「なぜ映像映えするのか」を短く添えてください。
+
+提示する候補は、できるだけ見た目の方向性が被らないようにしてください。
+
+例:
+・透明系
+・鋭い歯系
+・発光系
+・細長い異形系
+・甲殻類的な異形系
+
+出力例:
+
+次に、どのタイプで作りますか?
+
+1. Barreleye fish
+透明な頭部と上向きの目が特徴的で、普通の魚とは違う不気味さが出やすい実在の深海魚。
+
+2. Viperfish
+鋭すぎる歯と大きな口が目立ち、5秒でも攻撃的な違和感が伝わりやすい実在の深海魚。
+
+3. Black dragonfish
+黒く細長い体と発光器官があり、暗い深海でシルエットが映えやすい実在の深海魚。
+
+4. 他の提案を見る
+
+ユーザーが4を選んだ場合は、前回とできるだけ被らない別の候補を3つ出してください。
+無難な候補の言い換えではなく、別系統の見た目のインパクトがある実在種を出してください。
+
+候補例:
+・Barreleye fish
+・Glass squid
+・Viperfish
+・Fangtooth fish
+・Black dragonfish
+・Pacific blackdragon
+・Deep-sea hatchetfish
+・Snipe eel
+・Vampire squid
+・Frilled shark
+・Goblin shark
+・Tripod fish
+・Giant isopod
+・Sea pig
+・Stoplight loosejaw
+・Deep-sea lizardfish
+
+ただし、特徴に自信がない場合は断言しないでください。
+実在する特徴だけを使ってください。
+
+━━━━━━━━━━━━━━━━━━
+
+ユーザーが2を選んだ場合は、次に「実在する異形の絶景」の具体候補を3つ提示してください。
+
+候補は必ず実在する自然現象・地形・場所にしてください。
+
+このとき、単に名前だけを出してはいけません。
+必ず「なぜ見た目が強いのか」「なぜ映像映えするのか」を短く添えてください。
+
+出力例:
+
+次に、どのタイプで作りますか?
+
+1. Blood Falls
+赤い流れが氷の上に現れるため、地球上の風景なのに異様な印象を出しやすい実在の場所。
+
+2. Grand Prismatic Spring
+極端に鮮やかな色の温泉で、上空からの映像が強烈に映えやすい実在の地熱地帯。
+
+3. Zhangye Danxia
+赤や黄色の層が重なった地形で、地球とは思えない色彩を出しやすい実在の地形。
+
+4. 他の提案を見る
+
+ユーザーが4を選んだ場合は、前回とできるだけ被らない別の候補を3つ出してください。
+
+候補例:
+・Salar de Uyuni
+・Antelope Canyon
+・Pamukkale
+・Fly Geyser
+・Waitomo Glowworm Caves
+・Socotra Island
+・The Wave, Arizona
+・Dallol, Ethiopia
+・Zhangye Danxia
+・Giant's Causeway
+・Grand Prismatic Spring
+・Lake Hillier
+・Lençóis Maranhenses
+・Namib Desert
+・Door to Hell, Turkmenistan
+
+ただし、特徴に自信がない場合は断言しないでください。
+実在する特徴だけを使ってください。
+
+━━━━━━━━━━━━━━━━━━
+
+ユーザーが3を選んだ場合は、まず以下の注意を伝えてください。
+
+その他テーマは作成できます。
+ただし、動画生成AIでは難易度が上がります。
+
+特に避けた方がよいテーマ:
+・人物が主役
+・複数人が動く
+・動物同士が接触する
+・戦闘や爆発がある
+・建物や街が大きく変形する
+・複雑な機械の動き
+・細かい物理現象
+・架空の生物
+・未確認生物
+・都市伝説
+・陰謀論
+・抽象的すぎるテーマ
+
+成功しやすいテーマ:
+・被写体が1つ
+・全体を引きで見せられる
+・動きが少ない
+・現実世界に実在する
+・見た目だけで違和感がある
+・背景がシンプル
+・5秒で伝わる
+・カメラワークで魅せられる
+
+そのうえで、ユーザーにテーマを1つ入力してもらってください。
+
+ユーザーのテーマが破綻しやすい場合は、そのまま進めず、失敗しにくい形に言い換えて提案してください。
+
+例:
+
+「未来都市で人々が逃げ回る映像」
+↓
+「実在する巨大廃墟を、ゆっくりオービット撮影する映像」
+
+「巨大な怪物が街を破壊する映像」
+↓
+「実在する巨大な洞窟や奇岩を、怪物のように見える構図で撮る映像」
+
+「謎の未確認生物」
+↓
+「実在する深海生物の中で、未確認生物のように見えるもの」
+
+━━━━━━━━━━━━━━━━━━
+テーマ1の出力方針
+━━━━━━━━━━━━━━━━━━
+
+テーマ1「深海魚・深海生物」が選ばれた場合は、以下の方針で出力してください。
+
+ここでは、厳しすぎる安全設計よりも、「魅力的な動画として成立すること」を強く重視してください。
+
+ただし、実在性と事実性は維持してください。
+
+このテーマでの役割は、
+「誰も知らない、ちょっと不気味だけど面白い深海魚の雑学動画」
+を作ることです。
+
+出力するのは以下の4つです。
+
+1. 動画に乗せるための、視聴者の興味を強烈に惹きつける英語のキャッチコピー(1文)
+2. 5秒ごとに切り替えて表示させる、英語の雑学テキスト(3つ)
+3. この動画の背景に使うための、Veo用の英語プロンプト
+4. 日本語の解説と品質チェック
+
+テーマ1では、以下を重視してください。
+
+・英語圏の視聴者が思わず最後まで見てしまうこと
+・不気味さと面白さの両立
+・教科書っぽくない雑学
+・実写のような超高画質で映えること
+・ミステリアスな深海を泳ぐ不気味な深海魚の姿
+・シネマティックライティング
+・5秒クリップとして映像が成立すること
+
+テーマ1のVeo用プロンプトでは、以下の条件を強く反映してください。
+
+・photorealistic
+・ultra high quality
+・cinematic lighting
+・mysterious deep ocean
+・eerie deep-sea fish
+・5-second clip
+・single main subject
+・swimming slowly
+・simple dark deep-sea background
+・subtle natural motion
+・preserve the real biological features
+・no body deformation
+・keep the anatomy consistent
+・no people
+・no text
+・no logos
+
+テーマ1では、絶景用の「過度に厳しい構図固定」や「オービット前提」の考え方を適用しないでください。
+深海魚動画として魅力的になるなら、構図や演出にある程度の自由を持たせてください。
+ただし、被写体は1体を基本とし、不自然な変形や過剰なファンタジー化は避けてください。
+
+━━━━━━━━━━━━━━━━━━
+テーマ2の出力方針
+━━━━━━━━━━━━━━━━━━
+
+テーマ2「異形の絶景」が選ばれた場合は、これまで通り、破綻しにくさと構図安定を優先してください。
+
+出力するのは以下の4つです。
+
+1. 動画に乗せる英語キャッチコピー
+2. 短い英語の補足テキストまたは雑学テキスト
+3. Veo用の英語プロンプト
+4. 日本語の解説と品質チェック
+
+テーマ2では、以下を重視してください。
+
+・実在する異形の絶景
+・被写体そのものは大きく動かさない
+・カメラがゆっくり円を描く
+・ゆっくり周回する
+・壮大さを出す
+・複雑な天候変化を避ける
+・地形や色が途中で変形しないようにする
+・人や動物は出さない
+・景観としての安定感を優先する
+
+テーマ2のVeo用プロンプトでは、以下の表現を優先してください。
+
+・slow orbiting camera
+・slow circular panning
+・cinematic aerial orbit
+・stable wide shot
+・minimal environmental movement
+・keep the landscape structure consistent
+・no morphing terrain
+
+━━━━━━━━━━━━━━━━━━
+最終出力フォーマット
+━━━━━━━━━━━━━━━━━━
+
+ジャンルと具体テーマが決まったら、選ばれたテーマに応じて以下の形式で出力してください。
+
+テーマ1の場合:
+
+1. English Hook
+英語1文の強いキャッチコピー
+
+2. English Trivia Texts
+5秒ごとに切り替えて表示する、短い英語雑学テキストを3つ
+
+3. Veo Prompt
+Veoにそのまま貼れる英語プロンプト
+この部分だけは、必ずコードブロックで出力すること
+
+4. 日本語解説
+Hook、雑学、Veoプロンプトの意味と狙い
+
+5. 品質チェック
+
+テーマ2の場合:
+
+1. English Hook
+英語1文の強いキャッチコピー
+
+2. English Supporting Texts
+短い英語補足テキストまたは雑学テキスト
+
+3. Veo Prompt
+Veoにそのまま貼れる英語プロンプト
+この部分だけは、必ずコードブロックで出力すること
+
+4. 日本語解説
+
+5. 品質チェック
+
+重要:
+Veo Promptのコードブロックの中には、Veoに貼る英語プロンプトだけを書いてください。
+日本語、補足、見出し、注意書き、品質チェックは入れてはいけません。
+
+━━━━━━━━━━━━━━━━━━
+品質チェック
+━━━━━━━━━━━━━━━━━━
+
+最終出力の最後に、以下のチェック項目を付けてください。
+
+品質チェック:
+
+・実在するテーマか:
+OK / 注意点あり
+
+・事実の捏造リスク:
+低い / 中程度 / 高い
+
+・見た目のインパクト:
+強い / 中程度 / 弱い
+
+・動画生成AIの破綻リスク:
+低い / 中程度 / 高い
+
+・5秒ループとの相性:
+高い / 中程度 / 低い
+
+・英語圏ショート動画との相性:
+高い / 中程度 / 低い
+
+・Veo用プロンプトとしてそのまま使えるか:
+はい / 調整推奨
+
+注意点がある場合は、短く理由を書いてください。
+
+━━━━━━━━━━━━━━━━━━
+重要な姿勢
+━━━━━━━━━━━━━━━━━━
+
+あなたは、ただ正確な情報を並べるだけの解説者ではありません。
+あなたは、海外SNS向けの動画プロデューサーです。
+
+ただし、テーマごとに出力方針を変えてください。
+
+テーマ1では、
+「魅力的な深海魚動画を作ること」
+を優先してください。
+多少自由度を高めても構いません。
+ただし、実在性は守ってください。
+
+テーマ2では、
+「破綻しにくく、美しく安定した景観動画を作ること」
+を優先してください。
+
+最優先する順番は以下です。
+
+テーマ1:
+1. 実在する事実に基づくこと
+2. 見た瞬間に「何これ?」と思わせること
+3. 不気味だけど面白いこと
+4. 実写のような超高画質で映えること
+5. 英語圏の視聴者が最後まで見たくなること
+6. 動画生成AIで破綻しにくいこと
+
+テーマ2:
+1. 実在する事実に基づくこと
+2. 動画生成AIで破綻しにくいこと
+3. 景観の構造が安定していること
+4. 5秒ループとして成立すること
+5. 見た目のインパクトがあること
+6. 英語圏の視聴者が興味を持ちやすいこと
+
+━━━━━━━━━━━━━━━━━━
+出力時の注意
+━━━━━━━━━━━━━━━━━━
+
+最初のジャンル選択前に、最終出力を作ってはいけません。
+
+ユーザーが番号だけで回答した場合は、その番号に応じて次の選択肢を提示してください。
+
+ユーザーが「他の提案を見る」を選んだ場合は、前回とできるだけ被らない候補を3つ出してください。
+
+ユーザーが曖昧な回答をした場合は、勝手に進めず、選びやすいように候補を整理してください。
+
+ただし、ユーザーの負担を増やしすぎないよう、質問は一度に1つだけにしてください。</pre>
+      <button class="copy-btn" data-target="prompt-main">プロンプトをコピー</button>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card">
+      <h2 class="sec-title">うまく表示されない時は</h2>
+      <p style="font-size:15px;">もし「うまく表示されない」「エラーが出る」ということがあれば、まず理由を、そのままChatGPT(貼り付けたAI)に聞いてみてください。</p>
+      <div class="tip-box">それでもわからない時は、できる範囲でお答えしますので、遠慮なくInstagramのDMで聞いてください。</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card">
+      <h2 class="sec-title">最後に、大切な補足です</h2>
+      <p>このプロンプトは、海外で見られやすいショート動画を作るための"型"です。</p>
+      <p>ただし、これを使えば必ず再生数が伸びる、必ず結果につながる、1回でうまくいく、というものではありません。</p>
+      <p>AI動画は、テーマ選び、映像の仕上がり、投稿するタイミング、アカウントの状態、視聴者との相性など、いろいろな要素で結果が変わります。</p>
+      <p>なので、このページで紹介している内容は「こうすれば必ずうまくいく」というものではなく、<strong>「海外で見られやすいショート動画を作るための考え方を、そのまま使える形に整理したもの」</strong>として活用してください。</p>
+    </div>
+  </section>
+
+  <!-- ⑤ストーリーセクション(30秒版+折りたたみ全文) -->
+  <section class="section">
+    <div class="card">
+      <h2 class="sec-title">僕がこの発信を始めた、本当の理由</h2>
+      <p>数年前、僕は投資詐欺で家族にも言えない大きな失敗をしました。</p>
+      <p>子どもが「ディズニー行きたいね」と話すのに、「行こうね」の一言が言えない。そんな毎日でした。</p>
+      <p>転機は、同じどん底から立ち直った人の動画を、たまたま見た夜。</p>
+      <p>子どもが寝てからの1〜2時間、言われたことをやっただけで、投稿開始20日でフォロワー5,000人。</p>
+      <p class="story-close">あの日言えなかった「行こうね」を、今の僕は言えます。<br><span style="font-weight:400;color:var(--text);">同じ40代に、遠回りしてほしくない。だから、この特典を作りました。</span></p>
+
+      <button class="accordion-toggle" id="story-toggle" aria-expanded="false" aria-controls="story-full">▼ 僕の話の全文はこちら(2分)</button>
+      <div class="accordion-body" id="story-full">
+        <h3>時間も体力もない40代の僕が、人生をやり直せた理由</h3>
+        <p>はじめまして、あきです。</p>
+        <p>40代、福祉の仕事をしながら、3人の子どもを育てています。</p>
+        <p>夜勤明けに子どもの歯磨き、洗濯、寝かしつけ。<br>やっと自分の時間が持てるのは、子どもが寝てから。</p>
+        <p>きっとこの文章を読んでいるあなたも、<br>似たような毎日を送っているのではないでしょうか。</p>
+
+        <h3>家族にも言えない過去</h3>
+        <p>そんな僕には、家族にも言えない過去があります。</p>
+        <p>数年前、投資詐欺で2,700万円を失いました。<br>残ったのは、700万円の借金。</p>
+        <p>騙されたのは、怪しい儲け話に飛びついたからではありません。<br>信頼していた人からの紹介で、実際に何年も利益が振り込まれ続けていた仕組みでした。</p>
+        <p>少額から始めて、利益が入るのを確認して、<br>「家族の将来のために」と金額を増やしていった。</p>
+        <p>その仕組みは、ポンジスキームと呼ばれる詐欺でした。</p>
+        <p>ある日の電話一本で、すべてが終わりました。<br>子どもの教育資金。夫婦の老後資金。家族旅行のための貯え。<br>一瞬で消えました。</p>
+
+        <h3>一番辛かったのは、失った瞬間ではありません</h3>
+        <p>その事実を家族に言えないまま、<br>笑顔で食卓を囲んでいた時間です。</p>
+        <p>ある日、テレビでディズニーランドの特集が流れて、<br>子どもたちが「行きたいね」と楽しそうに話していました。</p>
+        <p>僕は「じゃあ今度行こうね」の一言が、<br>どうしても言えませんでした。</p>
+        <p>自分がいなくなった方が家族のためになるのではないか。<br>そこまで追い詰められた時期もありました。</p>
+
+        <h3>転機は、夜の寝室でした</h3>
+        <p>ある夜、一人でスマホを見ていた時、<br>たまたま流れてきた動画に釘付けになりました。</p>
+        <p>僕と同じポンジスキームで、大金を失った人。<br>豊岡さんという方でした。</p>
+        <p>感じたのは、希望ではなく共感でした。</p>
+        <p>そして、気づいてしまったんです。</p>
+        <p>僕は詐欺に遭った時点で、すべてを諦めて、<br>おとなしく生きていこうとしていた。</p>
+        <p>でもこの人は、そこからさらに挑戦して、<br>失敗を「上書き」していた。</p>
+        <p>同じどん底から、正反対の道を選んだ人が、そこにいました。</p>
+
+        <h3>言われたことを、ただやっただけです</h3>
+        <p>借金がある中で、さらにお金を払って学ぶ環境に入る。<br>怖くないはずがありません。</p>
+        <p>でも、思ったんです。</p>
+        <p>この失敗を「失敗」のまま終わらせるのか。<br>自分の人生の主導権を、自分以外に渡したまま生きるのか。</p>
+        <p>僕は環境に入り、言われたことを、ただやりました。<br>特別な才能もセンスも使っていません。<br>使ったのは、子どもが寝てからの1〜2時間だけです。</p>
+        <p>すると、ある日。<br>携帯の通知が鳴り止まなくなりました。</p>
+        <p>投稿開始20日で、フォロワー5,000人。</p>
+        <p>数字よりも嬉しかったのは、<br>「自分も同じです」というDMが届いたことでした。</p>
+
+        <h3>失敗は消せません。でも、上書きはできます。</h3>
+        <p>僕と同じように、時間も体力もお金の余裕もない40代に、<br>遠回りしてほしくない。</p>
+        <p>その一心で、この資料を作りました。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑥メインCTA -->
+  <section class="section">
+    <div class="main-cta">
+      <h2 class="sec-title" style="text-align:left;">ここから先に進みたい方へ</h2>
+      <p class="lead">「もっと子どもや家族のために、今の生活を少しでも変えていきたい」<br>「AIで、もう1本の柱を作っていきたい」</p>
+      <p class="lead" style="margin-top:12px;">そう思っている方に向けて、僕自身が実践している方法を1冊にまとめた無料資料<strong>「AIマネタイズの教科書」</strong>を、LINEでお渡ししています。</p>
+
+      <a class="line-banner js-line" href="#">
+        <img src="https://instaakiai40s.github.io/line_banner.PNG" alt="LINE登録で「AIマネタイズの教科書」を無料で受け取る">
+      </a>
+
+      <ul class="benefits">
+        <li>僕が実践している方法をまとめた「AIマネタイズの教科書」が無料で届きます</li>
+        <li>時間も体力もない40代でも続けられる、AI活用の始め方がわかります</li>
+        <li>わからないことがあれば、LINEでそのまま質問できます</li>
+      </ul>
+
+      <p class="limited">※予告なく配布を終了する場合があります</p>
+
+      <a class="btn-line-main js-line" href="#">AIマネタイズの教科書を無料で受け取る</a>
+    </div>
+  </section>
+
+  <!-- ⑦こんな方には向きません -->
+  <section class="section">
+    <div class="card">
+      <h2 class="sec-title">こんな方には向きません</h2>
+      <ul class="ng-list">
+        <li>今日明日で結果を求める方</li>
+        <li>コピペすら面倒で、自分では一切手を動かしたくない方</li>
+        <li>AIに丸投げすれば全部うまくいく、と考えている方</li>
+      </ul>
+      <hr class="ng-divider">
+      <p class="ng-positive">逆に、「1日30分でも、コツコツ積み上げる覚悟がある」という方なら、この教科書はきっとお役に立てます。</p>
+    </div>
+  </section>
+
+  <!-- ⑧フッター -->
+  <footer>© あき</footer>
+
+</div>
+
+<script>
+// ===== LINEリンク一元管理(ここを差し替えるだけで全導線に反映) =====
+const LINE_URL = "https://sub.aione.co.jp/line/open/MkR1IT8qt5S4?mtid=do4lxd608xWt"; // 全LP共通の固定URL(変更時はここ1箇所)
+
+document.querySelectorAll(".js-line").forEach(function(a){
+  a.href = LINE_URL;
+});
+
+// ===== コピーボタン =====
+document.querySelectorAll(".copy-btn").forEach(function(btn){
+  btn.addEventListener("click", function(){
+    var target = document.getElementById(btn.dataset.target);
+    if(!target) return;
+    var text = target.textContent;
+    function done(){
+      var original = "プロンプトをコピー";
+      btn.textContent = "コピーしました✓";
+      btn.classList.add("copied");
+      setTimeout(function(){
+        btn.textContent = original;
+        btn.classList.remove("copied");
+      }, 1600);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(function(){
+        fallbackCopy(text); done();
+      });
+    }else{
+      fallbackCopy(text); done();
+    }
+  });
+});
+function fallbackCopy(text){
+  var ta = document.createElement("textarea");
+  ta.value = text;
+  ta.style.position = "fixed";
+  ta.style.opacity = "0";
+  document.body.appendChild(ta);
+  ta.select();
+  document.execCommand("copy");
+  document.body.removeChild(ta);
+}
+
+// ===== ストーリー全文アコーディオン =====
+var toggle = document.getElementById("story-toggle");
+var body = document.getElementById("story-full");
+toggle.addEventListener("click", function(){
+  var open = body.classList.toggle("open");
+  toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  toggle.textContent = open ? "▲ 全文を閉じる" : "▼ 僕の話の全文はこちら(2分)";
+});
+</script>
+</body>
+</html>
