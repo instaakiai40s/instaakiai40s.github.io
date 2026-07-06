@@ -378,12 +378,16 @@ footer{
 <body>
 <div class="wrap">
 
-  <!-- ①ヘッダー(フェーズ1:テキスト見出し版。バナー完成後にフェーズ2へ差し替え) -->
+  <!-- ①ヘッダー(自動フォールバック方式:バナー未アップ時はテキスト見出しを自動表示。header026.PNGをアップすれば開き直すだけで画像に切り替わる) -->
   <header class="hero">
-    <span class="badge">保存版・無料特典</span>
-    <h1>海外で目を止める<br><span class="accent">ショート動画生成プロンプト</span></h1>
-    <p class="sub">コピペで完成|英語圏向け5秒ループ動画の設計図</p>
-    <div class="rule"></div>
+    <img class="hero-banner" src="https://instaakiai40s.github.io/header026.PNG" alt="" onerror="this.style.display='none';document.getElementById('hero-text').style.display='block';">
+    <div class="hero-text" id="hero-text">
+      <span class="badge">保存版・無料特典</span>
+      <p class="hero-title">海外で目を止める<br><span class="accent">ショート動画生成プロンプト</span></p>
+      <p class="sub">コピペで完成|英語圏向け5秒ループ動画の設計図</p>
+      <div class="rule"></div>
+    </div>
+    <h1 class="visually-hidden">海外で目を止める ショート動画生成プロンプト|コピペで完成 英語圏向け5秒ループ動画の設計図(保存版・無料特典)</h1>
   </header>
 
   <!-- ②発信者ブロック(定型・固定) -->
