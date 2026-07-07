@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!-- 経路メモ：リール経由（台本039「今年中に狙えるAI活用ランキング」対応） -->
+<!-- ファイル管理：index039.html／header039.PNG（台本039対応） -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>あなたに合うAI活用診断＆はじめる前の準備チェックリスト｜無料特典</title>
+<meta property="og:title" content="あなたに合うAI活用診断＆はじめる前の準備チェックリスト">
+<meta property="og:description" content="5つの方法から、あなたに合う“最初の一つ”がわかる無料特典。今日からそのまま使えます。">
+<meta property="og:image" content="https://instaakiai40s.github.io/header039.PNG">
+<style>
+:root{
+  --bg-color:#F7F2E9;
+  --bg-deep:#EFE6D6;
+  --main-color:#1E2A44;
+  --accent-color:#A9834A;
+  --card-bg:#FFFFFF;
+  --zone2-top:#1B2640;
+  --zone2-bottom:#243050;
+  --zone2-text:#F4EFE6;
+  --zone3-top:#F3E8CC;
+  --zone3-bottom:#E7D3A8;
+  --line-green:#06C755;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;
+  background:var(--bg-color);
+  color:var(--main-color);
+  line-height:1.9;
+  font-size:16px;
+}
+.wrap{max-width:640px;margin:0 auto;padding:0 18px;}
+.visually-hidden{
+  position:absolute;width:1px;height:1px;margin:-1px;padding:0;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
+}
+
+/* ===== ゾーン1：受け取り ===== */
+.zone1{
+  background:linear-gradient(180deg,#FBF7EF 0%,var(--bg-color) 40%,var(--bg-deep) 100%);
+  padding-bottom:56px;
+}
+
+/* ① ヘッダー */
+.header-banner{display:block;width:100%;height:auto;}
+.header-text{
+  display:none;
+  padding:52px 18px 44px;
+  text-align:center;
+  background:linear-gradient(160deg,#FBF6EC 0%,#F1E7D3 100%);
+  border-bottom:3px solid var(--accent-color);
+}
+.header-text .badge{
+  display:inline-block;
+  background:var(--main-color);color:#fff;
+  font-size:12px;letter-spacing:.18em;
+  padding:5px 16px;border-radius:999px;margin-bottom:18px;
+}
+.header-text h2{
+  font-size:25px;line-height:1.5;font-weight:700;color:var(--main-color);
+}
+.header-text h2 .gold{color:var(--accent-color);}
+.header-text p{
+  margin-top:12px;font-size:14px;color:#5A5144;
+}
+
+/* ② 発信者ブロック */
+.profile{
+  margin-top:36px;
+  display:flex;gap:16px;align-items:flex-start;
+}
+.profile img{
+  width:72px;height:72px;border-radius:50%;object-fit:cover;
+  border:2px solid var(--accent-color);flex-shrink:0;
+}
+.profile .txt{font-size:14.5px;}
+.profile .txt strong{color:var(--accent-color);}
+
+.bridge{text-align:center;}
+.bridge-head{
+  font-size:17px;font-weight:700;color:var(--main-color);margin-bottom:12px;
+}
+.bridge-txt{
+  font-size:14.5px;text-align:left;margin-bottom:18px;
+}
+.btn-line-mid{
+  display:block;text-align:center;text-decoration:none;
+  background:var(--line-green);color:#fff;font-weight:700;
+  font-size:15.5px;padding:16px 10px;border-radius:999px;
+  box-shadow:0 4px 12px rgba(6,199,85,.35);
+}
+
+/* ④ 特典カード */
+.section-label{
+  text-align:center;margin:52px 0 6px;
+  font-size:13px;letter-spacing:.24em;color:var(--accent-color);font-weight:700;
+}
+.section-title{
+  text-align:center;font-size:22px;font-weight:700;margin-bottom:26px;
+}
+.card{
+  background:var(--card-bg);border-radius:16px;
+  padding:26px 20px;margin-bottom:26px;
+  box-shadow:0 3px 14px rgba(30,42,68,.08);
+}
+.card h3{
+  font-size:19px;line-height:1.5;margin-bottom:6px;
+  padding-left:12px;border-left:4px solid var(--accent-color);
+}
+.card .lead{font-size:14px;color:#6B6353;margin-bottom:18px;}
+
+/* 診断 */
+.q-block{margin-bottom:20px;}
+.q-block .q{
+  font-weight:700;font-size:15.5px;margin-bottom:10px;
+  color:var(--main-color);
+}
+.opt{
+  display:block;width:100%;text-align:left;
+  background:#F8F4EB;border:2px solid #E4D9C2;border-radius:12px;
+  padding:12px 14px;margin-bottom:8px;font-size:14.5px;
+  color:var(--main-color);cursor:pointer;font-family:inherit;line-height:1.6;
+  transition:border-color .15s,background .15s;
+}
+.opt.selected{
+  border-color:var(--accent-color);background:#F3EAD6;font-weight:700;
+}
+.btn-diag{
+  display:block;width:100%;border:none;cursor:pointer;
+  background:var(--main-color);color:#fff;font-weight:700;
+  font-size:16px;padding:15px;border-radius:999px;margin-top:6px;
+  font-family:inherit;
+  box-shadow:0 3px 10px rgba(30,42,68,.25);
+}
+.btn-diag:disabled{opacity:.4;cursor:default;box-shadow:none;}
+.diag-result{
+  display:none;margin-top:22px;
+  background:linear-gradient(160deg,#FBF6EC,#F3EAD6);
+  border:2px solid var(--accent-color);border-radius:14px;
+  padding:22px 18px;
+}
+.diag-result .r-badge{
+  display:inline-block;font-size:12px;letter-spacing:.15em;
+  background:var(--accent-color);color:#fff;
+  padding:4px 14px;border-radius:999px;margin-bottom:10px;font-weight:700;
+}
+.diag-result h4{font-size:19px;margin-bottom:10px;color:var(--main-color);}
+.diag-result p{font-size:14.5px;margin-bottom:10px;}
+.diag-result p:last-child{margin-bottom:0;font-weight:700;color:var(--accent-color);}
+.diag-reset{
+  display:block;margin:14px auto 0;background:none;border:none;
+  color:#8A7B5E;font-size:13px;text-decoration:underline;cursor:pointer;font-family:inherit;
+}
+
+/* チェックリスト */
+.check-list{list-style:none;}
+.check-list li{
+  display:flex;align-items:flex-start;gap:12px;
+  background:#F8F4EB;border:2px solid #E4D9C2;border-radius:12px;
+  padding:13px 14px;margin-bottom:10px;cursor:pointer;
+  font-size:14.5px;line-height:1.6;transition:background .15s,border-color .15s;
+}
+.check-list li .box{
+  flex-shrink:0;width:24px;height:24px;border-radius:7px;
+  border:2px solid var(--accent-color);background:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;color:#fff;margin-top:2px;
+}
+.check-list li.done{background:#F3EAD6;border-color:var(--accent-color);}
+.check-list li.done .box{background:var(--accent-color);}
+.check-list li.done .t{text-decoration:line-through;color:#8A7B5E;}
+.check-list li .t small{display:block;font-size:12.5px;color:#8A7B5E;text-decoration:none;}
+.check-count{
+  text-align:center;font-weight:700;font-size:15px;
+  color:var(--accent-color);margin-top:14px;
+}
+
+/* ===== ゾーン境界 1→2 ===== */
+.divider-1to2{
+  height:64px;
+  background:linear-gradient(180deg,var(--bg-deep) 0%,#CBBc9A 100%);
+  position:relative;
+}
+.divider-1to2::after{
+  content:"";position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:var(--accent-color);
+}
+
+/* ===== ゾーン2：ストーリー ===== */
+.zone2{
+  background:linear-gradient(180deg,var(--zone2-top) 0%,var(--zone2-bottom) 100%);
+  color:var(--zone2-text);
+  padding:64px 0 72px;
+}
+.zone2 .wrap p,.zone2 .wrap div{color:var(--zone2-text);}
+.story-label{
+  text-align:center;font-size:13px;letter-spacing:.24em;
+  color:#D9A441;font-weight:700;margin-bottom:8px;
+}
+.story-title{
+  text-align:center;font-size:21px;font-weight:700;
+  color:#fff;margin-bottom:34px;line-height:1.6;
+}
+.story-30 p{
+  font-size:15.5px;margin-bottom:20px;color:var(--zone2-text);
+}
+.story-30 .kicker{
+  font-weight:700;color:#F0D9A8;font-size:16.5px;
+}
+.acc-toggle{
+  display:block;width:100%;margin-top:30px;
+  background:none;border:1px solid rgba(244,239,230,.45);
+  color:var(--zone2-text);border-radius:999px;
+  padding:13px;font-size:14.5px;cursor:pointer;font-family:inherit;
+}
+.acc-body{
+  display:none;margin-top:28px;
+  border-top:1px solid rgba(244,239,230,.25);
+  padding-top:28px;
+}
+.acc-body h4{
+  color:#F0D9A8;font-size:17px;margin:30px 0 12px;line-height:1.6;
+}
+.acc-body h4:first-child{margin-top:0;}
+.acc-body p{font-size:14.5px;margin-bottom:16px;color:var(--zone2-text);}
+.acc-body .last{
+  font-weight:700;color:#fff;
+}
+
+/* ===== ゾーン境界 2→3 ＋ ゾーン3 ===== */
+.zone3{
+  background:linear-gradient(180deg,var(--zone3-top) 0%,var(--zone3-bottom) 100%);
+  border-top:3px solid var(--accent-color);
+  padding:26px 0 60px;
+  position:relative;
+}
+.zone3::before{
+  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:min(560px,92%);height:220px;
+  background:radial-gradient(ellipse at top,rgba(255,248,225,.95) 0%,rgba(255,248,225,0) 70%);
+  pointer-events:none;
+}
+.cta-card{
+  position:relative;
+  background:#FFFDF7;border:2px solid var(--accent-color);
+  border-radius:18px;padding:30px 20px;
+  margin-top:34px;
+  box-shadow:0 10px 34px rgba(120,90,30,.28);
+}
+.cta-head{
+  text-align:center;font-size:20px;font-weight:700;
+  margin-bottom:20px;line-height:1.6;
+}
+.cta-banner{display:block;margin-bottom:18px;}
+.cta-banner img{width:100%;height:auto;border-radius:10px;display:block;}
+.benefits{
+  background:#F7F0DF;border-radius:12px;
+  padding:18px 16px;margin-bottom:16px;
+}
+.benefits p{font-weight:700;font-size:14px;margin-bottom:10px;color:var(--accent-color);}
+.benefits ul{list-style:none;}
+.benefits li{
+  font-size:14.5px;padding-left:26px;position:relative;margin-bottom:8px;line-height:1.7;
+}
+.benefits li:last-child{margin-bottom:0;}
+.benefits li::before{
+  content:"✓";position:absolute;left:2px;color:var(--line-green);font-weight:700;
+}
+.limited{
+  text-align:center;font-size:13px;color:#8A6B32;
+  margin-bottom:16px;
+}
+.btn-line-main{
+  display:block;text-align:center;text-decoration:none;
+  background:var(--line-green);color:#fff;font-weight:700;
+  font-size:16px;line-height:1.55;padding:19px 12px;border-radius:999px;
+  box-shadow:0 6px 16px rgba(6,199,85,.42);
+  transition:transform .1s,box-shadow .2s;
+  animation:pulse 2.6s ease-in-out infinite;
+}
+.btn-line-main:active{
+  transform:translateY(2px);box-shadow:0 2px 6px rgba(6,199,85,.4);
+}
+@keyframes pulse{
+  0%,100%{box-shadow:0 6px 16px rgba(6,199,85,.42);}
+  50%{box-shadow:0 6px 24px rgba(6,199,85,.66);}
+}
+
+/* ⑦ 向きません枠 */
+.ng-box{
+  margin-top:38px;
+  background:rgba(255,253,247,.6);
+  border:1px solid #D9C7A0;border-radius:14px;
+  padding:22px 18px;
+}
+.ng-box h3{font-size:16px;text-align:center;margin-bottom:14px;}
+.ng-box ul{list-style:none;margin-bottom:14px;}
+.ng-box li{
+  font-size:14px;padding-left:24px;position:relative;margin-bottom:8px;color:#4A4436;
+}
+.ng-box li::before{content:"×";position:absolute;left:4px;color:#B0533E;font-weight:700;}
+.ng-box .turn{
+  border-top:1px solid #D9C7A0;padding-top:14px;
+  font-size:14px;font-weight:700;color:var(--main-color);
+}
+
+/* ⑧ フッター */
+footer{
+  text-align:center;font-size:12px;color:#9A8C6E;
+  padding:30px 0 40px;background:var(--zone3-bottom);
+}
+</style>
+<!-- ここにアクセス解析タグ（Googleアナリティクス等）を貼り付け -->
+</head>
+<body>
+
+<h1 class="visually-hidden">あなたに合うAI活用診断＆はじめる前の準備チェックリスト｜5つの方法から、あなたに合う“最初の一つ”がわかる無料特典</h1>
+
+<!-- ===== ゾーン1：受け取り ===== -->
+<div class="zone1">
+
+  <!-- ① ヘッダー（自動フォールバック方式） -->
+  <img class="header-banner" src="https://instaakiai40s.github.io/header039.PNG" alt="あなたに合うAI活用診断＆はじめる前の準備チェックリスト（保存版・無料特典）" onerror="this.style.display='none';document.getElementById('textHeader').style.display='block';">
+  <div class="header-text" id="textHeader">
+    <span class="badge">保存版・無料特典</span>
+    <h2>あなたに合う<span class="gold">AI活用診断</span>＆<br>はじめる前の<span class="gold">準備チェックリスト</span></h2>
+    <p>5つの方法から、あなたに合う“最初の一つ”がわかる</p>
+  </div>
+
+  <div class="wrap">
+
+    <!-- ② 発信者ブロック -->
+    <div class="profile">
+      <img src="https://instaakiai40s.github.io/profile.JPG" alt="あきのプロフィール写真">
+      <div class="txt">
+        はじめまして、<strong>あき</strong>です。40代、福祉の仕事をしながら3人の子どもを育てています。<br>
+        特別な才能はありません。使えたのは子どもが寝てからの1〜2時間だけ。それでも投稿開始20日でフォロワー5,000人という結果が出ました。<br>
+        この特典は、時間も体力もお金の余裕もない、それでも家族のために何かを変えたい40代のために作りました。
+      </div>
+    </div>
+
+    <!-- ④ 特典カード群 -->
+    <p class="section-label">FREE GIFT</p>
+    <p class="section-title">今回の特典はこちら</p>
+
+    <!-- 特典1：診断 -->
+    <div class="card">
+      <h3>特典1｜あなたに合うAI活用診断</h3>
+      <p class="lead">動画で紹介した方法のうち、どれから始めるべきかは人によって違います。3つの質問に答えるだけで、あなたに合う“最初の一つ”がわかります。</p>
+
+      <div class="q-block" data-q="1">
+        <p class="q">Q1. 平日、自分のために使える時間は？</p>
+        <button class="opt" data-pt="stamp,room">30分くらい。日によっては取れない日も</button>
+        <button class="opt" data-pt="insta,writing">子どもが寝たあとの1時間前後なら</button>
+        <button class="opt" data-pt="room,stamp">バラバラ。すきま時間の寄せ集め</button>
+      </div>
+
+      <div class="q-block" data-q="2">
+        <p class="q">Q2. 一番「好き」に近いのは？</p>
+        <button class="opt" data-pt="writing,writing">文章を書く・言葉を選ぶこと</button>
+        <button class="opt" data-pt="stamp,stamp">絵や画像など“作品”を作ること</button>
+        <button class="opt" data-pt="room,room">良かった物を人にすすめること</button>
+        <button class="opt" data-pt="insta,insta">発信して、反応をもらうこと</button>
+      </div>
+
+      <div class="q-block" data-q="3">
+        <p class="q">Q3. 性格はどっち寄り？</p>
+        <button class="opt" data-pt="writing">決まった依頼を、きっちり仕上げるのが得意</button>
+        <button class="opt" data-pt="stamp,room">一度仕込んだら、ゆっくり育てるのが好き</button>
+        <button class="opt" data-pt="insta">自分の経験を、誰かに話してみたい</button>
+      </div>
+
+      <button class="btn-diag" id="diagBtn" disabled>診断結果を見る</button>
+
+      <div class="diag-result" id="diagResult">
+        <span class="r-badge" id="rBadge"></span>
+        <h4 id="rTitle"></h4>
+        <p id="rBody"></p>
+        <p id="rBridge"></p>
+        <button class="diag-reset" id="diagReset">もう一度診断する</button>
+      </div>
+    </div>
+
+    <!-- 特典2：チェックリスト -->
+    <div class="card">
+      <h3>特典2｜はじめる前の準備チェックリスト</h3>
+      <p class="lead">どの方法を選んでも、最初に必要になる準備は同じです。“第0章”として、今夜のうちに済ませておけるものだけを集めました。タップでチェックできます。</p>
+
+      <ul class="check-list" id="checkList">
+        <li><span class="box">✓</span><span class="t">無料のAIアカウントを1つ作る<small>ChatGPT・Gemini・Claude のどれか1つでOK</small></span></li>
+        <li><span class="box">✓</span><span class="t">専用のメールアドレスを1つ用意する<small>家族共用と分けておくと、あとがラクです</small></span></li>
+        <li><span class="box">✓</span><span class="t">スマホの空き容量を確保する<small>写真の整理と、使っていないアプリの削除から</small></span></li>
+        <li><span class="box">✓</span><span class="t">「自分の1枠」を決める<small>例：子どもが寝たあとの30分。曜日と時間を先に固定</small></span></li>
+        <li><span class="box">✓</span><span class="t">ニックネームを決めておく<small>本名を出す必要はありません</small></span></li>
+        <li><span class="box">✓</span><span class="t">パスワードのメモ場所を決める<small>登録が増えるので、最初に1か所に集約</small></span></li>
+      </ul>
+      <p class="check-count" id="checkCount">0 / 6 完了</p>
+    </div>
+
+    <!-- 橋渡しCTA（今回のみ：診断→準備→"次は進め方"の流れで案内） -->
+    <div class="card bridge">
+      <p class="bridge-head">具体的なやり方を受け取りたい方へ</p>
+      <p class="bridge-txt">診断で方向が決まり、準備が整ったら、次は“進め方”です。5つの方法の具体的なやり方は<strong>『AIマネタイズの教科書』</strong>にまとめて、無料でお配りしています。</p>
+      <a class="btn-line-mid js-line-link" href="https://sub.aione.co.jp/p/ss6dW0WuKBch?ftid=wD2ezNjVRT9o">今回のノウハウを無料で受け取る</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== ゾーン境界 1→2 ===== -->
+<div class="divider-1to2"></div>
+
+<!-- ===== ゾーン2：ストーリー ===== -->
+<div class="zone2">
+  <div class="wrap">
+    <p class="story-label">MY STORY</p>
+    <p class="story-title">僕がこの発信を始めた、本当の理由</p>
+
+    <div class="story-30">
+      <p>数年前、僕は投資詐欺で家族にも言えない大きな失敗をしました。</p>
+      <p>子どもが「ディズニー行きたいね」と話すのに、「行こうね」の一言が言えない。そんな毎日でした。</p>
+      <p>転機は、同じどん底から立ち直った人の動画を、たまたま見た夜。</p>
+      <p>子どもが寝てからの1〜2時間、言われたことをやっただけで、投稿開始20日でフォロワー5,000人。</p>
+      <p class="kicker">あの日言えなかった「行こうね」を、今の僕は言えます。同じ40代に、遠回りしてほしくない。だから、この特典を作りました。</p>
+    </div>
+
+    <button class="acc-toggle" id="accToggle">▼ 僕の話の全文はこちら（2分）</button>
+
+    <div class="acc-body" id="accBody">
+      <h4>時間も体力もない40代の僕が、人生をやり直せた理由</h4>
+      <p>はじめまして、あきです。</p>
+      <p>40代、福祉の仕事をしながら、3人の子どもを育てています。</p>
+      <p>夜勤明けに子どもの歯磨き、洗濯、寝かしつけ。やっと自分の時間が持てるのは、子どもが寝てから。</p>
+      <p>きっとこの文章を読んでいるあなたも、似たような毎日を送っているのではないでしょうか。</p>
+
+      <h4>家族にも言えない過去</h4>
+      <p>そんな僕には、家族にも言えない過去があります。</p>
+      <p>数年前、投資詐欺で2,700万円を失いました。残ったのは、700万円の借金。</p>
+      <p>騙されたのは、怪しい儲け話に飛びついたからではありません。信頼していた人からの紹介で、実際に何年も利益が振り込まれ続けていた仕組みでした。</p>
+      <p>少額から始めて、利益が入るのを確認して、「家族の将来のために」と金額を増やしていった。</p>
+      <p>その仕組みは、ポンジスキームと呼ばれる詐欺でした。</p>
+      <p>ある日の電話一本で、すべてが終わりました。子どもの教育資金。夫婦の老後資金。家族旅行のための貯え。一瞬で消えました。</p>
+
+      <h4>一番辛かったのは、失った瞬間ではありません</h4>
+      <p>その事実を家族に言えないまま、笑顔で食卓を囲んでいた時間です。</p>
+      <p>ある日、テレビでディズニーランドの特集が流れて、子どもたちが「行きたいね」と楽しそうに話していました。</p>
+      <p>僕は「じゃあ今度行こうね」の一言が、どうしても言えませんでした。</p>
+      <p>自分がいなくなった方が家族のためになるのではないか。そこまで追い詰められた時期もありました。</p>
+
+      <h4>転機は、夜の寝室でした</h4>
+      <p>ある夜、一人でスマホを見ていた時、たまたま流れてきた動画に釘付けになりました。</p>
+      <p>僕と同じポンジスキームで、大金を失った人。豊岡さんという方でした。</p>
+      <p>感じたのは、希望ではなく共感でした。</p>
+      <p>そして、気づいてしまったんです。</p>
+      <p>僕は詐欺に遭った時点で、すべてを諦めて、おとなしく生きていこうとしていた。</p>
+      <p>でもこの人は、そこからさらに挑戦して、失敗を「上書き」していた。</p>
+      <p>同じどん底から、正反対の道を選んだ人が、そこにいました。</p>
+
+      <h4>言われたことを、ただやっただけです</h4>
+      <p>借金がある中で、さらにお金を払って学ぶ環境に入る。怖くないはずがありません。</p>
+      <p>でも、思ったんです。</p>
+      <p>この失敗を「失敗」のまま終わらせるのか。自分の人生の主導権を、自分以外に渡したまま生きるのか。</p>
+      <p>僕は環境に入り、言われたことを、ただやりました。特別な才能もセンスも使っていません。使ったのは、子どもが寝てからの1〜2時間だけです。</p>
+      <p>すると、ある日。携帯の通知が鳴り止まなくなりました。</p>
+      <p>投稿開始20日で、フォロワー5,000人。</p>
+      <p>数字よりも嬉しかったのは、「自分も同じです」というDMが届いたことでした。</p>
+
+      <h4>失敗は消せません。でも、上書きはできます。</h4>
+      <p>僕と同じように、時間も体力もお金の余裕もない40代に、遠回りしてほしくない。</p>
+      <p class="last">その一心で、この特典と資料を作りました。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ゾーン3：本命CTA ===== -->
+<div class="zone3">
+  <div class="wrap">
+
+    <!-- ⑥ メインCTA -->
+    <div class="cta-card">
+      <p class="cta-head">『AIマネタイズの教科書』を<br>無料でお受け取りください</p>
+
+      <a class="cta-banner js-line-link" href="https://sub.aione.co.jp/p/ss6dW0WuKBch?ftid=wD2ezNjVRT9o">
+        <img src="https://instaakiai40s.github.io/line_banner.PNG" alt="LINE登録で『AIマネタイズの教科書』を無料で受け取る" onerror="this.parentElement.style.display='none';">
+      </a>
+
+      <div class="benefits">
+        <p>LINE登録でできること</p>
+        <ul>
+          <li>『AIマネタイズの教科書』をその場でお届けします</li>
+          <li>無料の個別相談会にご参加いただけます（質問もできます）</li>
+          <li>40代のためのAI活用のヒントを、不定期でお届けします</li>
+        </ul>
+      </div>
+
+      <p class="limited">※予告なく配布を終了する場合があります</p>
+
+      <a class="btn-line-main js-line-link" href="https://sub.aione.co.jp/p/ss6dW0WuKBch?ftid=wD2ezNjVRT9o">今回のノウハウ（AIマネタイズの教科書）を<br>無料で受け取る</a>
+    </div>
+
+    <!-- ⑦ 向きません枠 -->
+    <div class="ng-box">
+      <h3>こんな方には向きません</h3>
+      <ul>
+        <li>今日明日で結果を求める方</li>
+        <li>コピペすら面倒で、自分では一切手を動かしたくない方</li>
+        <li>AIに丸投げすれば全部うまくいく、と考えている方</li>
+      </ul>
+      <p class="turn">逆に、「1日30分でも、コツコツ積み上げる覚悟がある」という方なら、この教科書はきっとお役に立てます。</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ⑧ フッター -->
+<footer>© あき</footer>
+
+<script>
+// ===== LINEリンク一元管理 =====
+const LINE_URL = "https://sub.aione.co.jp/p/ss6dW0WuKBch?ftid=wD2ezNjVRT9o";
+document.querySelectorAll(".js-line-link").forEach(function(el){
+  el.setAttribute("href", LINE_URL);
+});
+
+// ===== 特典1：診断 =====
+const answers = {};
+const results = {
+  insta: {
+    badge: "動画の第1位",
+    title: "AI×インスタ",
+    body: "あなたは、自分の経験を発信に変えるタイプ。40代までの経験そのものが素材になるので、ゼロから何かを覚える必要がありません。台本づくりはAIに任せられるから、まとまった時間がなくても続けられます。",
+    bridge: "詳しい進め方は『AIマネタイズの教科書』に載っています。まずはすぐ下の準備チェックリストから始めてください。"
+  },
+  writing: {
+    badge: "動画の第2位",
+    title: "AIライティング",
+    body: "言葉を選ぶのが好きで、決まった依頼をきっちり仕上げられるあなたには、文章のお仕事が合っています。AIが下書きを担当してくれるので、あなたの役割は“仕上げ役”。実績が積み上がるほど、選べる案件の幅が広がっていきます。",
+    bridge: "詳しい進め方は『AIマネタイズの教科書』に載っています。まずはすぐ下の準備チェックリストから始めてください。"
+  },
+  stamp: {
+    badge: "動画の第3位",
+    title: "AI×LINEスタンプ",
+    body: "一度仕込んだら、ゆっくり育てる。そんな“作品づくり型”のあなたに合っています。絵心は不要で、AIに描いてもらって登録するだけ。すきま時間の寄せ集めでも進められるのが強みです。",
+    bridge: "詳しい進め方は『AIマネタイズの教科書』に載っています。まずはすぐ下の準備チェックリストから始めてください。"
+  },
+  room: {
+    badge: "動画の第4位",
+    title: "楽天ROOM",
+    body: "良かった物を人にすすめるのが好きなあなたには、一番ハードルの低いこの方法から。楽天アカウントがあれば、今日から始められます。紹介文づくりはAIに手伝ってもらえます。",
+    bridge: "まずはすぐ下の準備チェックリストを済ませて、今日アカウントを作るところから。『AIマネタイズの教科書』では、これと組み合わせる発信の作り方も学べます。"
+  }
+};
+const priority = ["insta","writing","stamp","room"];
+
+document.querySelectorAll(".q-block").forEach(function(block){
+  block.querySelectorAll(".opt").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      block.querySelectorAll(".opt").forEach(function(b){ b.classList.remove("selected"); });
+      btn.classList.add("selected");
+      answers[block.dataset.q] = btn.dataset.pt;
+      document.getElementById("diagBtn").disabled = (Object.keys(answers).length < 3);
+    });
+  });
+});
+
+document.getElementById("diagBtn").addEventListener("click", function(){
+  const score = { insta:0, writing:0, stamp:0, room:0 };
+  Object.values(answers).forEach(function(pt){
+    pt.split(",").forEach(function(k){ score[k.trim()]++; });
+  });
+  let winner = priority[0];
+  priority.forEach(function(k){
+    if(score[k] > score[winner]) winner = k;
+  });
+  const r = results[winner];
+  document.getElementById("rBadge").textContent = r.badge;
+  document.getElementById("rTitle").textContent = "あなたに合うのは「" + r.title + "」";
+  document.getElementById("rBody").textContent = r.body;
+  document.getElementById("rBridge").textContent = r.bridge;
+  document.getElementById("diagResult").style.display = "block";
+  document.getElementById("diagResult").scrollIntoView({behavior:"smooth", block:"center"});
+});
+
+document.getElementById("diagReset").addEventListener("click", function(){
+  Object.keys(answers).forEach(function(k){ delete answers[k]; });
+  document.querySelectorAll(".opt").forEach(function(b){ b.classList.remove("selected"); });
+  document.getElementById("diagBtn").disabled = true;
+  document.getElementById("diagResult").style.display = "none";
+});
+
+// ===== 特典2：チェックリスト =====
+const items = document.querySelectorAll("#checkList li");
+const countEl = document.getElementById("checkCount");
+items.forEach(function(li){
+  li.addEventListener("click", function(){
+    li.classList.toggle("done");
+    const done = document.querySelectorAll("#checkList li.done").length;
+    countEl.textContent = done + " / " + items.length + " 完了";
+    if(done === items.length){
+      countEl.textContent = "6 / 6 完了！準備OKです";
+    }
+  });
+});
+
+// ===== ストーリー全文アコーディオン =====
+document.getElementById("accToggle").addEventListener("click", function(){
+  const body = document.getElementById("accBody");
+  const open = body.style.display === "block";
+  body.style.display = open ? "none" : "block";
+  this.textContent = open ? "▼ 僕の話の全文はこちら（2分）" : "▲ 閉じる";
+});
+</script>
+</body>
+</html>
