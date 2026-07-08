@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- 経路メモ：リール経由（台本042「ChatGPT画像クオリティが跳ね上がる 神業4選」／いいね＋コメントトリガー） -->
+<!-- ファイル管理：index042.html／header042.PNG（台本042対応） -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatGPT画像クオリティが跳ね上がる 神業プロンプト4選｜無料特典</title>
+<meta property="og:title" content="ChatGPT画像クオリティが跳ね上がる 神業プロンプト4選">
+<meta property="og:description" content="コピペ1行で、&quot;AIっぽさ&quot;が消える。保存版・無料特典。">
+<meta property="og:image" content="https://instaakiai40s.github.io/header042.PNG">
+<meta property="og:type" content="website">
+<style>
+:root{
+  --main-color:#1E2A44;
+  --accent-color:#A9834A;
+  --bg-color:#F6F1E7;
+  --bg-color2:#EFE6D4;
+  --card-bg:#FFFFFF;
+  --zone2-top:#1B2640;
+  --zone2-bottom:#243050;
+  --zone2-text:#F4F0E6;
+  --zone2-gold:#D9B26A;
+  --zone3-top:#F3E8CC;
+  --zone3-bottom:#E7D3A8;
+  --line-green:#06C755;
+  --line-green-dark:#05A648;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",Meiryo,sans-serif;
+  background:linear-gradient(180deg,var(--bg-color) 0%,var(--bg-color2) 100%);
+  color:var(--main-color);
+  line-height:1.9;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:560px;margin:0 auto;padding:0 18px;}
+.visually-hidden{
+  position:absolute;width:1px;height:1px;margin:-1px;padding:0;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
+}
+
+/* ===== ゾーン1：ヘッダー ===== */
+.hero{padding:0 0 8px;}
+.hero-banner{display:block;width:100%;height:auto;border-radius:0 0 14px 14px;}
+.hero-text{
+  display:none;
+  text-align:center;
+  padding:52px 20px 44px;
+  background:linear-gradient(160deg,#FBF7EE 0%,var(--bg-color2) 100%);
+  border-bottom:3px solid var(--accent-color);
+}
+.hero-text .badge{
+  display:inline-block;
+  background:var(--main-color);
+  color:#fff;
+  font-size:12px;
+  letter-spacing:.18em;
+  padding:6px 16px;
+  border-radius:999px;
+  margin-bottom:18px;
+}
+.hero-text h2{
+  font-size:26px;
+  line-height:1.5;
+  color:var(--main-color);
+  margin-bottom:14px;
+}
+.hero-text h2 .gold{color:var(--accent-color);}
+.hero-text p{font-size:14px;color:#5A5243;letter-spacing:.06em;}
+
+/* ===== ゾーン1：発信者ブロック ===== */
+.profile{
+  display:flex;align-items:flex-start;gap:14px;
+  background:var(--card-bg);
+  border-radius:14px;
+  padding:20px 18px;
+  margin:22px 0 0;
+  box-shadow:0 2px 10px rgba(30,42,68,.07);
+}
+.profile img{
+  width:64px;height:64px;border-radius:50%;
+  object-fit:cover;flex-shrink:0;
+  border:2px solid var(--bg-color2);
+}
+.profile p{font-size:14px;line-height:1.9;}
+.profile .name{font-weight:bold;color:var(--main-color);}
+
+/* ===== ゾーン1：挨拶＋上部CTA ===== */
+.greeting{padding:26px 0 6px;}
+.greeting p{margin-bottom:14px;font-size:15px;}
+.greeting strong{color:var(--accent-color);}
+.mini-cta{
+  display:block;
+  text-align:center;
+  background:var(--line-green);
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:bold;
+  padding:13px 16px;
+  border-radius:999px;
+  margin:18px auto 16px;
+  max-width:330px;
+  box-shadow:0 3px 10px rgba(6,199,85,.32);
+  transition:transform .12s ease;
+}
+.mini-cta:active{transform:translateY(2px);}
+.foreshadow{
+  font-size:14px;
+  color:#5A5243;
+  background:rgba(169,131,74,.10);
+  border-left:3px solid var(--accent-color);
+  padding:12px 14px;
+  border-radius:0 10px 10px 0;
+}
+
+/* ===== ゾーン1：特典カード群 ===== */
+.gifts{padding:26px 0 10px;}
+.section-title{
+  text-align:center;
+  font-size:21px;
+  color:var(--main-color);
+  margin-bottom:6px;
+}
+.section-title .gold{color:var(--accent-color);}
+.section-lead{
+  text-align:center;
+  font-size:13px;
+  color:#6B6250;
+  margin-bottom:20px;
+  line-height:1.9;
+}
+.section-lead span{display:inline-block;}
+.howto{
+  background:var(--card-bg);
+  border:2px solid var(--accent-color);
+  border-radius:14px;
+  padding:18px 16px;
+  margin-bottom:22px;
+  font-size:14px;
+}
+.howto .howto-label{
+  display:inline-block;
+  background:var(--accent-color);
+  color:#fff;
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:.12em;
+  padding:3px 12px;
+  border-radius:999px;
+  margin-bottom:10px;
+}
+.card{
+  background:var(--card-bg);
+  border-radius:14px;
+  padding:22px 18px;
+  margin-bottom:18px;
+  box-shadow:0 2px 12px rgba(30,42,68,.08);
+}
+.card .num{
+  display:inline-block;
+  background:var(--main-color);
+  color:#fff;
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:.14em;
+  padding:3px 12px;
+  border-radius:999px;
+  margin-bottom:10px;
+}
+.card h3{
+  font-size:18px;
+  line-height:1.5;
+  color:var(--main-color);
+  margin-bottom:12px;
+}
+.prompt-box{
+  position:relative;
+  background:#20293E;
+  color:#EDEAE0;
+  font-family:"SFMono-Regular",Consolas,Menlo,monospace;
+  font-size:15px;
+  border-radius:10px;
+  padding:16px 14px 52px;
+  margin-bottom:12px;
+  word-break:break-all;
+}
+.copy-btn{
+  position:absolute;
+  right:10px;bottom:10px;
+  background:var(--accent-color);
+  color:#fff;
+  border:none;
+  font-size:13px;
+  font-weight:bold;
+  padding:8px 18px;
+  border-radius:999px;
+  cursor:pointer;
+  transition:background .15s ease,transform .12s ease;
+}
+.copy-btn:active{transform:translateY(1px);}
+.copy-btn.copied{background:var(--line-green);}
+.card .desc{font-size:14px;color:#4A4436;}
+
+/* ===== ゾーン1→2 境界 ===== */
+.zone-gap{height:44px;}
+
+/* ===== ゾーン2：ストーリー（全幅・反転） ===== */
+.story-zone{
+  background:linear-gradient(180deg,var(--zone2-top) 0%,var(--zone2-bottom) 100%);
+  border-top:3px solid var(--zone2-gold);
+  padding:52px 0 56px;
+  color:var(--zone2-text);
+}
+.story-zone .wrap p,
+.story-zone .wrap strong,
+.story-zone .wrap h2,
+.story-zone .wrap h3{color:var(--zone2-text);}
+.story-zone h2{
+  text-align:center;
+  font-size:20px;
+  line-height:1.6;
+  margin-bottom:26px;
+}
+.story-zone h2 .gold,
+.story-zone strong.gold{color:var(--zone2-gold);}
+.story-30 p{font-size:15px;margin-bottom:16px;line-height:2.0;}
+.story-30 .closing{
+  font-size:16px;
+  margin-top:22px;
+}
+.story-30 .closing strong{color:var(--zone2-gold);}
+.accordion{margin-top:30px;}
+.accordion-toggle{
+  display:block;
+  width:100%;
+  background:transparent;
+  color:var(--zone2-text);
+  border:1px solid rgba(217,178,106,.6);
+  border-radius:999px;
+  font-size:14px;
+  padding:13px 16px;
+  cursor:pointer;
+  transition:background .15s ease;
+}
+.accordion-toggle:active{background:rgba(217,178,106,.15);}
+.accordion-body{
+  display:none;
+  margin-top:26px;
+  border-top:1px solid rgba(244,240,230,.25);
+  padding-top:26px;
+}
+.accordion-body.open{display:block;}
+.accordion-body h3{
+  font-size:17px;
+  color:var(--zone2-gold);
+  margin:26px 0 12px;
+  line-height:1.6;
+}
+.accordion-body p{font-size:15px;margin-bottom:15px;line-height:2.0;}
+
+/* ===== ゾーン2→3 境界＋ゾーン3 ===== */
+.cta-zone{
+  background:linear-gradient(180deg,var(--zone3-top) 0%,var(--zone3-bottom) 100%);
+  border-top:3px solid var(--accent-color);
+  position:relative;
+  padding:56px 0 46px;
+}
+.cta-zone::before{
+  content:"";
+  position:absolute;
+  top:0;left:50%;
+  transform:translateX(-50%);
+  width:100%;max-width:560px;height:220px;
+  background:radial-gradient(ellipse at center top,rgba(255,250,235,.95) 0%,rgba(255,250,235,0) 70%);
+  pointer-events:none;
+}
+.cta-zone .wrap{position:relative;}
+.cta-title{
+  text-align:center;
+  font-size:21px;
+  color:var(--main-color);
+  margin-bottom:20px;
+  line-height:1.6;
+}
+.cta-title .gold{color:var(--accent-color);}
+.line-banner-link{display:block;margin-bottom:18px;}
+.line-banner-link img{
+  display:block;width:100%;height:auto;
+  border-radius:12px;
+  box-shadow:0 4px 14px rgba(30,42,68,.18);
+}
+.cta-card{
+  background:#FFFDF7;
+  border:2px solid var(--accent-color);
+  border-radius:16px;
+  padding:24px 18px;
+  box-shadow:0 8px 28px rgba(122,92,40,.28);
+}
+.benefits{list-style:none;margin-bottom:18px;}
+.benefits li{
+  font-size:15px;
+  padding:10px 0 10px 32px;
+  position:relative;
+  border-bottom:1px dashed rgba(169,131,74,.35);
+}
+.benefits li:last-child{border-bottom:none;}
+.benefits li::before{
+  content:"✅";
+  position:absolute;left:0;top:10px;
+  font-size:16px;
+}
+.limited{
+  text-align:center;
+  font-size:13px;
+  color:#8A6A2F;
+  background:rgba(169,131,74,.12);
+  border-radius:8px;
+  padding:10px 12px;
+  margin-bottom:16px;
+}
+.main-cta{
+  display:block;
+  width:100%;
+  text-align:center;
+  background:linear-gradient(180deg,var(--line-green) 0%,var(--line-green-dark) 100%);
+  color:#fff;
+  text-decoration:none;
+  font-size:17px;
+  font-weight:bold;
+  padding:19px 16px;
+  border-radius:999px;
+  box-shadow:0 6px 16px rgba(6,199,85,.42);
+  animation:softGlow 2.4s ease-in-out infinite;
+  transition:transform .12s ease,box-shadow .12s ease;
+}
+.main-cta:active{
+  transform:translateY(3px);
+  box-shadow:0 2px 8px rgba(6,199,85,.4);
+}
+@keyframes softGlow{
+  0%,100%{box-shadow:0 6px 16px rgba(6,199,85,.42);}
+  50%{box-shadow:0 6px 22px rgba(6,199,85,.62);}
+}
+
+/* ===== ゾーン3：向きません枠（控えめ） ===== */
+.not-for{
+  margin-top:34px;
+  background:rgba(255,255,255,.55);
+  border:1px solid rgba(30,42,68,.18);
+  border-radius:12px;
+  padding:20px 18px;
+}
+.not-for h3{
+  font-size:16px;
+  color:var(--main-color);
+  text-align:center;
+  margin-bottom:14px;
+}
+.not-for ul{list-style:none;}
+.not-for li{
+  font-size:14px;
+  color:#4A4436;
+  padding:6px 0 6px 26px;
+  position:relative;
+}
+.not-for li::before{
+  content:"×";
+  position:absolute;left:2px;top:6px;
+  color:#B0552F;
+  font-weight:bold;
+}
+.not-for .flip{
+  border-top:1px solid rgba(30,42,68,.15);
+  margin-top:14px;
+  padding-top:14px;
+  font-size:14px;
+  color:var(--main-color);
+}
+.not-for .flip strong{color:var(--accent-color);}
+
+/* ===== フッター ===== */
+footer{
+  text-align:center;
+  font-size:12px;
+  color:#8B8370;
+  padding:30px 0 40px;
+  background:var(--zone3-bottom);
+}
+</style>
+<!-- ここにアクセス解析タグ（Googleアナリティクス等）を貼り付け -->
+</head>
+<body>
+
+<h1 class="visually-hidden">ChatGPT画像クオリティが跳ね上がる 神業プロンプト4選｜コピペ1行で、"AIっぽさ"が消える｜保存版・無料特典</h1>
+
+<!-- ===== ゾーン1 ===== -->
+<header class="hero">
+  <img class="hero-banner" src="https://instaakiai40s.github.io/header042.PNG" alt="ChatGPT画像クオリティが跳ね上がる 神業プロンプト4選" onerror="this.style.display='none';document.getElementById('heroText').style.display='block';">
+  <div class="hero-text" id="heroText">
+    <span class="badge">保存版・無料特典</span>
+    <h2>ChatGPT画像クオリティが<br>跳ね上がる <span class="gold">神業プロンプト4選</span></h2>
+    <p>コピペ1行で、"AIっぽさ"が消える</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="profile">
+    <img src="https://instaakiai40s.github.io/profile.JPG" alt="あきのプロフィール写真">
+    <p><span class="name">はじめまして、あきです。</span><br>
+    40代、福祉の仕事をしながら3人の子どもを育てています。<br>
+    特別な才能はありません。使えたのは子どもが寝てからの1〜2時間だけ。それでも投稿開始20日でフォロワー5,000人という結果が出ました。<br>
+    この特典は、時間も体力もお金の余裕もない、それでも家族のために何かを変えたい40代のために作りました。</p>
+  </section>
+
+  <section class="greeting">
+    <p>リールをご覧いただき、そして受け取っていただき、ありがとうございます。</p>
+    <p>今回の特典は、このすぐ下にまとめてあります。<strong>4つすべて、今日からそのまま使えます。</strong></p>
+    <p>そして今、この特典とあわせて、さらに本格的に"もう一つの給料日"を作るための『AIマネタイズの教科書』も無料でお配りしています。</p>
+    <a class="mini-cta" href="#" data-line-link>AIマネタイズの教科書を無料で受け取る</a>
+    <p class="foreshadow">このページの最後に、僕がこの発信を始めた"本当の理由"を書きました。特典と合わせて、最後まで読んでもらえたら嬉しいです。</p>
+  </section>
+
+  <section class="gifts">
+    <h2 class="section-title">神業プロンプト<span class="gold">4選</span></h2>
+    <p class="section-lead"><span>※プロンプトはリールの</span><span>キャプション（説明欄）にも</span><span>載せていますが、</span><span>いつでも見返せるように、</span><span>このページにもすべて</span><span>まとめておきます。</span></p>
+
+    <div class="howto">
+      <span class="howto-label">使い方</span><br>
+      ChatGPTで画像を作ったあと、続けて下の一言を送るだけ。それだけで仕上がりが劇的に変わります。気になるものからコピーして試してみてください。
+    </div>
+
+    <div class="card">
+      <span class="num">神業 その1</span>
+      <h3>肌を、写真と見間違えるリアルな質感に</h3>
+      <div class="prompt-box">natural skin textureにして
+        <button class="copy-btn" data-copy="natural skin textureにして">コピー</button>
+      </div>
+      <p class="desc">人物の肌を、AIっぽいツルツルの美肌ではなく、写真みたいな自然な質感に近づけたいときに便利です。</p>
+    </div>
+
+    <div class="card">
+      <span class="num">神業 その2</span>
+      <h3>髪や服に、自然になびく風の動きを</h3>
+      <div class="prompt-box">moderate windsにして
+        <button class="copy-btn" data-copy="moderate windsにして">コピー</button>
+      </div>
+      <p class="desc">髪や服に自然な風の動きを足せます。ただ立っている画像でも、動きのある生きた写真に生まれ変わります。</p>
+    </div>
+
+    <div class="card">
+      <span class="num">神業 その3</span>
+      <h3>不自然な影を抑えて、自然光の雰囲気に</h3>
+      <div class="prompt-box">soft shadowにして
+        <button class="copy-btn" data-copy="soft shadowにして">コピー</button>
+      </div>
+      <p class="desc">強すぎる影をやわらげて、自然光っぽい落ち着いた雰囲気に整えられます。</p>
+    </div>
+
+    <div class="card">
+      <span class="num">神業 その4</span>
+      <h3>映画のワンシーンのような光と立体感を</h3>
+      <div class="prompt-box">cinematic lightingにして
+        <button class="copy-btn" data-copy="cinematic lightingにして">コピー</button>
+      </div>
+      <p class="desc">映画っぽい光の入り方になり、圧倒的な立体感と高級感を引き出せます。</p>
+    </div>
+  </section>
+
+</div>
+
+<div class="zone-gap"></div>
+
+<!-- ===== ゾーン2：ストーリー ===== -->
+<section class="story-zone">
+  <div class="wrap">
+    <h2>僕がこの発信を始めた<span class="gold">"本当の理由"</span></h2>
+
+    <div class="story-30">
+      <p>数年前、僕は投資詐欺で家族にも言えない大きな失敗をしました。</p>
+      <p>子どもが「ディズニー行きたいね」と話すのに、「行こうね」の一言が言えない。そんな毎日でした。</p>
+      <p>転機は、同じどん底から立ち直った人の動画を、たまたま見た夜。</p>
+      <p>子どもが寝てからの1〜2時間、言われたことをやっただけで、投稿開始20日でフォロワー5,000人。</p>
+      <p class="closing"><strong class="gold">あの日言えなかった「行こうね」を、今の僕は言えます。</strong><br>同じ40代に、遠回りしてほしくない。だから、この特典を作りました。</p>
+    </div>
+
+    <div class="accordion">
+      <button class="accordion-toggle" id="storyToggle">▼ 僕の話の全文はこちら（2分）</button>
+      <div class="accordion-body" id="storyBody">
+        <h3>時間も体力もない40代の僕が、人生をやり直せた理由</h3>
+        <p>はじめまして、あきです。</p>
+        <p>40代、福祉の仕事をしながら、3人の子どもを育てています。</p>
+        <p>夜勤明けに子どもの歯磨き、洗濯、寝かしつけ。やっと自分の時間が持てるのは、子どもが寝てから。</p>
+        <p>きっとこの文章を読んでいるあなたも、似たような毎日を送っているのではないでしょうか。</p>
+
+        <h3>家族にも言えない過去</h3>
+        <p>そんな僕には、家族にも言えない過去があります。</p>
+        <p>数年前、投資詐欺で2,700万円を失いました。残ったのは、700万円の借金。</p>
+        <p>騙されたのは、怪しい儲け話に飛びついたからではありません。信頼していた人からの紹介で、実際に何年も利益が振り込まれ続けていた仕組みでした。</p>
+        <p>少額から始めて、利益が入るのを確認して、「家族の将来のために」と金額を増やしていった。</p>
+        <p>その仕組みは、ポンジスキームと呼ばれる詐欺でした。</p>
+        <p>ある日の電話一本で、すべてが終わりました。子どもの教育資金。夫婦の老後資金。家族旅行のための貯え。一瞬で消えました。</p>
+
+        <h3>一番辛かったのは、失った瞬間ではありません</h3>
+        <p>その事実を家族に言えないまま、笑顔で食卓を囲んでいた時間です。</p>
+        <p>ある日、テレビでディズニーランドの特集が流れて、子どもたちが「行きたいね」と楽しそうに話していました。</p>
+        <p>僕は「じゃあ今度行こうね」の一言が、どうしても言えませんでした。</p>
+        <p>自分がいなくなった方が家族のためになるのではないか。そこまで追い詰められた時期もありました。</p>
+
+        <h3>転機は、夜の寝室でした</h3>
+        <p>ある夜、一人でスマホを見ていた時、たまたま流れてきた動画に釘付けになりました。</p>
+        <p>僕と同じポンジスキームで、大金を失った人。豊岡さんという方でした。</p>
+        <p>感じたのは、希望ではなく共感でした。</p>
+        <p>そして、気づいてしまったんです。</p>
+        <p>僕は詐欺に遭った時点で、すべてを諦めて、おとなしく生きていこうとしていた。</p>
+        <p>でもこの人は、そこからさらに挑戦して、失敗を「上書き」していた。</p>
+        <p>同じどん底から、正反対の道を選んだ人が、そこにいました。</p>
+
+        <h3>言われたことを、ただやっただけです</h3>
+        <p>借金がある中で、さらにお金を払って学ぶ環境に入る。怖くないはずがありません。</p>
+        <p>でも、思ったんです。</p>
+        <p>この失敗を「失敗」のまま終わらせるのか。自分の人生の主導権を、自分以外に渡したまま生きるのか。</p>
+        <p>僕は環境に入り、言われたことを、ただやりました。特別な才能もセンスも使っていません。使ったのは、子どもが寝てからの1〜2時間だけです。</p>
+        <p>すると、ある日。携帯の通知が鳴り止まなくなりました。</p>
+        <p>投稿開始20日で、フォロワー5,000人。</p>
+        <p>数字よりも嬉しかったのは、「自分も同じです」というDMが届いたことでした。</p>
+
+        <h3>失敗は消せません。でも、上書きはできます。</h3>
+        <p>僕と同じように、時間も体力もお金の余裕もない40代に、遠回りしてほしくない。</p>
+        <p>その一心で、この資料を作りました。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ゾーン3：メインCTA ===== -->
+<section class="cta-zone">
+  <div class="wrap">
+    <h2 class="cta-title">『AIマネタイズの教科書』を<br><span class="gold">無料</span>でお受け取りください</h2>
+
+    <a class="line-banner-link" href="#" data-line-link>
+      <img src="https://instaakiai40s.github.io/line_banner.PNG" alt="LINE登録でAIマネタイズの教科書を無料で受け取る">
+    </a>
+
+    <div class="cta-card">
+      <ul class="benefits">
+        <li>『AIマネタイズの教科書』が、その場ですぐ受け取れます</li>
+        <li>AIで"もう一つの給料日"を作る手順を、配信で順番に解説します</li>
+        <li>わからないことは、LINEで直接質問できます</li>
+      </ul>
+      <p class="limited">※予告なく配布を終了する場合があります</p>
+      <a class="main-cta" href="#" data-line-link>AIマネタイズの教科書を無料で受け取る</a>
+    </div>
+
+    <div class="not-for">
+      <h3>こんな方には向きません</h3>
+      <ul>
+        <li>今日明日で結果を求める方</li>
+        <li>コピペすら面倒で、自分では一切手を動かしたくない方</li>
+        <li>AIに丸投げすれば全部うまくいく、と考えている方</li>
+      </ul>
+      <p class="flip">逆に、<strong>「1日30分でも、コツコツ積み上げる覚悟がある」</strong>という方なら、この教科書はきっとお役に立てます。</p>
+    </div>
+  </div>
+</section>
+
+<footer>© あき</footer>
+
+<script>
+// LINEリンク一元管理（この1箇所を変えれば全導線に反映）
+const LINE_URL = "https://sub.aione.co.jp/p/ss6dW0WuKBch?ftid=wD2ezNjVRT9o";
+document.querySelectorAll("[data-line-link]").forEach(function(el){
+  el.setAttribute("href", LINE_URL);
+});
+
+// プロンプトのコピー機能
+document.querySelectorAll(".copy-btn").forEach(function(btn){
+  btn.addEventListener("click", function(){
+    const text = btn.getAttribute("data-copy");
+    function done(){
+      btn.textContent = "コピーしました✓";
+      btn.classList.add("copied");
+      setTimeout(function(){
+        btn.textContent = "コピー";
+        btn.classList.remove("copied");
+      }, 1600);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(function(){
+        fallbackCopy(text); done();
+      });
+    }else{
+      fallbackCopy(text); done();
+    }
+  });
+});
+function fallbackCopy(text){
+  const ta = document.createElement("textarea");
+  ta.value = text;
+  ta.style.position = "fixed";
+  ta.style.opacity = "0";
+  document.body.appendChild(ta);
+  ta.select();
+  document.execCommand("copy");
+  document.body.removeChild(ta);
+}
+
+// ストーリー全文アコーディオン
+document.getElementById("storyToggle").addEventListener("click", function(){
+  const body = document.getElementById("storyBody");
+  const open = body.classList.toggle("open");
+  this.textContent = open ? "▲ 全文を閉じる" : "▼ 僕の話の全文はこちら（2分）";
+});
+</script>
+</body>
+</html>
