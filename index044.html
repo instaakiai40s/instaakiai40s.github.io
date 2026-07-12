@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- 経路メモ：リール経由（1ページ1経路で運用） -->
+<!-- ファイル管理：index044.html／header044.PNG（台本044対応） -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>コピペ2回でお店のホームページが完成する“魔法のプロンプト”【全手順つき】</title>
+<meta name="description" content="口コミを貼って2回コピペするだけで、お店のホームページが完成。STEP1〜3の全手順つきの無料特典です。">
+<meta property="og:title" content="コピペ2回でお店のホームページが完成する“魔法のプロンプト”【全手順つき】">
+<meta property="og:description" content="口コミを貼って2回コピペするだけで、お店のホームページが完成。STEP1〜3の全手順つきの無料特典です。">
+<meta property="og:image" content="https://instaakiai40s.github.io/header044.PNG">
+<meta property="og:url" content="https://instaakiai40s.github.io/index044.html">
+<meta property="og:type" content="website">
+<style>
+:root{
+--bg-base:#F7F1E4;
+--card:#FFFFFF;
+--navy:#1E2A44;
+--gold:#A9834A;
+--gold-light:#D8BC85;
+--gold-pale:#EFE3C8;
+--green:#06C755;
+--z2a:#1B2640;
+--z2b:#243050;
+--z3a:#F3E8CC;
+--z3b:#E7D3A8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Noto Sans JP",Meiryo,sans-serif;background:var(--bg-base);color:var(--navy);font-size:16px;line-height:1.9;overflow-x:hidden}
+.wrap{max-width:520px;margin:0 auto;padding:0 18px}
+a{-webkit-tap-highlight-color:rgba(0,0,0,.1)}
+.visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ゾーン1：ヘッダー（自動フォールバック方式） */
+.hero{max-width:680px;margin:0 auto}
+.hero-banner{width:100%;display:block}
+.text-header{display:none;text-align:center;padding:52px 22px 44px;background:linear-gradient(160deg,#FBF6EA 0%,#F0E5CD 100%);border-bottom:3px solid var(--gold)}
+.badge{display:inline-block;background:var(--navy);color:#FFFFFF;font-size:12px;font-weight:700;letter-spacing:.14em;padding:6px 16px;border-radius:999px;margin-bottom:18px}
+.th-title{font-size:23px;font-weight:800;line-height:1.55;color:var(--navy)}
+.th-title .gold{color:var(--gold)}
+.th-sub{margin-top:14px;font-size:13.5px;line-height:1.8;color:#55617F}
+
+/* ゾーン1：共通カード */
+main.wrap{padding-top:26px;padding-bottom:10px}
+.card{background:var(--card);border-radius:16px;padding:26px 22px;margin:22px 0;box-shadow:0 4px 16px rgba(30,42,68,.08)}
+
+/* 発信者ブロック */
+.profile-img{width:96px;height:96px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 18px;border:3px solid var(--gold-pale)}
+.profile p{font-size:14.5px;margin-bottom:12px}
+.profile p:last-child{margin-bottom:0}
+
+/* 挨拶・上部CTA */
+.greeting p{font-size:14.5px;margin-bottom:14px}
+.greeting strong{color:#8A6B33}
+.btn-line-s{display:block;text-align:center;text-decoration:none;background:linear-gradient(180deg,#14D96E 0%,#06C755 100%);color:#FFFFFF;font-weight:700;font-size:15px;padding:15px 16px;border-radius:12px;box-shadow:0 5px 14px rgba(6,199,85,.32);margin:20px 0 16px;transition:transform .08s}
+.btn-line-s:active{transform:translateY(2px);box-shadow:0 2px 6px rgba(6,199,85,.3)}
+.foreshadow{font-size:13.5px;color:#5A6480;border-top:1px dashed #D9CBAA;padding-top:14px;margin-bottom:0}
+
+/* 特典カード群 */
+.gift-head{text-align:center;margin:36px 0 4px;font-size:17px;font-weight:800;color:var(--navy)}
+.gift-head span{display:inline-block;padding:0 8px 8px;border-bottom:3px solid var(--gold)}
+.step-badge{display:inline-block;background:var(--gold);color:#FFFFFF;font-size:12px;font-weight:700;letter-spacing:.18em;padding:5px 14px;border-radius:6px;margin-bottom:12px}
+.card-title{font-size:19px;font-weight:800;line-height:1.5;margin-bottom:14px}
+.title-note{font-size:13px;font-weight:700;color:#7A849E}
+.howto{background:#FBF6EA;border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:12px 14px;font-size:13.5px;line-height:1.8;margin-bottom:18px}
+.howto-label{display:block;font-size:11.5px;font-weight:700;letter-spacing:.12em;color:var(--gold);margin-bottom:4px}
+.prompt-label{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.prompt-box{background:#1C2438;color:#EDEBE0;font-family:Consolas,Monaco,"Courier New",monospace;font-size:12.5px;line-height:1.85;padding:16px 14px;border-radius:12px;white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word}
+.btn-copy{display:block;width:100%;margin-top:12px;background:var(--navy);color:#FFFFFF;border:none;font-family:inherit;font-size:14.5px;font-weight:700;padding:14px;border-radius:10px;cursor:pointer;transition:transform .08s,background .2s}
+.btn-copy:active{transform:translateY(2px)}
+.btn-copy.copied{background:var(--gold)}
+.sub-h{font-size:15px;font-weight:800;color:var(--navy);margin:22px 0 10px}
+.step-list{list-style:none;margin-bottom:6px}
+.step-list li{position:relative;padding-left:34px;font-size:14px;line-height:1.8;margin-bottom:10px}
+.step-list .num{position:absolute;left:0;top:3px;width:24px;height:24px;background:var(--gold-pale);color:#7A5C2E;font-size:13px;font-weight:800;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.note{font-size:12px;color:#7A849E}
+.step-p{font-size:14px;line-height:1.9;margin-bottom:6px}
+.claude-box{background:#FBF6EA;border:1.5px solid var(--gold-light);border-radius:12px;padding:16px 14px;margin-top:20px}
+.claude-box .sub-h{margin-top:0}
+.img-ph{display:none;background:repeating-linear-gradient(45deg,#F3ECDC,#F3ECDC 12px,#ECE2CB 12px,#ECE2CB 24px);border:1.5px dashed var(--gold);border-radius:12px;padding:36px 14px;text-align:center;font-size:13px;font-weight:700;color:#8A7346;line-height:1.8;margin-top:14px}
+.card-img{width:100%;display:block;border-radius:12px;margin-top:14px;box-shadow:0 4px 14px rgba(30,42,68,.14)}
+.onepoint .card-title{font-size:16px;color:#8A6B33;margin-bottom:10px}
+.onepoint p{font-size:14px}
+
+/* ゾーン2：ストーリー（全幅・背景反転） */
+.zone2{background:linear-gradient(180deg,var(--z2a) 0%,var(--z2b) 100%);border-top:3px solid var(--gold);margin-top:52px;padding:60px 0 68px}
+.zone2 p{color:#F2EFE5;font-size:15.5px;margin-bottom:18px}
+.zone2 strong,.zone2 b{color:#E9CD90}
+.z2-title{color:var(--gold-light);text-align:center;font-size:19px;font-weight:800;line-height:1.6;margin-bottom:8px}
+.z2-title::after{content:"";display:block;width:44px;height:2px;background:var(--gold-light);margin:16px auto 26px;opacity:.85}
+.z2-close{margin-top:24px}
+.acc-btn{display:block;width:100%;background:transparent;border:1.5px solid rgba(216,188,133,.75);color:#E9CD90;font-family:inherit;font-size:14.5px;font-weight:700;padding:15px;border-radius:12px;margin-top:32px;cursor:pointer}
+.acc-btn:active{opacity:.75}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .6s ease}
+.acc-body.open{max-height:9000px}
+.story-full{padding-top:30px}
+.story-full h3{color:var(--gold-light);font-size:16.5px;font-weight:800;line-height:1.6;margin:34px 0 14px}
+.story-main-title{font-size:18px;text-align:center;margin-top:6px}
+.story-full p{font-size:15px;line-height:2.05;margin-bottom:16px}
+
+/* ゾーン3：本命CTA（ページで一番光る場所） */
+.zone3{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--z3a) 0%,var(--z3b) 100%);border-top:3px solid var(--gold);padding:34px 0 10px}
+.zone3::before{content:"";position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:130%;height:240px;background:radial-gradient(ellipse at center,rgba(255,253,243,.95) 0%,rgba(255,253,243,0) 68%);pointer-events:none}
+.z3-inner{position:relative;z-index:1;padding-top:14px;padding-bottom:30px}
+.z3-title{text-align:center;font-size:20px;font-weight:800;color:var(--navy);line-height:1.6}
+.z3-lead{text-align:center;font-size:14px;color:#5C5233;margin:12px 0 20px;line-height:1.9}
+.banner-link{display:block}
+.banner-link img{width:100%;display:block;border-radius:14px;box-shadow:0 8px 22px rgba(110,84,30,.25)}
+.light-pool{height:74px;margin-bottom:-48px;background:radial-gradient(ellipse at center,rgba(255,253,244,.95) 0%,rgba(255,253,244,0) 70%);pointer-events:none}
+.cta-card{position:relative;background:#FFFFFF;border:2px solid var(--gold);border-radius:18px;padding:24px 20px 26px;box-shadow:0 16px 38px rgba(120,92,36,.30);margin-top:22px}
+.benefit-head{text-align:center;font-size:15px;font-weight:800;color:var(--navy);margin-bottom:14px}
+.benefit-list{list-style:none;margin-bottom:16px}
+.benefit-list li{position:relative;padding-left:30px;font-size:14.5px;line-height:1.8;margin-bottom:10px}
+.benefit-list li::before{content:"✓";position:absolute;left:2px;top:0;color:var(--gold);font-weight:800;font-size:16px}
+.limited{text-align:center;background:#FBF3DF;border:1px dashed var(--gold);border-radius:10px;font-size:13px;font-weight:700;color:#7A5C2E;padding:9px 10px;margin-bottom:16px}
+.btn-main{display:block;text-align:center;text-decoration:none;background:linear-gradient(180deg,#16DA70 0%,#06C755 100%);color:#FFFFFF;font-size:17.5px;font-weight:800;line-height:1.5;padding:20px 16px;border-radius:14px;box-shadow:0 9px 22px rgba(6,199,85,.38);animation:glowPulse 2.6s ease-in-out infinite;transition:transform .08s}
+.btn-main:active{transform:translateY(3px);box-shadow:0 3px 10px rgba(6,199,85,.35);animation:none}
+@keyframes glowPulse{0%,100%{box-shadow:0 9px 22px rgba(6,199,85,.38)}50%{box-shadow:0 9px 30px rgba(6,199,85,.62)}}
+
+/* 「向きません」枠（CTAより控えめ） */
+.unfit{background:rgba(255,255,255,.5);border:1px solid #CBB88E;border-radius:14px;padding:20px 18px;margin-top:32px}
+.unfit-h{font-size:14.5px;font-weight:800;color:#6B6046;margin-bottom:12px}
+.unfit-list{list-style:none}
+.unfit-list li{position:relative;padding-left:24px;font-size:13.5px;line-height:1.8;color:#4C5470;margin-bottom:8px}
+.unfit-list li::before{content:"×";position:absolute;left:2px;top:0;color:#A66A5C;font-weight:800}
+.unfit-divider{height:1px;background:#D8C9A4;margin:14px 0}
+.unfit-flip{font-size:13.5px;line-height:1.9;color:#8A6B33;font-weight:700}
+
+/* フッター */
+.foot{text-align:center;font-size:12px;color:#8A7A55;padding:34px 0 30px}
+</style>
+<!-- ここにアクセス解析タグ（Googleアナリティクス等）を貼り付け -->
+</head>
+<body>
+
+<!-- ① ヘッダー（自動フォールバック方式） -->
+<header class="hero">
+<img class="hero-banner" src="https://instaakiai40s.github.io/header044.PNG" alt="コピペ2回でお店のホームページが完成する“魔法のプロンプト”【全手順つき】" onerror="this.style.display='none';var t=document.getElementById('textHeader');if(t){t.style.display='block';}">
+<div id="textHeader" class="text-header">
+<div class="badge">保存版・無料特典</div>
+<div class="th-title"><span class="gold">コピペ2回</span>でお店のホームページが完成する<br><span class="gold">“魔法のプロンプト”</span></div>
+<div class="th-sub">【全手順つき】口コミを貼って2回コピペするだけ。専門知識はいりません。</div>
+</div>
+<h1 class="visually-hidden">コピペ2回でお店のホームページが完成する“魔法のプロンプト”｜【全手順つき】口コミを貼って2回コピペするだけ。専門知識はいりません。</h1>
+</header>
+
+<main class="wrap">
+
+<!-- ② 発信者ブロック -->
+<section class="card profile">
+<img class="profile-img" src="https://instaakiai40s.github.io/profile.JPG" alt="あきのプロフィール写真">
+<p>はじめまして、あきです。40代、福祉の仕事をしながら3人の子どもを育てています。</p>
+<p>特別な才能はありません。使えたのは子どもが寝てからの1〜2時間だけ。それでも投稿開始20日でフォロワー5,000人という結果が出ました。</p>
+<p>この特典は、時間も体力もお金の余裕もない、それでも家族のために何かを変えたい40代のために作りました。</p>
+</section>
+
+<!-- ③ 挨拶・お礼＋上部CTA（小）＋伏線 -->
+<section class="card greeting">
+<p>リールをご覧いただき、そして受け取っていただき、ありがとうございます。</p>
+<p>今回の特典は、このすぐ下にまとめてあります。<strong>STEP1〜3のすべて、今日からそのまま使えます。</strong></p>
+<p>そして今、この特典とあわせて、さらに本格的に“もう一つの給料日”を作るための『AIマネタイズの教科書』も無料でお配りしています。</p>
+<a class="js-line btn-line-s" href="https://sub.aione.co.jp/p/ss6dW0WuKBch?ftid=wD2ezNjVRT9o">AIマネタイズの教科書を無料で受け取る</a>
+<p class="foreshadow">このページの最後に、僕がこの発信を始めた“本当の理由”を書きました。特典と合わせて、最後まで読んでもらえたら嬉しいです。</p>
+</section>
+
+<!-- ④ 特典カード群 -->
+<div class="gift-head"><span>今回の特典（全3ステップ）</span></div>
+
+<section class="card">
+<div class="step-badge">STEP1</div>
+<h2 class="card-title">口コミ分析→文章構成プロンプト<span class="title-note">（文字版）</span></h2>
+<div class="howto">
+<span class="howto-label">使い方</span>
+Googleマップで「口コミ評価は高いのに公式ホームページがないお店」を見つけて、口コミをコピー。下のプロンプトの【口コミデータ】部分に貼り付けて、ChatGPT（またはClaude）に送信するだけ。
+</div>
+<div class="prompt-label">▼ コピーして使うプロンプト（STEP1）</div>
+<pre class="prompt-box" id="prompt1">あなたは、口コミの分析とマーケティング戦略、WEBデザインを行う
+プロのWEBディレクターです。
+これまでに集まった【口コミデータ】をベースに、
+「新規顧客を集客できる店舗ホームページ」の構成と、
+各コンテンツのテキストを生成してください。
+
+【目的】
+・新規ユーザーが「行ってみたい」と感じる構成にする
+・店舗オーナーが自分の魅力を客観的に理解して驚く構成にする
+・お店の強み・特徴・お客様に感謝される共通点を生かす
+・SEO（検索エンジン最適化）を意識したキーワード構成にする
+
+【出力構成】
+1. キャッチコピー（閲覧者の心を掴む一言）
+2. 店舗の強み・特徴（口コミ分析から導いた強みを3つ）
+3. こんな方にオススメ（ターゲット層の明確化）
+4. メニュー／サービス（口コミで高評価の具体的な内容）
+5. お客様の声（口コミから魅力的なものを3つ抜粋・要約）
+6. 初めての方へ（不安を払拭するメッセージ）
+7. 来店を促すラスト一言（行動へのひと押し）
+8. 基本情報（住所・営業時間・アクセスなど）
+9. 行動喚起（予約・問い合わせへの導線文章）
+
+【重要ルール】
+・口コミから読み取れるキーワードを各コンテンツに効果的に反映
+・「理解しやすい」「共感しやすい」文章を意識し、固い表現は避ける
+・オーナー自身が気づいていない「店舗の価値」を可視化すること
+
+【口コミデータ】
+（ここにコピーした口コミを貼り付け）</pre>
+<button type="button" class="btn-copy" onclick="copyPrompt(this,'prompt1')">このプロンプトをコピー</button>
+</section>
+
+<section class="card">
+<div class="step-badge">STEP2</div>
+<h2 class="card-title">そのままホームページ化プロンプト<span class="title-note">（HTML版）</span></h2>
+<div class="howto">
+<span class="howto-label">使い方</span>
+STEP1の回答が出たら、同じチャットの続きに下のプロンプトをそのまま貼って送信するだけ。（STEP1の内容をAIが覚えているので、追加の貼り付けは不要）
+</div>
+<div class="prompt-label">▼ コピーして使うプロンプト（STEP2）</div>
+<pre class="prompt-box" id="prompt2">上記の内容を、文章の提案ではなく、そのまま公開できる
+「1枚完結のホームページ（HTMLコード）」として出力してください。
+
+【出力形式（最重要）】
+・HTML/CSS/JavaScriptをすべて1つのHTMLファイル内に記述する
+　（外部ファイルの読み込みなし）
+・スマホ表示に最適化する
+　（&lt;meta name="viewport" content="width=device-width,
+　initial-scale=1.0"&gt; を含める）
+・構成は次の順で1ページにまとめる：
+　キャッチコピー／店舗の強み3選／こんな方にオススメ／
+　メニュー・サービス／お客様の声／初めての方へ／
+　基本情報／予約・問い合わせボタン
+・配色はお店の雰囲気（口コミから推測）に合わせて上品にまとめる
+・写真が必要な箇所は画像プレースホルダーを置き、
+　推奨する写真の内容をHTMLコメントで記載する
+・解説や前置きは不要。HTMLコード全文のみを出力する</pre>
+<button type="button" class="btn-copy" onclick="copyPrompt(this,'prompt2')">このプロンプトをコピー</button>
+</section>
+
+<section class="card">
+<div class="step-badge">STEP3</div>
+<h2 class="card-title">デザインを目で確認する手順<span class="title-note">（ChatGPT／Claude別）</span></h2>
+
+<h3 class="sub-h">▼ ChatGPTを使った場合（パソコン）</h3>
+<ul class="step-list">
+<li><span class="num">1</span>出てきたHTMLコードの右上「コピー」を押す</li>
+<li><span class="num">2</span>メモ帳（Windowsなら「メモ帳」、Macなら「テキストエディット」）を開いて貼り付ける</li>
+<li><span class="num">3</span>「shop.html」という名前で保存する<br><span class="note">※Macのテキストエディットは「フォーマット→標準テキストにする」を先に選んでから保存</span></li>
+<li><span class="num">4</span>保存したファイルをダブルクリック → ブラウザでホームページが表示されます</li>
+</ul>
+
+<h3 class="sub-h">▼ ChatGPTを使った場合（スマホのみ）</h3>
+<p class="step-p">スマホだけでも「HTMLビューア」系の無料アプリにコードを貼り付ければ確認できます。ただし操作が増えるため、スマホ派の方は下のClaudeがおすすめです。</p>
+
+<div class="claude-box">
+<h3 class="sub-h">▼ Claudeを使った場合（いちばん簡単）</h3>
+<p class="step-p">STEP1・STEP2を同じように貼るだけで、コードと一緒に完成デザインがその場に表示されます。保存もアプリも不要。見た目を確認しながら「もっと明るい色に」など追加の注文もできます。</p>
+<!-- 推奨画像：スマホでClaudeを開き、チャット画面の中に完成したお店のホームページのデザインが表示されている手元。生活感のあるテーブルの上で撮影。
+     理由：「コードではなく完成した見た目がその場で出る」という体験を一目で伝え、専門知識への不安を消すため -->
+<img class="card-img" id="step3Img" src="https://instaakiai40s.github.io/card044_step3.PNG" alt="Claudeの画面に完成した店舗ホームページのデザインが表示されている様子" onerror="this.style.display='none';var t=document.getElementById('step3Ph');if(t){t.style.display='block';}">
+<div class="img-ph" id="step3Ph">【画像スペース】<br>Claudeの画面に完成デザインが<br>表示されている様子</div>
+</div>
+</section>
+
+<section class="card onepoint">
+<h2 class="card-title">✦ ワンポイント</h2>
+<p>文章の整理だけで十分な方はSTEP1まで、「形」まで見たい方はSTEP3まで。<br>どちらで止まっても、お店に見せられる成果物が手に入ります。</p>
+</section>
+
+</main>
+
+<!-- ⑤ ストーリーセクション（ゾーン2・全幅反転） -->
+<section class="zone2">
+<div class="wrap">
+<h2 class="z2-title">僕がこの発信を始めた“本当の理由”</h2>
+<p>数年前、僕は投資詐欺で家族にも言えない大きな失敗をしました。</p>
+<p>子どもが「ディズニー行きたいね」と話すのに、「行こうね」の一言が言えない。そんな毎日でした。</p>
+<p>転機は、同じどん底から立ち直った人の動画を、たまたま見た夜。</p>
+<p>子どもが寝てからの1〜2時間、言われたことをやっただけで、投稿開始20日でフォロワー5,000人。</p>
+<p class="z2-close"><strong>あの日言えなかった「行こうね」を、今の僕は言えます。</strong><br>同じ40代に、遠回りしてほしくない。だから、この特典を作りました。</p>
+<button type="button" class="acc-btn" id="accBtn" onclick="toggleStory()">▼ 僕の話の全文はこちら（2分）</button>
+<div class="acc-body" id="accBody">
+<div class="story-full">
+<h3 class="story-main-title">時間も体力もない40代の僕が、<br>人生をやり直せた理由</h3>
+<p>はじめまして、あきです。</p>
+<p>40代、福祉の仕事をしながら、3人の子どもを育てています。</p>
+<p>夜勤明けに子どもの歯磨き、洗濯、寝かしつけ。<br>やっと自分の時間が持てるのは、子どもが寝てから。</p>
+<p>きっとこの文章を読んでいるあなたも、<br>似たような毎日を送っているのではないでしょうか。</p>
+<h3>家族にも言えない過去</h3>
+<p>そんな僕には、家族にも言えない過去があります。</p>
+<p>数年前、投資詐欺で2,700万円を失いました。<br>残ったのは、700万円の借金。</p>
+<p>騙されたのは、怪しい儲け話に飛びついたからではありません。<br>信頼していた人からの紹介で、実際に何年も利益が振り込まれ続けていた仕組みでした。</p>
+<p>少額から始めて、利益が入るのを確認して、<br>「家族の将来のために」と金額を増やしていった。</p>
+<p>その仕組みは、ポンジスキームと呼ばれる詐欺でした。</p>
+<p>ある日の電話一本で、すべてが終わりました。<br>子どもの教育資金。夫婦の老後資金。家族旅行のための貯え。<br>一瞬で消えました。</p>
+<h3>一番辛かったのは、失った瞬間ではありません</h3>
+<p>その事実を家族に言えないまま、<br>笑顔で食卓を囲んでいた時間です。</p>
+<p>ある日、テレビでディズニーランドの特集が流れて、<br>子どもたちが「行きたいね」と楽しそうに話していました。</p>
+<p>僕は「じゃあ今度行こうね」の一言が、<br>どうしても言えませんでした。</p>
+<p>自分がいなくなった方が家族のためになるのではないか。<br>そこまで追い詰められた時期もありました。</p>
+<h3>転機は、夜の寝室でした</h3>
+<p>ある夜、一人でスマホを見ていた時、<br>たまたま流れてきた動画に釘付けになりました。</p>
+<p>僕と同じポンジスキームで、大金を失った人。<br>豊岡さんという方でした。</p>
+<p>感じたのは、希望ではなく共感でした。</p>
+<p>そして、気づいてしまったんです。</p>
+<p>僕は詐欺に遭った時点で、すべてを諦めて、<br>おとなしく生きていこうとしていた。</p>
+<p>でもこの人は、そこからさらに挑戦して、<br>失敗を「上書き」していた。</p>
+<p>同じどん底から、正反対の道を選んだ人が、そこにいました。</p>
+<h3>言われたことを、ただやっただけです</h3>
+<p>借金がある中で、さらにお金を払って学ぶ環境に入る。<br>怖くないはずがありません。</p>
+<p>でも、思ったんです。</p>
+<p>この失敗を「失敗」のまま終わらせるのか。<br>自分の人生の主導権を、自分以外に渡したまま生きるのか。</p>
+<p>僕は環境に入り、言われたことを、ただやりました。<br>特別な才能もセンスも使っていません。<br>使ったのは、子どもが寝てからの1〜2時間だけです。</p>
+<p>すると、ある日。<br>携帯の通知が鳴り止まなくなりました。</p>
+<p>投稿開始20日で、フォロワー5,000人。</p>
+<p>数字よりも嬉しかったのは、<br>「自分も同じです」というDMが届いたことでした。</p>
+<h3>失敗は消せません。でも、上書きはできます。</h3>
+<p>僕と同じように、時間も体力もお金の余裕もない40代に、<br>遠回りしてほしくない。</p>
+<p>その一心で、この資料を作りました。</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ⑥⑦⑧ メインCTA・向きません枠・フッター（ゾーン3） -->
+<section class="zone3">
+<div class="wrap z3-inner">
+<h2 class="z3-title">ここまで読んでくださったあなたへ</h2>
+<p class="z3-lead">この特典と同じ想いで作った『AIマネタイズの教科書』を、LINEで無料でお渡ししています。</p>
+<a class="js-line banner-link" href="https://sub.aione.co.jp/p/ss6dW0WuKBch?ftid=wD2ezNjVRT9o"><img src="https://instaakiai40s.github.io/line_banner.PNG" alt="AIマネタイズの教科書を無料で受け取る（LINE登録バナー）"></a>
+<div class="light-pool" aria-hidden="true"></div>
+<div class="cta-card">
+<div class="benefit-head">LINE登録で受け取れるもの</div>
+<ul class="benefit-list">
+<li>『AIマネタイズの教科書』がその場で届きます</li>
+<li>わからない所は、LINEでそのまま質問できます</li>
+<li>ご希望の方には、無料の個別相談会をご案内します</li>
+</ul>
+<div class="limited">※予告なく配布を終了する場合があります</div>
+<a class="js-line btn-main" href="https://sub.aione.co.jp/p/ss6dW0WuKBch?ftid=wD2ezNjVRT9o">AIマネタイズの教科書を無料で受け取る</a>
+</div>
+
+<section class="unfit">
+<h3 class="unfit-h">こんな方には向きません</h3>
+<ul class="unfit-list">
+<li>今日明日で結果を求める方</li>
+<li>コピペすら面倒で、自分では一切手を動かしたくない方</li>
+<li>AIに丸投げすれば全部うまくいく、と考えている方</li>
+</ul>
+<div class="unfit-divider"></div>
+<p class="unfit-flip">逆に、『1日30分でも、コツコツ積み上げる覚悟がある』という方なら、この教科書はきっとお役に立てます。</p>
+</section>
+
+<footer class="foot">© あき</footer>
+</div>
+</section>
+
+<script>
+// LINEリンクはこの定数1箇所で一元管理（全導線に自動反映）
+const LINE_URL = 'https://sub.aione.co.jp/p/ss6dW0WuKBch?ftid=wD2ezNjVRT9o';
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('a.js-line').forEach(function(a){ a.setAttribute('href', LINE_URL); });
+});
+
+// プロンプトのワンタップコピー
+function copyPrompt(btn, id){
+  var el = document.getElementById(id);
+  if(!el){ return; }
+  var text = el.textContent;
+  var finish = function(){
+    if(!btn.getAttribute('data-label')){ btn.setAttribute('data-label', btn.textContent); }
+    btn.textContent = 'コピーしました✓';
+    btn.classList.add('copied');
+    setTimeout(function(){
+      btn.textContent = btn.getAttribute('data-label');
+      btn.classList.remove('copied');
+    }, 1600);
+  };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(finish).catch(function(){ legacyCopy(text); finish(); });
+  } else {
+    legacyCopy(text); finish();
+  }
+}
+function legacyCopy(text){
+  var ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); } catch(e){}
+  document.body.removeChild(ta);
+}
+
+// ストーリー全文のアコーディオン
+function toggleStory(){
+  var body = document.getElementById('accBody');
+  var btn = document.getElementById('accBtn');
+  var open = body.classList.toggle('open');
+  btn.textContent = open ? '▲ 全文を閉じる' : '▼ 僕の話の全文はこちら（2分）';
+}
+</script>
+</body>
+</html>
