@@ -373,10 +373,14 @@
 
     <div class="hero-visual">
       <div class="steam" aria-hidden="true"><span></span><span></span><span></span></div>
-      <!-- 推奨写真：スタッフが笑顔で、湯気の立つあたたかい料理を玄関先で手渡ししている横長の写真。人の温かさが最初に伝わる一枚を最優先に。 -->
-      <div class="ph" data-ratio="hero" role="img" aria-label="配達スタッフが料理を手渡している写真">
+      <!-- 推奨写真：スタッフが笑顔で、湯気の立つあたたかい料理を玄関先で手渡ししている横長（4:3くらい）の写真。
+           表示するには、この写真を「hero.jpg」という名前で保存し、index.html と同じフォルダに入れてください。
+           ファイル名を変えたい／PNGを使いたい場合は、下の src="hero.jpg" の部分も同じ名前に書き換えます。 -->
+      <img class="hero-photo" src="hero.PNG" alt="配達スタッフが笑顔で料理を手渡している様子"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="ph" data-ratio="hero" style="display:none" aria-hidden="true">
         <svg class="ph-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.2"/><path d="M8 5l1.2-2h5.6L16 5"/></svg>
-        <span class="ph-txt">推奨：手渡しの笑顔（あたたかい料理）</span>
+        <span class="ph-txt">ここに「hero.PNG」を置くと写真が表示されます</span>
       </div>
     </div>
 
