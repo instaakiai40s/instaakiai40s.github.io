@@ -44,8 +44,10 @@
   /* アプリ内ブラウザの自動ダーク化に対する保険（地の文の背景と文字色を明示的にライトへ固定） */
   @media (prefers-color-scheme: dark){
     html,body{background:var(--bg)!important;color:var(--ink)!important;}
-    .greet p,.foreshadow,.gifts-intro,.gifts-note,.card p,.card h3,.steplist li,.themes li,.author p{color:var(--ink)!important;}
-    .foreshadow,.gifts-note{color:var(--ink-soft)!important;}
+    .greet p,.foreshadow,.card p,.card h3,.steplist li,.themes li,.author p{color:var(--ink)!important;}
+    .foreshadow{color:var(--ink-soft)!important;}
+    .gift-box .g-title,.gift-box .g-sub{color:#fff!important;}
+    .gift-box .g-mark{color:var(--amber-hi)!important;}
   }
   body{
     font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic","YuGothic","Meiryo",sans-serif;
@@ -108,6 +110,28 @@
     color:var(--accent-2);margin-bottom:8px;
   }
   .h2{font-size:21px;font-weight:800;color:var(--main-2);line-height:1.5;margin:0 0 6px;}
+  /* ④の入口：ここから特典であることを大きく明示する区切り */
+  .gift-start{
+    text-align:center;margin:0 0 22px;padding:26px 18px 22px;
+    background:linear-gradient(180deg,#FFFFFF 0%,#F4F8FD 100%);
+    border:1px solid rgba(42,109,176,.14);border-top:4px solid var(--accent);
+    border-radius:16px;box-shadow:0 8px 22px rgba(20,41,76,.06);
+  }
+  .gs-badge{
+    display:inline-block;background:linear-gradient(145deg,var(--accent),var(--accent-2));
+    color:#fff;font-size:13px;font-weight:800;letter-spacing:.06em;
+    padding:7px 20px;border-radius:999px;margin-bottom:14px;
+    box-shadow:0 6px 14px rgba(221,122,18,.28);
+  }
+  .gs-title{font-size:22px;font-weight:800;color:var(--main-2);line-height:1.5;margin:0 0 10px;}
+  .gs-title .u{
+    background:linear-gradient(transparent 62%,rgba(240,144,42,.35) 62%);
+    padding:0 2px;
+  }
+  .gs-sub{
+    display:inline-block;font-size:13px;font-weight:700;color:var(--main-2);
+    background:#EAF2FB;border-radius:999px;padding:6px 16px;margin:0;
+  }
 
   /* ================= ② 発信者ブロック ================= */
   .author{
@@ -128,6 +152,21 @@
     background:#F3F8FD;border-left:4px solid var(--main);
     padding:14px 16px;border-radius:0 12px 12px 0;font-weight:600;color:var(--main-2);
   }
+  /* ③：特典ブロック（青）とLINEブロック（緑）。色＋中身で役割を区別（ラベルは置かない） */
+  .gift-box{
+    background:linear-gradient(150deg,var(--main) 0%,var(--main-2) 100%);
+    border-radius:16px;padding:24px 20px 22px;margin:0 0 16px;text-align:center;
+    box-shadow:0 10px 24px rgba(30,90,153,.28);
+  }
+  .gift-box .g-title{margin:0;font-weight:800;color:#fff;font-size:18px;line-height:1.7;}
+  .gift-box .g-mark{color:var(--amber-hi);font-weight:800;}
+  .gift-box .g-sub{margin:10px 0 0;font-size:13px;color:rgba(255,255,255,.88);font-weight:700;letter-spacing:.02em;}
+  .line-box{
+    background:#F0FBF4;border:1.5px solid rgba(6,199,85,.35);border-radius:14px;
+    padding:20px 18px;margin:0 0 22px;
+  }
+  .line-box .l-text{margin:0 0 15px;font-size:14.5px;color:var(--ink);line-height:1.85;}
+  .line-box .btn-line{margin:0;}
   .btn-line{
     display:block;text-decoration:none;text-align:center;
     background:linear-gradient(180deg,var(--line),var(--line-d));
@@ -146,8 +185,6 @@
   }
 
   /* ================= ④ 特典カード群 ================= */
-  .gifts-intro{font-size:15px;margin:0 0 8px;color:var(--ink);}
-  .gifts-note{font-size:11.5px;color:var(--ink-soft);margin:0 0 20px;line-height:1.7;}
   .card{
     background:var(--card);border-radius:16px;box-shadow:var(--shadow);
     padding:22px 20px;margin-bottom:18px;position:relative;overflow:hidden;
@@ -186,6 +223,21 @@
     border:1px solid rgba(255,255,255,.06);
   }
   .prompt-note{font-size:11.5px;color:var(--ink-soft);margin-top:8px;line-height:1.6;}
+  /* 画風の候補ヒント */
+  .style-hint{
+    margin-top:12px;background:#F3F8FD;border:1px solid rgba(42,109,176,.16);
+    border-radius:12px;padding:14px 15px;
+  }
+  .sh-lead{margin:0 0 10px;font-size:13px;color:var(--ink);line-height:1.75;font-weight:600;}
+  .sh-list{margin:0;padding:0;list-style:none;}
+  .sh-list li{
+    font-size:13px;line-height:1.6;padding:7px 0;border-top:1px dashed rgba(42,109,176,.22);
+    color:var(--ink);
+  }
+  .sh-list li:first-child{border-top:none;}
+  .sh-list b{color:var(--main-2);}
+  .sh-list .cap{color:var(--ink-soft);font-size:12px;}
+  .sh-foot{margin:10px 0 0;font-size:12px;color:var(--ink-soft);line-height:1.6;}
 
   /* 図解プレースホルダー */
   .card-img{margin:10px 0 4px;}
@@ -366,20 +418,29 @@
   <!-- ③ 挨拶・お礼＋上部CTA（小）＋伏線 -->
   <section class="greet sec">
     <p>リールをご覧いただき、そして受け取っていただき、ありがとうございます。</p>
-    <p class="give-line">今回の特典は、このすぐ下にまとめてあります。全5点、今日からそのまま使えます。</p>
-    <p>そして今、この特典を“点”で終わらせず、“もう一つの給料日”まで繋げる全体の地図——『AIマネタイズの教科書』も無料でお配りしています。</p>
-    <a class="btn-line btn-small js-line" href="https://sub.aione.co.jp/line/open/ISEBuerKAyih?mtid=5pvXPtVKFnEL">
-      <span class="ico">LINE</span>AIマネタイズの教科書を無料で受け取る
-    </a>
+
+    <div class="gift-box">
+      <p class="g-title">今回の特典は、<span class="g-mark">登録不要</span>で、<br>下にスクロールするだけ。</p>
+      <p class="g-sub">全5点／今日からそのまま使えます</p>
+    </div>
+
+    <div class="line-box">
+      <p class="l-text">そして今、この特典を“点”で終わらせず、“もう一つの給料日”まで繋げる全体の地図——『AIマネタイズの教科書』も無料でお配りしています。受け取りはLINEから。</p>
+      <a class="btn-line btn-small js-line" href="https://sub.aione.co.jp/line/open/ISEBuerKAyih?mtid=5pvXPtVKFnEL">
+        <span class="ico">LINE</span>AIマネタイズの教科書を無料で受け取る
+      </a>
+    </div>
+
     <p class="foreshadow">このページの最後に、僕がこの発信を始めた“本当の理由”を書きました。特典と合わせて、最後まで読んでもらえたら嬉しいです。</p>
   </section>
 
   <!-- ④ 特典カード群 -->
   <section class="sec" style="padding-top:8px;">
-    <span class="kicker">FREE GIFT ／ 全5点</span>
-    <h2 class="h2">今日から使える、5つの“部品”</h2>
-    <p class="gifts-intro">動画でお話ししたとおり、日本ではシールが人気ですが、世界ではいま“デジタルステッカー”の争奪戦が起きています。Etsyには、1セットで販売実績1万8500件を超えているステッカーも実際にあります。そして、特別な才能や経験は一切いりません。動画の3ステップを“出品完了”までまるごと再現できるよう、必要な全部をこの下でお渡しします。</p>
-    <p class="gifts-note">※販売件数は、Etsy上で実際に販売されている他の方のショップの市場実績です（僕自身の販売実績ではありません）。</p>
+    <div class="gift-start">
+      <span class="gs-badge">▼ ここから無料特典</span>
+      <h2 class="gs-title">ゼロから<span class="u">“出品完了”</span>まで。<br>この5つのステップで完了です。</h2>
+      <span class="gs-sub">全5点・登録不要／今日からそのまま使えます</span>
+    </div>
 
     <!-- ①ステッカー生成プロンプト -->
     <div class="card">
@@ -404,7 +465,19 @@
 ・ステッカー同士が重ならないように配置すること。
 ・文字（テキスト）は一切含めないこと。
 ・フラットデザインで、影（シャドウ）はつけないこと。</div>
-        <p class="prompt-note">【テーマ】欄の差し替え候補は、下のカード3「売れるテーマ 鉄板5パターン」からどうぞ。</p>
+        <p class="prompt-note">【テーマ】欄には「モチーフ＋画風」を入れます。売れるモチーフの例は下のカード3に（もちろん、そこにないモチーフでもOKです）。画風が思いつかないときは、下の指定が伝わりやすいです。</p>
+        <div class="style-hint">
+          <p class="sh-lead">▼ 画風の指定例（これも一例。組み合わせ自由）</p>
+          <ul class="sh-list">
+            <li><b>水彩画風</b> <span class="cap">やわらかく上品。花・植物・雑貨に</span></li>
+            <li><b>ぷっくり3D・レジン風</b> <span class="cap">つや＆ラメで映える。今っぽい人気の質感</span></li>
+            <li><b>フラットなイラスト風</b> <span class="cap">シンプルで見やすい王道</span></li>
+            <li><b>アニメ・ちびキャラ風</b> <span class="cap">ゆるく可愛い。キャラ物に</span></li>
+            <li><b>色鉛筆・手描き風</b> <span class="cap">あたたかく素朴な雰囲気</span></li>
+            <li><b>ネオン・サイバーパンク風</b> <span class="cap">個性派・ガジェット系に</span></li>
+          </ul>
+          <p class="sh-foot">コツは〈モチーフ＋画風〉をセットで入れること（例：レジン風の海の生き物）。上にない画風でもOKです。</p>
+        </div>
       </div>
     </div>
 
@@ -427,7 +500,7 @@
     <div class="card">
       <span class="card-no">3</span><span class="card-tag tag-howto">保存版</span>
       <h3>売れるテーマ 鉄板5パターン</h3>
-      <p>「何を作ればいいか分からない」で止まらないように。狙いどころの違う5つのテーマを用意しました。カード1のプロンプトの【テーマ】欄に、そのまま入れて使えます。</p>
+      <p>「何を作ればいいか分からない」で止まらないように、狙いどころの違う5つのテーマを用意しました（ほんの一例なので、これ以外のモチーフでももちろんOK）。カード1のプロンプトの【テーマ】欄に、そのまま入れて使えます。</p>
       <ul class="themes">
         <li><span class="dot">①</span>水彩画風の落ち着いた色の花や雑貨</li>
         <li><span class="dot">②</span>ガジェット・PC好き向け（男性・ビジネス層用）</li>
