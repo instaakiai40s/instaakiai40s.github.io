@@ -98,26 +98,30 @@
   .author-role{ font-size:12.5px; color:var(--ink-soft); }
   .author p{ margin:8px 0 0; font-size:14.5px; color:var(--ink); }
 
-  /* ③ 挨拶＋上部CTA＋伏線 */
-  .greet{ margin:22px 0 4px; }
-  .greet p{ margin:0 0 12px; font-size:15px; }
-  .greet .give{ font-weight:700; color:var(--navy); }
-  .mini-cta{ text-align:center; margin:18px 0 14px; }
+  /* ③＋③-2 ウェルカムカード（1枚の白カード） */
+  .welcome{
+    margin:22px 0 4px; background:var(--card); border-radius:16px; padding:24px 20px 22px;
+    box-shadow:0 6px 18px rgba(30,42,68,.08); border:1px solid rgba(169,131,74,.14);
+  }
+  .welcome > p{ margin:0 0 12px; font-size:15px; }
+  .welcome .give{ font-weight:700; color:var(--navy); }
+  .welcome .guide strong{ color:var(--navy); }
+  .mini-cta{ text-align:center; margin:16px 0 14px; }
   .mini-cta a{
     display:inline-block; background:var(--line-green); color:#fff; text-decoration:none;
     font-weight:700; font-size:15px; padding:13px 22px; border-radius:12px; box-shadow:0 5px 14px rgba(6,199,85,.28);
   }
-  .mini-cta .note{ display:block; margin-top:8px; font-size:11.5px; color:var(--ink-soft); }
   .foreshadow{
     background:#FCF6E9; border-left:4px solid var(--gold-light); border-radius:0 12px 12px 0;
-    padding:14px 16px; font-size:13.5px; color:var(--ink-soft);
+    padding:13px 15px; font-size:13.5px; color:var(--ink-soft);
   }
-
-  /* ③-2 自分事化フロー */
-  .persona{ margin:26px 0 6px; }
+  .w-divider{
+    width:46px; height:2px; margin:20px auto 18px; border-radius:2px;
+    background:linear-gradient(90deg,transparent,var(--gold-light),transparent);
+  }
+  /* ③-2 STEP図（カード内・沈んだベージュ地） */
   .pstep{
-    background:var(--card); border-radius:14px; padding:16px 16px 15px;
-    box-shadow:0 5px 14px rgba(30,42,68,.08); border:1px solid rgba(169,131,74,.14); position:relative;
+    background:#F7F0E1; border:1px solid rgba(169,131,74,.18); border-radius:13px; padding:14px 15px 13px;
   }
   .pstep.step3{ border-left:4px solid var(--gold); }
   .plabel{
@@ -126,13 +130,17 @@
   }
   .pstep p{ margin:0; font-size:14.5px; color:var(--ink); line-height:1.7; }
   .parrow{ text-align:center; color:var(--gold-light); font-size:18px; line-height:1; margin:7px 0; }
-  .pconnect{ margin:14px 2px 0; font-size:14.5px; color:var(--navy); font-weight:700; line-height:1.7; }
+  .pconnect{ margin:16px 2px 0; font-size:14.5px; color:var(--navy); font-weight:700; line-height:1.7; }
 
-  /* セクション見出し */
-  .sec-head{ text-align:center; margin:36px 0 18px; }
-  .sec-head .ey{ display:block; font-size:12px; letter-spacing:.16em; color:var(--gold); font-weight:700; margin-bottom:6px; }
-  .sec-head h3{ margin:0; font-size:21px; font-weight:800; color:var(--navy); line-height:1.4; }
-  .sec-head .lead{ margin:8px 0 0; font-size:13.5px; color:var(--ink-soft); }
+  /* ④-0 特典ヘッドライン */
+  .gift-headline{ text-align:center; margin:34px 0 18px; }
+  .gh-label{
+    display:inline-flex; align-items:center; gap:10px; color:var(--gold);
+    font-size:13px; font-weight:800; letter-spacing:.1em;
+  }
+  .gh-label::before,.gh-label::after{ content:""; width:28px; height:1.5px; background:var(--gold-light); }
+  .gh-title{ margin:10px 0 8px; font-size:25px; font-weight:800; color:var(--navy); line-height:1.4; }
+  .gh-sub{ margin:0; font-size:13.5px; color:var(--ink-soft); }
 
   /* ④ 特典カード */
   .gift-card{
@@ -167,7 +175,7 @@
   .notice li{ font-size:13.5px; color:#5C5230; margin-bottom:5px; }
   .notice p:last-child{ margin-bottom:0; }
 
-  /* 使い方ワンポイント（特典セクションの締め） */
+  /* 使い方ワンポイント（特典カード群の末尾） */
   .usetip{
     background:linear-gradient(135deg,#FFFDF8,#FBF2DD); border:1px solid rgba(169,131,74,.28);
     border-left:4px solid var(--gold); border-radius:14px; padding:17px 18px; margin-bottom:8px;
@@ -206,7 +214,8 @@
     color:#EDE6D6; margin-top:34px; padding:6px 0 44px; border-top:1px solid rgba(201,164,94,.45);
   }
   .zone2 .z-divider{ width:64px; height:3px; margin:34px auto 6px; background:linear-gradient(90deg,transparent,var(--amber),transparent); border-radius:2px; }
-  .zone2 .z-eyebrow{ text-align:center; color:var(--amber); font-size:12px; letter-spacing:.18em; font-weight:700; margin:0 0 18px; }
+  .zone2 .z-eyebrow{ text-align:center; color:var(--amber); font-size:12px; letter-spacing:.18em; font-weight:700; margin:0 0 10px; }
+  .zone2 .story-title{ text-align:center; color:#FFF6E4; font-size:21px; font-weight:800; margin:0 0 22px; line-height:1.5; }
   .zone2 .story p{ color:#EDE6D6; font-size:15.5px; margin:0 0 16px; }
   .zone2 .story .last{ color:#FFF6E4; font-weight:800; font-size:17px; line-height:1.65; }
   .zone2 .story .last .g{ color:var(--amber); }
@@ -225,7 +234,7 @@
   .acc-body p{ color:#E4DCCB; font-size:14px; margin:0 0 12px; line-height:1.85; }
   .acc-body .end-title{ color:#FFF6E4; font-size:16.5px; font-weight:800; margin:24px 0 10px; line-height:1.55; }
 
-  /* ===== ZONE 3（本命CTA：最も光る・全幅） ===== */
+  /* ===== ZONE 3（本命CTA：最も光る・全幅・決断のフェーズ） ===== */
   .zone3{
     width:100%; position:relative;
     background:linear-gradient(180deg,var(--champagne1) 0%,var(--champagne2) 100%);
@@ -237,13 +246,17 @@
     background:radial-gradient(ellipse at center,rgba(255,251,235,.95),rgba(255,247,220,0) 70%); pointer-events:none;
   }
   .zone3 .inner{ position:relative; z-index:1; }
-  .cta-lead{ text-align:center; padding-top:30px; }
-  .cta-lead .ey{ display:block; font-size:12px; letter-spacing:.16em; color:var(--gold); font-weight:800; margin-bottom:8px; }
-  .cta-lead h3{ margin:0; font-size:22px; color:var(--navy); font-weight:800; line-height:1.45; }
+  .cta-call{
+    text-align:center; color:var(--navy); font-size:16.5px; font-weight:700; line-height:1.85;
+    padding-top:32px; margin:0 0 20px;
+  }
+
+  .line-banner-link{ display:block; border-radius:14px; overflow:hidden; margin-bottom:16px; box-shadow:0 8px 20px rgba(30,42,68,.18); }
+  .line-banner-link img{ width:100%; }
 
   .benefit{
     background:#fff; border:1px solid rgba(169,131,74,.3); border-radius:14px; padding:18px 18px;
-    margin:20px 0 16px; box-shadow:0 6px 16px rgba(169,131,74,.18);
+    margin:0 0 16px; box-shadow:0 6px 16px rgba(169,131,74,.18);
   }
   .benefit .bt{ font-size:13px; font-weight:800; color:var(--gold); letter-spacing:.06em; margin-bottom:12px; text-align:center; }
   .benefit ul{ margin:0; padding:0; list-style:none; }
@@ -258,8 +271,6 @@
     text-align:center; font-size:12.5px; color:#7A6A44; background:rgba(255,255,255,.55);
     border:1px dashed rgba(169,131,74,.5); border-radius:10px; padding:10px 12px; margin-bottom:16px;
   }
-  .line-banner-link{ display:block; border-radius:14px; overflow:hidden; margin-bottom:14px; box-shadow:0 8px 20px rgba(30,42,68,.18); }
-  .line-banner-link img{ width:100%; }
 
   .line-btn{
     position:relative; display:block; width:100%; text-align:center; text-decoration:none;
@@ -268,7 +279,6 @@
     box-shadow:0 10px 22px rgba(6,199,85,.4); overflow:hidden; transition:transform .1s, box-shadow .1s;
   }
   .line-btn:active{ transform:translateY(2px); box-shadow:0 5px 12px rgba(6,199,85,.4); }
-  .line-btn .sub{ display:block; font-size:12px; font-weight:600; opacity:.92; margin-top:4px; }
   .line-btn::after{
     content:""; position:absolute; top:0; left:0; width:60%; height:100%;
     background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);
@@ -276,16 +286,13 @@
   }
   @keyframes shimmer{ 0%{ transform:translateX(-160%);} 55%{ transform:translateX(180%);} 100%{ transform:translateX(180%);} }
 
-  .copy-line-wrap{ text-align:center; margin-top:12px; }
-  .copy-line{
-    background:transparent; border:1px solid rgba(30,42,68,.3); color:var(--navy); font-size:12.5px;
-    font-weight:700; padding:9px 16px; border-radius:9px; cursor:pointer;
+  .micro{
+    text-align:center; font-size:12.5px; color:#6E6142; margin:12px 4px 0; line-height:1.75;
   }
-  .copy-line.copied{ background:var(--line-green); color:#fff; border-color:var(--line-green); }
 
   /* ⑦ 向きません（CTAより控えめ） */
   .nofit{
-    background:rgba(255,255,255,.5); border-radius:14px; padding:18px 18px; margin-top:24px; border:1px solid rgba(169,131,74,.22);
+    background:rgba(255,255,255,.5); border-radius:14px; padding:18px 18px; margin-top:26px; border:1px solid rgba(169,131,74,.22);
   }
   .nofit h4{ margin:0 0 12px; font-size:15px; color:var(--ink-soft); font-weight:800; text-align:center; }
   .nofit ul{ margin:0 0 12px; padding:0; list-style:none; }
@@ -298,9 +305,10 @@
 
   @media (max-width:480px){
     body{ font-size:15.5px; }
-    .sec-head h3{ font-size:19px; }
+    .gh-title{ font-size:22px; }
     .header-fallback h2{ font-size:23px; }
-    .cta-lead h3{ font-size:20px; }
+    .zone2 .story-title{ font-size:19px; }
+    .cta-call{ font-size:15.5px; }
     .line-btn{ font-size:16.5px; }
   }
   @media (prefers-reduced-motion:reduce){
@@ -342,20 +350,24 @@
     <p>はじめまして、あきです。40代、福祉の仕事をしながら3人の子どもを育てています。特別な才能はありません。使えたのは子どもが寝てからの1〜2時間だけ。それでも投稿開始20日でフォロワー5,000人という結果が出ました。この特典は、時間も体力もお金の余裕もない、それでも家族のために何かを変えたい40代のために作りました。</p>
   </section>
 
-  <!-- ③ 挨拶・お礼＋上部CTA＋伏線 -->
-  <section class="greet">
+  <!-- ③＋③-2 ウェルカムカード（1枚の白カード） -->
+  <section class="welcome">
+    <!-- ③ お礼 -->
     <p>リールをご覧いただき、そして受け取っていただき、ありがとうございます。</p>
-    <p class="give">今回の特典は、このすぐ下にまとめてあります。2つとも、今日からそのまま使えます。</p>
-    <p>そして今、この特典を“点”で終わらせず、本業とは別のもう一つの収入につなげるための全体の地図——『AIマネタイズの教科書』も無料でお配りしています。</p>
+    <!-- ③ 特典の所在 -->
+    <p class="give">今回の特典は、このすぐ下にまとめてあります。2個すべて、今日からそのまま使えます。</p>
+    <!-- ③ 教科書の案内 -->
+    <p class="guide">そして今、この特典を“点”で終わらせず、<strong>本業とは別のもう一つの収入</strong>につなげるための全体の地図——『AIマネタイズの教科書』も無料でお配りしています。</p>
+    <!-- ③ 小ボタン -->
     <div class="mini-cta">
       <a class="line-link" href="https://sub.aione.co.jp/line/open/ISEBuerKAyih?mtid=5pvXPtVKFnEL">AIマネタイズの教科書を無料で受け取る</a>
-      <span class="note">※このページの特典とは別に、LINEでお渡ししています</span>
     </div>
+    <!-- ③ 伏線 -->
     <p class="foreshadow">このページの最後に、僕がこの発信を始めた“本当の理由”を書きました。特典と合わせて、最後まで読んでもらえたら嬉しいです。</p>
-  </section>
 
-  <!-- ③-2 自分事化セクション（CSS縦フロー・ボタン無し） -->
-  <section class="persona">
+    <div class="w-divider"></div>
+
+    <!-- ③-2 自分事化（CSS縦フロー・ボタン無し・カード内で沈んだ地色） -->
     <div class="pstep">
       <span class="plabel">STEP1｜いまの現実</span>
       <p>物価は上がる。でも、給料はほとんど変わらない。自由に使える時間は、子どもが寝てからの1〜2時間だけ。</p>
@@ -370,16 +382,18 @@
       <span class="plabel">STEP3｜これからの分かれ道</span>
       <p>この変化は待ってくれません。知って動いた人と、後回しにした人の差は、これから開く一方です。</p>
     </div>
+    <!-- 接続文＝ウェルカムカードの最終行 -->
     <p class="pconnect">だからこそ、まずはこの下の特典から。今日そのまま使えるものだけを置いています。</p>
   </section>
 
-  <!-- ④ 特典カード群 -->
-  <div class="sec-head">
-    <span class="ey">FREE GIFT</span>
-    <h3>スマホのAIを、あなた専属の<br>“手相鑑定士”にするプロンプト</h3>
-    <p class="lead">手のひらの写真を1枚送るだけ。使い方は、コピーして貼るだけです。</p>
-  </div>
+  <!-- ④-0 特典ヘッドライン -->
+  <section class="gift-headline">
+    <span class="gh-label">― 今回の無料特典 ―</span>
+    <h3 class="gh-title">手相鑑定プロンプト<br>2点セット</h3>
+    <p class="gh-sub">コピーして貼るだけ。今夜そのまま使えます。</p>
+  </section>
 
+  <!-- ④ 特典カード群 -->
   <!-- カード① テキスト鑑定 -->
   <section class="gift-card">
     <span class="gift-no">特典 ①</span>
@@ -524,7 +538,7 @@
 ・画像内の文字は読みやすく、過密にならないよう調整する</div>
     <button class="copy-btn" data-target="promptB">このプロンプトをコピー</button>
 
-    <!-- 整えた注意書き（従来の説明＋DM画像の内容を統合） -->
+    <!-- 注意書き（うまくいかないとき） -->
     <div class="notice">
       <p class="nt-h">⚠️ うまくいかないときは</p>
       <p>画像がうまく作られない・途中で止まってしまう・思ったような結果にならない——そんなときは、あわてず次の順番で試してみてください。</p>
@@ -537,18 +551,18 @@
     </div>
   </section>
 
-  <!-- 使い方ワンポイント（特典セクションの締め） -->
+  <!-- 使い方ワンポイント（特典カード群の末尾） -->
   <section class="usetip">
     <h4>💡 もっと喜ばれる、ひと工夫</h4>
     <p>①のテキスト鑑定と②の画像、両方そろえて使うのがおすすめです。家族や友だちの手相を見てあげるときは、鑑定結果に手のひらの写真も一緒に添えてお渡しすると、ぐっと本格的で喜ばれます。</p>
     <p>②の画像プロンプトなら、手のひら写真と鑑定結果が最初から1枚にまとまるので、そのまま渡せて便利です。</p>
   </section>
 
-  <!-- ④-2 ブリッジ（パターンA・標準）＋ちょい出し -->
+  <!-- ④-2 ブリッジ（パターンA・固定文言）＋ちょい出し -->
   <section class="bridge">
     <p>まずは今夜、上の特典をどれか1つ試してみてください。</p>
-    <p>ただ、正直にお伝えすると、この特典は<span class="em">“部品”</span>です。部品を組み上げて収入という形にするには、全体の設計図が別に必要です。</p>
-    <p>その設計図が、LINEでお渡ししている『AIマネタイズの教科書』です。</p>
+    <p>ただ、正直にお伝えすると、この特典は<span class="em">“部品”</span>です。部品を組み上げて収入という形にするには、これだけでは足りません。実は、別の部品と、全体の設計図が必要です。</p>
+    <p>その“別の部品”と設計図を、まとめてお渡ししているのが——LINEの『AIマネタイズの教科書』です。</p>
 
     <div class="peek">
       <img class="textbook-img" src="https://instaakiai40s.github.io/textbook.PNG" alt="AIマネタイズの教科書（全5章）"
@@ -571,6 +585,7 @@
 <div class="wrap">
   <div class="z-divider"></div>
   <p class="z-eyebrow">MY STORY</p>
+  <h3 class="story-title">僕がこの発信を始めた、“本当の理由”</h3>
 
   <div class="story">
     <p>数年前、僕は投資詐欺で、家族にも言えない大きな失敗をしました。</p>
@@ -612,43 +627,38 @@
 </div><!-- /wrap -->
 </div><!-- /zone2 -->
 
-<!-- ================= ZONE 3（本命CTA） ================= -->
+<!-- ================= ZONE 3（本命CTA・決断のフェーズ） ================= -->
 <div class="zone3">
 <div class="inner">
 <div class="wrap">
 
-  <div class="cta-lead">
-    <span class="ey">NEXT STEP</span>
-    <h3>“部品”を、結果につなげる<br>設計図は教科書の中に</h3>
-  </div>
+  <!-- 1. 決断の呼びかけ（固定文言） -->
+  <p class="cta-call">ここまで読んでいただき、ありがとうございます。<br>あとは教科書を受け取って、今夜の1〜2時間から始めるだけです。</p>
 
-  <!-- ⑥ ベネフィット3点 -->
-  <div class="benefit">
-    <div class="bt">登録すると、こうなります</div>
-    <ul>
-      <li>時間のない40代の生活時間に合わせて組んだ『AIマネタイズの教科書』（全5章）が届きます</li>
-      <li>特典で受け取った“部品”を、どの順番で組み上げて収入に変えるか——全体の設計図がわかります</li>
-      <li>無料の個別相談で、あなたの状況に合わせた次の一歩を一緒に考えられます</li>
-    </ul>
-  </div>
-
-  <div class="limit">※個別相談の枠に限りがあるため、教科書の配布は予告なく終了する場合があります</div>
-
-  <!-- LINE誘導バナー（タップ可能） -->
+  <!-- 2. LINE誘導バナー（タップ可能） -->
   <a class="line-banner-link line-link" href="https://sub.aione.co.jp/line/open/ISEBuerKAyih?mtid=5pvXPtVKFnEL">
     <img src="https://instaakiai40s.github.io/line_banner.PNG" alt="AIマネタイズの教科書を無料で受け取る"
          onerror="this.parentNode.style.display='none';">
   </a>
 
-  <!-- 緑ボタン（同一リンク） -->
-  <a class="line-btn line-link" href="https://sub.aione.co.jp/line/open/ISEBuerKAyih?mtid=5pvXPtVKFnEL">
-    AIマネタイズの教科書を無料で受け取る
-    <span class="sub">LINEで受け取る（無料）</span>
-  </a>
-
-  <div class="copy-line-wrap">
-    <button class="copy-line">登録リンクをコピー</button>
+  <!-- 3. ベネフィット3点 -->
+  <div class="benefit">
+    <div class="bt">登録すると、こうなります</div>
+    <ul>
+      <li>時間のない40代の生活時間に合わせて組んだ『AIマネタイズの教科書』（全5章）が届きます</li>
+      <li>特典で受け取った“部品”に、足りなかった“別の部品”と全体の設計図を足せます</li>
+      <li>無料の個別相談で、あなたの状況に合わせた次の一歩を一緒に考えられます</li>
+    </ul>
   </div>
+
+  <!-- 4. 限定性枠 -->
+  <div class="limit">※個別相談の枠に限りがあるため、教科書の配布は予告なく終了する場合があります</div>
+
+  <!-- 5. メインボタン -->
+  <a class="line-btn line-link" href="https://sub.aione.co.jp/line/open/ISEBuerKAyih?mtid=5pvXPtVKFnEL">AIマネタイズの教科書を無料で受け取る</a>
+
+  <!-- 6. 安心マイクロコピー（固定文言） -->
+  <p class="micro">登録は10秒ほどで完了します。合わないと感じたら、いつでもブロックしていただいて大丈夫です。</p>
 
   <!-- ⑦ 向きません -->
   <section class="nofit">
@@ -679,10 +689,6 @@
         var el = document.getElementById(btn.getAttribute('data-target'));
         if(el){ copyText(el.innerText, btn, 'このプロンプトをコピー'); }
       });
-    });
-
-    document.querySelectorAll('.copy-line').forEach(function(btn){
-      btn.addEventListener('click', function(){ copyText(LINE_URL, btn, '登録リンクをコピー'); });
     });
 
     var toggle = document.querySelector('.acc-toggle');
