@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-<!-- ファイル管理：index045.html／header045.PNG（台本045対応） -->
+<!-- ファイル管理：index045.html／header045.PNG（台本045対応) -->
 <!-- 経路メモ：リール経由（1ページ1経路運用） -->
 <head>
 <meta charset="UTF-8">
@@ -41,6 +41,7 @@
     color:var(--ink);
     color-scheme: only light;
     -webkit-text-size-adjust:100%;
+    scroll-behavior:smooth;
   }
   body{
     margin:0;
@@ -98,39 +99,19 @@
   .author-role{ font-size:12.5px; color:var(--ink-soft); }
   .author p{ margin:8px 0 0; font-size:14.5px; color:var(--ink); }
 
-  /* ③＋③-2 ウェルカムカード（1枚の白カード） */
+  /* ③ ウェルカムカード（スリム版・5要素・余白のみで区切る） */
   .welcome{
-    margin:22px 0 4px; background:var(--card); border-radius:16px; padding:24px 20px 22px;
+    margin:22px 0 4px; background:var(--card); border-radius:16px; padding:22px 20px;
     box-shadow:0 6px 18px rgba(30,42,68,.08); border:1px solid rgba(169,131,74,.14);
   }
-  .welcome > p{ margin:0 0 12px; font-size:15px; }
+  .welcome p{ margin:0 0 14px; font-size:15px; }
   .welcome .give{ font-weight:700; color:var(--navy); }
-  .welcome .guide strong{ color:var(--navy); }
-  .mini-cta{ text-align:center; margin:16px 0 14px; }
-  .mini-cta a{
-    display:inline-block; background:var(--line-green); color:#fff; text-decoration:none;
-    font-weight:700; font-size:15px; padding:13px 22px; border-radius:12px; box-shadow:0 5px 14px rgba(6,199,85,.28);
+  .anchor-link{
+    display:block; text-align:center; margin:0 0 14px;
+    color:var(--gold); font-size:14px; font-weight:700;
+    text-decoration:underline; text-underline-offset:3px;
   }
-  .foreshadow{
-    background:#FCF6E9; border-left:4px solid var(--gold-light); border-radius:0 12px 12px 0;
-    padding:13px 15px; font-size:13.5px; color:var(--ink-soft);
-  }
-  .w-divider{
-    width:46px; height:2px; margin:20px auto 18px; border-radius:2px;
-    background:linear-gradient(90deg,transparent,var(--gold-light),transparent);
-  }
-  /* ③-2 STEP図（カード内・沈んだベージュ地） */
-  .pstep{
-    background:#F7F0E1; border:1px solid rgba(169,131,74,.18); border-radius:13px; padding:14px 15px 13px;
-  }
-  .pstep.step3{ border-left:4px solid var(--gold); }
-  .plabel{
-    display:inline-block; background:var(--gold); color:#fff; font-size:11.5px; font-weight:800;
-    letter-spacing:.04em; padding:4px 12px; border-radius:7px; margin-bottom:9px;
-  }
-  .pstep p{ margin:0; font-size:14.5px; color:var(--ink); line-height:1.7; }
-  .parrow{ text-align:center; color:var(--gold-light); font-size:18px; line-height:1; margin:7px 0; }
-  .pconnect{ margin:16px 2px 0; font-size:14.5px; color:var(--navy); font-weight:700; line-height:1.7; }
+  .welcome .foreshadow{ margin-bottom:0; font-size:13.5px; color:var(--ink-soft); }
 
   /* ④-0 特典ヘッドライン */
   .gift-headline{ text-align:center; margin:34px 0 18px; }
@@ -246,9 +227,20 @@
     background:radial-gradient(ellipse at center,rgba(255,251,235,.95),rgba(255,247,220,0) 70%); pointer-events:none;
   }
   .zone3 .inner{ position:relative; z-index:1; }
+
+  /* ⑥-0 分かれ道ブロック */
+  .crossroad{
+    background:#fff; border:1px solid rgba(169,131,74,.35); border-radius:14px;
+    padding:20px 18px; margin:34px 0 20px; box-shadow:0 6px 16px rgba(169,131,74,.2);
+    scroll-margin-top:16px;
+  }
+  .crossroad p{ margin:0 0 12px; font-size:14.5px; color:var(--ink); line-height:1.8; }
+  .crossroad p:last-child{ margin-bottom:0; }
+  .cr-final{ display:block; margin-top:10px; font-size:17.5px; font-weight:800; color:var(--navy); }
+
   .cta-call{
     text-align:center; color:var(--navy); font-size:16.5px; font-weight:700; line-height:1.85;
-    padding-top:32px; margin:0 0 20px;
+    margin:0 0 20px;
   }
 
   .line-banner-link{ display:block; border-radius:14px; overflow:hidden; margin-bottom:16px; box-shadow:0 8px 20px rgba(30,42,68,.18); }
@@ -309,9 +301,11 @@
     .header-fallback h2{ font-size:23px; }
     .zone2 .story-title{ font-size:19px; }
     .cta-call{ font-size:15.5px; }
+    .cr-final{ font-size:16.5px; }
     .line-btn{ font-size:16.5px; }
   }
   @media (prefers-reduced-motion:reduce){
+    html{ scroll-behavior:auto; }
     .line-btn::after{ animation:none; display:none; }
     .acc-body.open{ animation:none; }
   }
@@ -350,40 +344,13 @@
     <p>はじめまして、あきです。40代、福祉の仕事をしながら3人の子どもを育てています。特別な才能はありません。使えたのは子どもが寝てからの1〜2時間だけ。それでも投稿開始20日でフォロワー5,000人という結果が出ました。この特典は、時間も体力もお金の余裕もない、それでも家族のために何かを変えたい40代のために作りました。</p>
   </section>
 
-  <!-- ③＋③-2 ウェルカムカード（1枚の白カード） -->
+  <!-- ③ ウェルカムカード（スリム版・5要素のみ） -->
   <section class="welcome">
-    <!-- ③ お礼 -->
     <p>リールをご覧いただき、そして受け取っていただき、ありがとうございます。</p>
-    <!-- ③ 特典の所在 -->
     <p class="give">今回の特典は、このすぐ下にまとめてあります。2個すべて、今日からそのまま使えます。</p>
-    <!-- ③ 教科書の案内 -->
-    <p class="guide">そして今、この特典を“点”で終わらせず、<strong>本業とは別のもう一つの収入</strong>につなげるための全体の地図——『AIマネタイズの教科書』も無料でお配りしています。</p>
-    <!-- ③ 小ボタン -->
-    <div class="mini-cta">
-      <a class="line-link" href="https://sub.aione.co.jp/line/open/ISEBuerKAyih?mtid=5pvXPtVKFnEL">AIマネタイズの教科書を無料で受け取る</a>
-    </div>
-    <!-- ③ 伏線 -->
+    <p>そしてページの後半では、この特典の“その先”——本業とは別のもう一つの収入につなげる『AIマネタイズの教科書』（無料・全5章）もご案内しています。</p>
+    <a class="anchor-link" href="#cta">▼ 先に教科書の案内を見る</a>
     <p class="foreshadow">このページの最後に、僕がこの発信を始めた“本当の理由”を書きました。特典と合わせて、最後まで読んでもらえたら嬉しいです。</p>
-
-    <div class="w-divider"></div>
-
-    <!-- ③-2 自分事化（CSS縦フロー・ボタン無し・カード内で沈んだ地色） -->
-    <div class="pstep">
-      <span class="plabel">STEP1｜いまの現実</span>
-      <p>物価は上がる。でも、給料はほとんど変わらない。自由に使える時間は、子どもが寝てからの1〜2時間だけ。</p>
-    </div>
-    <div class="parrow">▼</div>
-    <div class="pstep">
-      <span class="plabel">STEP2｜いま起きている変化</span>
-      <p>その1〜2時間でも、AIを使えば、本業とは別の収入をつくれる時代になりました。</p>
-    </div>
-    <div class="parrow">▼</div>
-    <div class="pstep step3">
-      <span class="plabel">STEP3｜これからの分かれ道</span>
-      <p>この変化は待ってくれません。知って動いた人と、後回しにした人の差は、これから開く一方です。</p>
-    </div>
-    <!-- 接続文＝ウェルカムカードの最終行 -->
-    <p class="pconnect">だからこそ、まずはこの下の特典から。今日そのまま使えるものだけを置いています。</p>
   </section>
 
   <!-- ④-0 特典ヘッドライン -->
@@ -632,16 +599,23 @@
 <div class="inner">
 <div class="wrap">
 
-  <!-- 1. 決断の呼びかけ（固定文言） -->
+  <!-- ⑥-0 分かれ道ブロック（固定文言・1カード・アンカー着地点） -->
+  <section class="crossroad" id="cta">
+    <p>物価は上がる。でも、給料はほとんど変わらない。</p>
+    <p>その一方で、AIを使えば、子どもが寝てからの1〜2時間でも、本業とは別の収入をつくれる時代になりました。</p>
+    <p>この変化は待ってくれません。知って動くか、後回しにするか——<span class="cr-final">分かれ道は、ここです。</span></p>
+  </section>
+
+  <!-- 決断の呼びかけ（固定文言） -->
   <p class="cta-call">ここまで読んでいただき、ありがとうございます。<br>あとは教科書を受け取って、今夜の1〜2時間から始めるだけです。</p>
 
-  <!-- 2. LINE誘導バナー（タップ可能） -->
+  <!-- LINE誘導バナー（タップ可能） -->
   <a class="line-banner-link line-link" href="https://sub.aione.co.jp/line/open/ISEBuerKAyih?mtid=5pvXPtVKFnEL">
     <img src="https://instaakiai40s.github.io/line_banner.PNG" alt="AIマネタイズの教科書を無料で受け取る"
          onerror="this.parentNode.style.display='none';">
   </a>
 
-  <!-- 3. ベネフィット3点 -->
+  <!-- ベネフィット3点 -->
   <div class="benefit">
     <div class="bt">登録すると、こうなります</div>
     <ul>
@@ -651,13 +625,13 @@
     </ul>
   </div>
 
-  <!-- 4. 限定性枠 -->
+  <!-- 限定性枠 -->
   <div class="limit">※個別相談の枠に限りがあるため、教科書の配布は予告なく終了する場合があります</div>
 
-  <!-- 5. メインボタン -->
+  <!-- メインボタン -->
   <a class="line-btn line-link" href="https://sub.aione.co.jp/line/open/ISEBuerKAyih?mtid=5pvXPtVKFnEL">AIマネタイズの教科書を無料で受け取る</a>
 
-  <!-- 6. 安心マイクロコピー（固定文言） -->
+  <!-- 安心マイクロコピー（固定文言） -->
   <p class="micro">登録は10秒ほどで完了します。合わないと感じたら、いつでもブロックしていただいて大丈夫です。</p>
 
   <!-- ⑦ 向きません -->
