@@ -100,7 +100,7 @@
   .author-role{ font-size:12.5px; color:var(--ink-soft); }
   .author p{ margin:8px 0 0; font-size:14.5px; color:var(--ink); }
 
-  /* ③ ウェルカムカード（v2.5：7要素・区切りは余白のみ） */
+  /* ③ ウェルカムカード（v2.6：6要素・区切りは余白のみ） */
   .welcome{
     margin:22px 0 4px; background:var(--card); border-radius:16px; padding:22px 20px;
     box-shadow:0 6px 18px rgba(30,42,68,.08); border:1px solid rgba(169,131,74,.14);
@@ -108,8 +108,6 @@
   .welcome p{ margin:0 0 16px; font-size:15px; }
   .welcome .locate{ font-weight:800; color:var(--navy); }
   .welcome .notice-next strong{ font-weight:800; color:var(--navy); }
-  /* 案内リボン（装飾見出し・タップ動作なし） */
-  .guide-ribbon{ width:100%; border-radius:10px; margin:0 0 16px; }
   /* ジャンプ動画（タップで#ctaへ） */
   .movie-link{ display:block; border-radius:14px; overflow:hidden; margin:0 0 16px; }
   .welcome-movie{
@@ -391,8 +389,9 @@
   <!-- ① ヘッダー（自動フォールバック方式） -->
   <header class="header">
     <img class="header-banner" src="https://instaakiai40s.github.io/header045.PNG"
+         data-basename="header045" data-fallback="headerFallback"
          alt="スマホのAIが手相鑑定士になる｜手相鑑定プロンプト2点セット"
-         onerror="this.style.display='none';document.getElementById('headerFallback').style.display='block';">
+         onerror="imageFallback(this);">
     <div class="header-fallback" id="headerFallback">
       <span class="badge-ribbon">保存版・無料特典</span>
       <h2>スマホのAIが<br><span class="hl">“手相鑑定士”</span>になる</h2>
@@ -404,7 +403,8 @@
   <!-- ② 発信者ブロック -->
   <section class="author">
     <div class="author-top">
-      <img class="author-photo" src="https://instaakiai40s.github.io/profile.JPG" alt="あき">
+      <img class="author-photo" src="https://instaakiai40s.github.io/profile.JPG"
+           data-basename="profile" data-fallback="hide" alt="あき" onerror="imageFallback(this);">
       <div>
         <div class="author-name">あき</div>
         <div class="author-role">40代／福祉の仕事×3児の父</div>
@@ -413,14 +413,11 @@
     <p>はじめまして、あきです。40代、福祉の仕事をしながら3人の子どもを育てています。特別な才能はありません。使えたのは子どもが寝てからの1〜2時間だけ。それでも投稿開始20日でフォロワー5,000人という結果が出ました。この特典は、時間も体力もお金の余裕もない、それでも家族のために何かを変えたい40代のために作りました。</p>
   </section>
 
-  <!-- ③ ウェルカムカード（7要素） -->
+  <!-- ③ ウェルカムカード（6要素・案内リボン画像は置かない） -->
   <section class="welcome">
     <p>リールをご覧いただき、そして受け取っていただき、ありがとうございます。</p>
     <p class="locate">今回の動画の特典は、少しスクロールした先にまとめてあります。</p>
-    <p class="notice-next">また、ページの後半では皆さんへ<strong>無料で受け取れる『更なる特典』</strong>をご用意しています。</p>
-    <img class="guide-ribbon" src="https://instaakiai40s.github.io/guide_ribbon.PNG"
-         alt="このページをご覧いただいた皆さんへ｜この先のご案内"
-         onerror="this.style.display='none';">
+    <p class="notice-next">また、ページの後半では皆さんへ<strong>無料で受け取れる『更なる特典』</strong>をご用意しました。</p>
     <a class="movie-link" id="movieLink" href="#cta" aria-label="タップして、この先のご案内へ移動する">
       <video class="welcome-movie" id="welcomeMovie" autoplay muted loop playsinline webkit-playsinline
              preload="auto" disablepictureinpicture>
@@ -429,8 +426,9 @@
       </video>
     </a>
     <img class="reason-banner" src="https://instaakiai40s.github.io/reason_banner.PNG"
+         data-basename="reason_banner" data-fallback="reasonFallback"
          alt="このページの最後に、僕がこの発信を始めた“本当の理由”を書きました。特典と合わせて、最後まで読んでもらえたら嬉しいです。"
-         onerror="this.style.display='none';document.getElementById('reasonFallback').style.display='block';">
+         onerror="imageFallback(this);">
     <div class="reason-fallback" id="reasonFallback">
       このページの最後に、僕がこの発信を始めた“本当の理由”を書きました。特典と合わせて、最後まで読んでもらえたら嬉しいです。
     </div>
@@ -618,9 +616,9 @@
     <div class="peek">
       <p class="peek-h">教科書の中身を、少しだけ。</p>
       <img class="textbook-img" src="https://instaakiai40s.github.io/textbook.jpg"
-           data-alt-src="https://instaakiai40s.github.io/textbook.PNG"
+           data-basename="textbook" data-fallback="chapterFallback"
            alt="AIマネタイズの教科書（全5章）の章一覧と、スマホで読んでいるところ"
-           onerror="if(this.dataset.altSrc){this.src=this.dataset.altSrc;this.removeAttribute('data-alt-src');}else{this.style.display='none';document.getElementById('chapterFallback').style.display='block';}">
+           onerror="imageFallback(this);">
       <div class="chapter-list" id="chapterFallback">
         <div class="chapter"><span class="cno">第一章</span><span class="ctitle">いま一番始めやすいAIマネタイズ手法</span></div>
         <div class="chapter"><span class="cno">第二章</span><span class="ctitle">ChatGPT収益化プロンプト3選</span></div>
@@ -629,7 +627,8 @@
         <div class="chapter"><span class="cno">第五章</span><span class="ctitle">AI×SNSで収益を生むリアル事例</span></div>
       </div>
       <div class="voice">
-        <img class="voice-photo" src="https://instaakiai40s.github.io/profile.JPG" alt="あき">
+        <img class="voice-photo" src="https://instaakiai40s.github.io/profile.JPG"
+             data-basename="profile" data-fallback="hide" alt="あき" onerror="imageFallback(this);">
         <div class="voice-bubble">
           <p>子どもが寝てからの1〜2時間しかない、僕と同じ40代の生活時間に合わせて組んだ内容です。</p>
         </div>
@@ -695,8 +694,9 @@
   <!-- ⑥-0 分かれ道ブロック（fork.PNG本体＋HTML締め文・SVG3行フォールバック・アンカー着地点） -->
   <section class="crossroad" id="cta">
     <img class="fork-img" src="https://instaakiai40s.github.io/fork.PNG"
+         data-basename="fork" data-fallback="forkFallback"
          alt="いまの現実：物価は上がるのに、給料はほとんど変わらない。いま起きている変化：AIを使えば、子どもが寝てからの1〜2時間でも、本業とは別の収入をつくれる時代になった。これからの分かれ道：知って動いた人と、後回しにした人の差は開く一方です。"
-         onerror="this.style.display='none';document.getElementById('forkFallback').style.display='block';">
+         onerror="imageFallback(this);">
     <div class="fork-fallback" id="forkFallback">
       <div class="cr-row">
         <span class="cr-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M14 36V16m0 0l-6 6m6-6l6 6"/><path d="M26 30h14m0 0l-6-6m6 6l-6 6"/></svg></span>
@@ -719,8 +719,9 @@
 
   <!-- LINE誘導バナー（タップ可能） -->
   <a class="line-banner-link line-link" href="https://sub.aione.co.jp/line/open/ISEBuerKAyih?mtid=5pvXPtVKFnEL">
-    <img src="https://instaakiai40s.github.io/line_banner.PNG" alt="AIマネタイズの教科書を無料で受け取る"
-         onerror="this.parentNode.style.display='none';">
+    <img src="https://instaakiai40s.github.io/line_banner.PNG"
+         data-basename="line_banner" data-fallback="parent"
+         alt="AIマネタイズの教科書を無料で受け取る" onerror="imageFallback(this);">
   </a>
 
   <!-- ベネフィット3点 -->
@@ -763,10 +764,46 @@
 <script>
   var LINE_URL = "https://sub.aione.co.jp/line/open/ISEBuerKAyih?mtid=5pvXPtVKFnEL";
 
+  /* §8-2 画像読み込みの共通ルール（拡張子フォールバック）
+     全固定素材はこの1関数を経由する。onerrorのたびに
+     .PNG → .png → .JPG → .jpg → .jpeg の順でsrcを差し替え、
+     全滅した場合のみ各素材の代替表示へ切り替える。
+     data-basename＝ファイル名（拡張子なし）／data-fallback＝
+     代替表示のid、'hide'（画像のみ非表示）、'parent'（親要素ごと非表示）。
+     ※吸収できるのは拡張子違いのみ。名前の綴り違いは対象外。 */
+  var GH_BASE  = "https://instaakiai40s.github.io/";
+  var IMG_EXTS = ["PNG","png","JPG","jpg","jpeg"];
+
+  function imageFallback(img){
+    var base  = img.getAttribute("data-basename") || "";
+    var tried = img.getAttribute("data-tried") || "";
+    var src   = img.getAttribute("src") || "";
+    var cur   = src.indexOf(".") >= 0 ? src.split(".").pop() : "";
+    if(cur && tried.indexOf("|" + cur + "|") === -1){ tried += "|" + cur + "|"; }
+
+    for(var i = 0; i < IMG_EXTS.length; i++){
+      if(tried.indexOf("|" + IMG_EXTS[i] + "|") === -1){
+        tried += "|" + IMG_EXTS[i] + "|";
+        img.setAttribute("data-tried", tried);
+        img.setAttribute("src", GH_BASE + base + "." + IMG_EXTS[i]);
+        return;
+      }
+    }
+    img.setAttribute("data-tried", tried);
+    img.style.display = "none";
+    var mode = img.getAttribute("data-fallback") || "hide";
+    if(mode === "parent"){
+      if(img.parentNode){ img.parentNode.style.display = "none"; }
+    } else if(mode !== "hide"){
+      var el = document.getElementById(mode);
+      if(el){ el.style.display = "block"; }
+    }
+  }
+
   // ③ジャンプ動画：読み込みに失敗したらコンテナごと非表示（ページの成立に動画は必須ではない）
   function hideWelcomeMovie(){
-    var m = document.getElementById('movieLink');
-    if(m){ m.style.display = 'none'; }
+    var m = document.getElementById("movieLink");
+    if(m){ m.style.display = "none"; }
   }
 
   document.addEventListener('DOMContentLoaded', function(){
