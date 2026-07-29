@@ -168,16 +168,17 @@
   .notice p{ margin:0 0 8px; font-size:13.5px; color:#5C5230; }
   .notice ol{ margin:0 0 8px; padding-left:1.25em; }
   .notice li{ font-size:13.5px; color:#5C5230; margin-bottom:5px; }
+  .notice strong{ font-weight:800; color:#6B5116; }
   .notice p:last-child{ margin-bottom:0; }
 
-  /* 使い方ワンポイント（特典カード群の末尾） */
-  .usetip{
-    background:linear-gradient(135deg,#FFFDF8,#FBF2DD); border:1px solid rgba(169,131,74,.28);
-    border-left:4px solid var(--gold); border-radius:14px; padding:17px 18px; margin-bottom:8px;
+  /* 完成イメージ（特典②） */
+  .sample-wrap{ margin:0 0 14px; }
+  .sample-cap{ text-align:center; font-size:12.5px; font-weight:800; color:var(--gold); margin:0 0 8px; letter-spacing:.04em; }
+  .sample-img{
+    width:100%; border-radius:10px; border:1px solid rgba(169,131,74,.28);
+    box-shadow:0 6px 16px rgba(30,42,68,.16);
   }
-  .usetip h4{ margin:0 0 8px; font-size:15px; color:var(--navy); font-weight:800; }
-  .usetip p{ margin:0 0 8px; font-size:14px; color:var(--ink); }
-  .usetip p:last-child{ margin-bottom:0; }
+  .sample-note{ margin:8px 2px 0; font-size:12.5px; color:var(--ink-soft); line-height:1.7; }
 
   /* ④-2 ブリッジ */
   .bridge{
@@ -490,6 +491,14 @@
     <span class="tag">見せる・贈る｜画像タイプ</span>
     <h4>手相インフォグラフィック生成プロンプト（画像版）</h4>
     <p>同じ手相鑑定を、“1枚のオシャレな診断レポート画像”にまとめてくれるプロンプトです。文章よりパッと見て伝わるので、家族や友だちに見せる・贈るのにぴったり。手のひらの写真を添付してから、下を貼ってください。</p>
+    <div class="sample-wrap">
+      <p class="sample-cap">― 完成イメージ ―</p>
+      <img class="sample-img" src="https://instaakiai40s.github.io/img045a.PNG"
+           data-basename="img045a" data-fallback="hide"
+           alt="手相診断レポートの完成イメージ。中央に手のひらの写真と主要線マップ、周囲に総合タイプ・主要線診断・才能・人間関係・金運・総合アドバイスの診断ブロックが並んだ1枚もののインフォグラフィック。"
+           onerror="imageFallback(this);">
+      <p class="sample-note">※出来上がりは手の写真や写り方によって変わります。上は一例です。</p>
+    </div>
     <div class="prompt-box" id="promptB">あなたは、手相分析・性格傾向分析・自己理解レポート作成に精通した
 プロの手相アナリスト兼インフォグラフィックデザイナーです。
 
@@ -590,7 +599,8 @@
     <!-- 注意書き（うまくいかないとき） -->
     <div class="notice">
       <p class="nt-h">⚠️ うまくいかないときは</p>
-      <p>画像がうまく作られない・途中で止まってしまう・思ったような結果にならない——そんなときは、あわてず次の順番で試してみてください。</p>
+      <p><strong>親指が消えている、指先や手首が切れている</strong>——そんな“手が欠けた”状態で出てくることがあります。そのときは、そのまま<strong>「手が欠けた！」</strong>と送ってみてください。手全体がきちんと入る形で作り直してくれます。</p>
+      <p>そのほか、画像がうまく作られない・途中で止まってしまう・思ったような結果にならないときは、あわてず次の順番で試してみてください。</p>
       <ol>
         <li>もう一度、同じプロンプトをそのまま送ってみる</li>
         <li>生成が途中で止まった場合は、「止まってしまったので画像生成を続けて」と送る</li>
@@ -598,13 +608,6 @@
       </ol>
       <p>それでも解決しないときは、できる範囲でお答えしますので、遠慮なくDMしてください。</p>
     </div>
-  </section>
-
-  <!-- 使い方ワンポイント（特典カード群の末尾） -->
-  <section class="usetip">
-    <h4>💡 もっと喜ばれる、ひと工夫</h4>
-    <p>①のテキスト鑑定と②の画像、両方そろえて使うのがおすすめです。家族や友だちの手相を見てあげるときは、鑑定結果に手のひらの写真も一緒に添えてお渡しすると、ぐっと本格的で喜ばれます。</p>
-    <p>②の画像プロンプトなら、手のひら写真と鑑定結果が最初から1枚にまとまるので、そのまま渡せて便利です。</p>
   </section>
 
   <!-- ④-2 ブリッジ（パターンA・固定文言＋固定装飾）＋ちょい出し -->
