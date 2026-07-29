@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-<!-- ファイル管理：index045.html／header045.PNG（台本045対応) -->
+<!-- ファイル管理：index045.html／header045.PNG（台本045対応） -->
 <!-- 経路メモ：リール経由（1ページ1経路運用） -->
 <head>
 <meta charset="UTF-8">
@@ -173,10 +173,15 @@
   .bridge p{ margin:0 0 12px; font-size:14.5px; color:var(--ink); }
   .bridge .em{ font-weight:800; color:var(--navy); }
 
-  /* ④-2 ちょい出しブロック */
-  .peek{ margin-top:16px; }
-  .textbook-img{ width:64%; max-width:260px; margin:0 auto 14px; filter:drop-shadow(0 10px 18px rgba(30,42,68,.22)); }
-  .peek-h{ text-align:center; font-size:14.5px; font-weight:800; color:var(--gold); margin:0 0 12px; letter-spacing:.02em; }
+  /* ④-2 ちょい出しブロック（v2.3：小見出し→画像→吹き出し） */
+  .peek{ margin-top:18px; }
+  .peek-h{ text-align:center; font-size:15px; font-weight:800; color:var(--gold); margin:0 0 14px; letter-spacing:.02em; }
+  .textbook-img{
+    width:82%; max-width:340px; margin:0 auto; border-radius:12px;
+    box-shadow:0 10px 22px rgba(30,42,68,.22);
+  }
+  /* 画像が読めたときは表示しない（二重表示の禁止） */
+  .chapter-list{ display:none; }
   .chapter{
     display:flex; align-items:flex-start; gap:11px; background:#fff; border:1px solid rgba(169,131,74,.2);
     border-radius:11px; padding:11px 13px; margin-bottom:9px;
@@ -186,12 +191,34 @@
     padding:3px 9px; border-radius:6px; margin-top:2px; white-space:nowrap;
   }
   .chapter .ctitle{ font-size:13.5px; color:var(--ink); font-weight:600; line-height:1.55; }
-  .peek-distance{ margin:12px 2px 0; font-size:13.5px; color:var(--ink-soft); line-height:1.7; }
 
-  /* ===== ZONE 2（ストーリー：最も暗い・全幅） ===== */
+  /* 距離感の一言（吹き出しスタイル） */
+  .voice{ display:flex; align-items:flex-start; gap:10px; margin-top:18px; }
+  .voice-photo{
+    width:40px; height:40px; border-radius:50%; object-fit:cover; flex:0 0 auto;
+    border:1.5px solid var(--gold-light); box-shadow:0 2px 6px rgba(0,0,0,.12);
+  }
+  .voice-bubble{
+    position:relative; background:#FFFBF1; border:1px solid var(--gold);
+    border-radius:12px; padding:13px 15px;
+  }
+  .voice-bubble::before{
+    content:""; position:absolute; left:-7px; top:15px; width:12px; height:12px;
+    background:#FFFBF1; border-left:1px solid var(--gold); border-bottom:1px solid var(--gold);
+    transform:rotate(45deg);
+  }
+  .voice-bubble p{ margin:0; font-size:15px; color:var(--navy); font-weight:600; line-height:1.75; }
+
+  /* ===== ZONE 2（ストーリー：最も暗い・全幅・背景写真は透過で沈める） ===== */
   .zone2{
     width:100%;
-    background:linear-gradient(180deg,var(--navy) 0%,var(--navy2) 45%,var(--navy-deep) 100%);
+    background-color:var(--navy);
+    background-image:
+      linear-gradient(180deg, rgba(30,42,68,.90) 0%, rgba(36,48,80,.89) 45%, rgba(22,31,56,.94) 100%),
+      url('https://instaakiai40s.github.io/story_bg.JPG');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
     color:#EDE6D6; margin-top:34px; padding:6px 0 44px; border-top:1px solid rgba(201,164,94,.45);
   }
   .zone2 .z-divider{ width:64px; height:3px; margin:34px auto 6px; background:linear-gradient(90deg,transparent,var(--amber),transparent); border-radius:2px; }
@@ -202,7 +229,7 @@
   .zone2 .story .last .g{ color:var(--amber); }
 
   .acc-toggle{
-    width:100%; margin-top:22px; background:rgba(255,255,255,.06); border:1px solid rgba(232,194,117,.4);
+    width:100%; margin-top:22px; background:rgba(20,28,50,.55); border:1px solid rgba(232,194,117,.4);
     color:#F2E6CC; font-weight:700; font-size:14.5px; padding:14px; border-radius:12px; cursor:pointer;
     display:flex; align-items:center; justify-content:center; gap:8px;
   }
@@ -228,15 +255,38 @@
   }
   .zone3 .inner{ position:relative; z-index:1; }
 
-  /* ⑥-0 分かれ道ブロック */
+  /* ⑥-0 分かれ道ブロック（v2.3：fork.PNG本体＋HTML締め文） */
   .crossroad{
     background:#fff; border:1px solid rgba(169,131,74,.35); border-radius:14px;
-    padding:20px 18px; margin:34px 0 20px; box-shadow:0 6px 16px rgba(169,131,74,.2);
+    padding:14px 14px 16px; margin:34px 0 20px; box-shadow:0 6px 16px rgba(169,131,74,.2);
     scroll-margin-top:16px;
   }
-  .crossroad p{ margin:0 0 12px; font-size:14.5px; color:var(--ink); line-height:1.8; }
-  .crossroad p:last-child{ margin-bottom:0; }
-  .cr-final{ display:block; margin-top:10px; font-size:17.5px; font-weight:800; color:var(--navy); }
+  .fork-img{ width:100%; border-radius:10px; box-shadow:0 4px 12px rgba(30,42,68,.14); }
+  /* 画像が読めたときは表示しない（二重表示の禁止） */
+  .fork-fallback{ display:none; padding:8px 4px 0; }
+  .cr-row{ display:flex; align-items:flex-start; gap:14px; }
+  .cr-row + .cr-row{ margin-top:16px; }
+  .cr-icon{
+    flex:0 0 auto; width:48px; height:48px; border-radius:50%;
+    background:#FBF4E3; border:1.5px solid var(--gold-light);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .cr-icon svg{
+    width:30px; height:30px;
+    stroke:var(--gold); stroke-width:2.5; fill:none;
+    stroke-linecap:round; stroke-linejoin:round;
+  }
+  .cr-text{ margin:3px 0 0; font-size:14.5px; color:var(--ink); line-height:1.75; }
+  .cr-final{
+    position:relative; text-align:center; font-size:18px; font-weight:800; color:var(--navy);
+    margin:16px 0 0; padding-bottom:20px;
+  }
+  .cr-final::after{
+    content:""; position:absolute; left:50%; bottom:0; transform:translateX(-50%);
+    width:200px; height:30px;
+    background:radial-gradient(ellipse at center, rgba(217,164,65,.4), rgba(217,164,65,0) 70%);
+    pointer-events:none;
+  }
 
   .cta-call{
     text-align:center; color:var(--navy); font-size:16.5px; font-weight:700; line-height:1.85;
@@ -301,8 +351,9 @@
     .header-fallback h2{ font-size:23px; }
     .zone2 .story-title{ font-size:19px; }
     .cta-call{ font-size:15.5px; }
-    .cr-final{ font-size:16.5px; }
+    .cr-final{ font-size:17px; }
     .line-btn{ font-size:16.5px; }
+    .textbook-img{ width:92%; }
   }
   @media (prefers-reduced-motion:reduce){
     html{ scroll-behavior:auto; }
@@ -532,15 +583,23 @@
     <p>その“別の部品”と設計図を、まとめてお渡ししているのが——LINEの『AIマネタイズの教科書』です。</p>
 
     <div class="peek">
-      <img class="textbook-img" src="https://instaakiai40s.github.io/textbook.PNG" alt="AIマネタイズの教科書（全5章）"
-           onerror="this.style.display='none';">
       <p class="peek-h">教科書の中身を、少しだけ。</p>
-      <div class="chapter"><span class="cno">第一章</span><span class="ctitle">いま一番始めやすいAIマネタイズ手法</span></div>
-      <div class="chapter"><span class="cno">第二章</span><span class="ctitle">ChatGPT収益化プロンプト3選</span></div>
-      <div class="chapter"><span class="cno">第三章</span><span class="ctitle">AIマネタイズ神テンプレート</span></div>
-      <div class="chapter"><span class="cno">第四章</span><span class="ctitle">マネタイズのための生成AIツール3選</span></div>
-      <div class="chapter"><span class="cno">第五章</span><span class="ctitle">AI×SNSで収益を生むリアル事例</span></div>
-      <p class="peek-distance">子どもが寝てからの1〜2時間しかない、僕と同じ40代の生活時間に合わせて組んだ内容です。</p>
+      <img class="textbook-img" src="https://instaakiai40s.github.io/textbook.PNG"
+           alt="AIマネタイズの教科書（全5章）の章一覧と、スマホで読んでいるところ"
+           onerror="this.style.display='none';document.getElementById('chapterFallback').style.display='block';">
+      <div class="chapter-list" id="chapterFallback">
+        <div class="chapter"><span class="cno">第一章</span><span class="ctitle">いま一番始めやすいAIマネタイズ手法</span></div>
+        <div class="chapter"><span class="cno">第二章</span><span class="ctitle">ChatGPT収益化プロンプト3選</span></div>
+        <div class="chapter"><span class="cno">第三章</span><span class="ctitle">AIマネタイズ神テンプレート</span></div>
+        <div class="chapter"><span class="cno">第四章</span><span class="ctitle">マネタイズのための生成AIツール3選</span></div>
+        <div class="chapter"><span class="cno">第五章</span><span class="ctitle">AI×SNSで収益を生むリアル事例</span></div>
+      </div>
+      <div class="voice">
+        <img class="voice-photo" src="https://instaakiai40s.github.io/profile.JPG" alt="あき">
+        <div class="voice-bubble">
+          <p>子どもが寝てからの1〜2時間しかない、僕と同じ40代の生活時間に合わせて組んだ内容です。</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -599,11 +658,26 @@
 <div class="inner">
 <div class="wrap">
 
-  <!-- ⑥-0 分かれ道ブロック（固定文言・1カード・アンカー着地点） -->
+  <!-- ⑥-0 分かれ道ブロック（fork.PNG本体＋HTML締め文・SVG3行フォールバック・アンカー着地点） -->
   <section class="crossroad" id="cta">
-    <p>物価は上がる。でも、給料はほとんど変わらない。</p>
-    <p>その一方で、AIを使えば、子どもが寝てからの1〜2時間でも、本業とは別の収入をつくれる時代になりました。</p>
-    <p>この変化は待ってくれません。知って動くか、後回しにするか——<span class="cr-final">分かれ道は、ここです。</span></p>
+    <img class="fork-img" src="https://instaakiai40s.github.io/fork.PNG"
+         alt="いまの現実：物価は上がるのに、給料はほとんど変わらない。いま起きている変化：AIを使えば、子どもが寝てからの1〜2時間でも、本業とは別の収入をつくれる時代になった。これからの分かれ道：知って動いた人と、後回しにした人の差は開く一方です。"
+         onerror="this.style.display='none';document.getElementById('forkFallback').style.display='block';">
+    <div class="fork-fallback" id="forkFallback">
+      <div class="cr-row">
+        <span class="cr-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M14 36V16m0 0l-6 6m6-6l6 6"/><path d="M26 30h14m0 0l-6-6m6 6l-6 6"/></svg></span>
+        <p class="cr-text">物価は上がる。でも、給料はほとんど変わらない。</p>
+      </div>
+      <div class="cr-row">
+        <span class="cr-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="14" y="8" width="17" height="30" rx="3"/><path d="M20 33h5"/><path d="M38 12l1.6 3.4L43 17l-3.4 1.6L38 22l-1.6-3.4L33 17l3.4-1.6z"/></svg></span>
+        <p class="cr-text">その一方で、AIを使えば、子どもが寝てからの1〜2時間でも、本業とは別の収入をつくれる時代になりました。</p>
+      </div>
+      <div class="cr-row">
+        <span class="cr-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 42V26"/><path d="M24 26L13 13m0 0v7m0-7h7"/><path d="M24 26l11-13m0 0v7m0-7h-7"/></svg></span>
+        <p class="cr-text">この変化は待ってくれません。知って動くか、後回しにするか——</p>
+      </div>
+    </div>
+    <p class="cr-final">分かれ道は、ここです。</p>
   </section>
 
   <!-- 決断の呼びかけ（固定文言） -->
