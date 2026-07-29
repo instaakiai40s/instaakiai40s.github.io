@@ -584,9 +584,10 @@
 
     <div class="peek">
       <p class="peek-h">教科書の中身を、少しだけ。</p>
-      <img class="textbook-img" src="https://instaakiai40s.github.io/textbook.PNG"
+      <img class="textbook-img" src="https://instaakiai40s.github.io/textbook.jpg"
+           data-alt-src="https://instaakiai40s.github.io/textbook.PNG"
            alt="AIマネタイズの教科書（全5章）の章一覧と、スマホで読んでいるところ"
-           onerror="this.style.display='none';document.getElementById('chapterFallback').style.display='block';">
+           onerror="if(this.dataset.altSrc){this.src=this.dataset.altSrc;this.removeAttribute('data-alt-src');}else{this.style.display='none';document.getElementById('chapterFallback').style.display='block';}">
       <div class="chapter-list" id="chapterFallback">
         <div class="chapter"><span class="cno">第一章</span><span class="ctitle">いま一番始めやすいAIマネタイズ手法</span></div>
         <div class="chapter"><span class="cno">第二章</span><span class="ctitle">ChatGPT収益化プロンプト3選</span></div>
