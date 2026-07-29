@@ -33,6 +33,7 @@
     --ink:#2A2E37;
     --ink-soft:#4B5160;
     --amber:#E8C275;
+    --em-red:#C43D3D;
   }
 
   *{ box-sizing:border-box; }
@@ -99,19 +100,34 @@
   .author-role{ font-size:12.5px; color:var(--ink-soft); }
   .author p{ margin:8px 0 0; font-size:14.5px; color:var(--ink); }
 
-  /* ③ ウェルカムカード（スリム版・5要素・余白のみで区切る） */
+  /* ③ ウェルカムカード（v2.5：7要素・区切りは余白のみ） */
   .welcome{
     margin:22px 0 4px; background:var(--card); border-radius:16px; padding:22px 20px;
     box-shadow:0 6px 18px rgba(30,42,68,.08); border:1px solid rgba(169,131,74,.14);
   }
-  .welcome p{ margin:0 0 14px; font-size:15px; }
-  .welcome .give{ font-weight:700; color:var(--navy); }
+  .welcome p{ margin:0 0 16px; font-size:15px; }
+  .welcome .locate{ font-weight:800; color:var(--navy); }
+  .welcome .notice-next strong{ font-weight:800; color:var(--navy); }
+  /* 案内リボン（装飾見出し・タップ動作なし） */
+  .guide-ribbon{ width:100%; border-radius:10px; margin:0 0 16px; }
+  /* ジャンプ動画（タップで#ctaへ） */
+  .movie-link{ display:block; border-radius:14px; overflow:hidden; margin:0 0 16px; }
+  .welcome-movie{
+    display:block; margin:0 auto; width:auto; max-width:100%; max-height:40vh;
+    border-radius:14px; background:#101A2E; box-shadow:0 5px 14px rgba(30,42,68,.16);
+    pointer-events:none;
+  }
+  /* “本当の理由”バナー（伏線・タップ動作なし） */
+  .reason-banner{ width:100%; border-radius:12px; margin:0 0 16px; }
+  .reason-fallback{
+    display:none; background:var(--navy); color:#EDE6D6; border-radius:12px;
+    padding:14px 16px; margin:0 0 16px; font-size:13.5px; line-height:1.8;
+  }
   .anchor-link{
-    display:block; text-align:center; margin:0 0 14px;
-    color:var(--gold); font-size:14px; font-weight:700;
+    display:block; text-align:center; margin:0;
+    color:var(--gold); font-size:14.5px; font-weight:700;
     text-decoration:underline; text-underline-offset:3px;
   }
-  .welcome .foreshadow{ margin-bottom:0; font-size:13.5px; color:var(--ink-soft); }
 
   /* ④-0 特典ヘッドライン */
   .gift-headline{ text-align:center; margin:34px 0 18px; }
@@ -171,9 +187,11 @@
     padding:20px 18px; margin:24px 0 8px;
   }
   .bridge p{ margin:0 0 12px; font-size:14.5px; color:var(--ink); }
-  .bridge .em{ font-weight:800; color:var(--navy); }
+  /* 接続文の固定装飾（この2つ以外は使わない） */
+  .em-gift{ font-weight:800; color:var(--navy); }
+  .em-book{ font-weight:800; color:var(--em-red); }
 
-  /* ④-2 ちょい出しブロック（v2.3：小見出し→画像→吹き出し） */
+  /* ④-2 ちょい出しブロック（小見出し→画像→吹き出し） */
   .peek{ margin-top:18px; }
   .peek-h{ text-align:center; font-size:15px; font-weight:800; color:var(--gold); margin:0 0 14px; letter-spacing:.02em; }
   .textbook-img{
@@ -255,7 +273,7 @@
   }
   .zone3 .inner{ position:relative; z-index:1; }
 
-  /* ⑥-0 分かれ道ブロック（v2.3：fork.PNG本体＋HTML締め文） */
+  /* ⑥-0 分かれ道ブロック（fork.PNG本体＋HTML締め文） */
   .crossroad{
     background:#fff; border:1px solid rgba(169,131,74,.35); border-radius:14px;
     padding:14px 14px 16px; margin:34px 0 20px; box-shadow:0 6px 16px rgba(169,131,74,.2);
@@ -395,13 +413,28 @@
     <p>はじめまして、あきです。40代、福祉の仕事をしながら3人の子どもを育てています。特別な才能はありません。使えたのは子どもが寝てからの1〜2時間だけ。それでも投稿開始20日でフォロワー5,000人という結果が出ました。この特典は、時間も体力もお金の余裕もない、それでも家族のために何かを変えたい40代のために作りました。</p>
   </section>
 
-  <!-- ③ ウェルカムカード（スリム版・5要素のみ） -->
+  <!-- ③ ウェルカムカード（7要素） -->
   <section class="welcome">
     <p>リールをご覧いただき、そして受け取っていただき、ありがとうございます。</p>
-    <p class="give">今回の特典は、このすぐ下にまとめてあります。2個すべて、今日からそのまま使えます。</p>
-    <p>そしてページの後半では、この特典の“その先”——本業とは別のもう一つの収入につなげる『AIマネタイズの教科書』（無料・全5章）もご案内しています。</p>
-    <a class="anchor-link" href="#cta">▼ 先に教科書の案内を見る</a>
-    <p class="foreshadow">このページの最後に、僕がこの発信を始めた“本当の理由”を書きました。特典と合わせて、最後まで読んでもらえたら嬉しいです。</p>
+    <p class="locate">今回の動画の特典は、少しスクロールした先にまとめてあります。</p>
+    <p class="notice-next">また、ページの後半では皆さんへ<strong>無料で受け取れる『更なる特典』</strong>をご用意しています。</p>
+    <img class="guide-ribbon" src="https://instaakiai40s.github.io/guide_ribbon.PNG"
+         alt="このページをご覧いただいた皆さんへ｜この先のご案内"
+         onerror="this.style.display='none';">
+    <a class="movie-link" id="movieLink" href="#cta" aria-label="タップして、この先のご案内へ移動する">
+      <video class="welcome-movie" id="welcomeMovie" autoplay muted loop playsinline webkit-playsinline
+             preload="auto" disablepictureinpicture>
+        <source src="https://instaakiai40s.github.io/welcome_movie.MP4" type="video/mp4">
+        <source src="https://instaakiai40s.github.io/welcome_movie.MOV" type="video/quicktime" onerror="hideWelcomeMovie();">
+      </video>
+    </a>
+    <img class="reason-banner" src="https://instaakiai40s.github.io/reason_banner.PNG"
+         alt="このページの最後に、僕がこの発信を始めた“本当の理由”を書きました。特典と合わせて、最後まで読んでもらえたら嬉しいです。"
+         onerror="this.style.display='none';document.getElementById('reasonFallback').style.display='block';">
+    <div class="reason-fallback" id="reasonFallback">
+      このページの最後に、僕がこの発信を始めた“本当の理由”を書きました。特典と合わせて、最後まで読んでもらえたら嬉しいです。
+    </div>
+    <a class="anchor-link" href="#cta">▼先にAIマネタイズ教科書の案内を見る</a>
   </section>
 
   <!-- ④-0 特典ヘッドライン -->
@@ -576,11 +609,11 @@
     <p>②の画像プロンプトなら、手のひら写真と鑑定結果が最初から1枚にまとまるので、そのまま渡せて便利です。</p>
   </section>
 
-  <!-- ④-2 ブリッジ（パターンA・固定文言）＋ちょい出し -->
+  <!-- ④-2 ブリッジ（パターンA・固定文言＋固定装飾）＋ちょい出し -->
   <section class="bridge">
     <p>まずは今夜、上の特典をどれか1つ試してみてください。</p>
-    <p>ただ、正直にお伝えすると、この特典は<span class="em">“部品”</span>です。部品を組み上げて収入という形にするには、これだけでは足りません。実は、別の部品と、全体の設計図が必要です。</p>
-    <p>その“別の部品”と設計図を、まとめてお渡ししているのが——LINEの『AIマネタイズの教科書』です。</p>
+    <p>ただ、正直にお伝えすると、この特典は“部品”です。部品を組み上げて収入という形にするには、これだけでは足りません。実は、別の部品と、全体の設計図が必要です。</p>
+    <p>その“別の部品”と設計図を、<span class="em-gift">無料プレゼント</span>しているのが——LINEの<span class="em-book">『AIマネタイズの教科書』</span>です。</p>
 
     <div class="peek">
       <p class="peek-h">教科書の中身を、少しだけ。</p>
@@ -730,7 +763,23 @@
 <script>
   var LINE_URL = "https://sub.aione.co.jp/line/open/ISEBuerKAyih?mtid=5pvXPtVKFnEL";
 
+  // ③ジャンプ動画：読み込みに失敗したらコンテナごと非表示（ページの成立に動画は必須ではない）
+  function hideWelcomeMovie(){
+    var m = document.getElementById('movieLink');
+    if(m){ m.style.display = 'none'; }
+  }
+
   document.addEventListener('DOMContentLoaded', function(){
+    var mv = document.getElementById('welcomeMovie');
+    if(mv){
+      mv.addEventListener('error', hideWelcomeMovie);
+      var pr = mv.play();
+      if(pr && pr.catch){ pr.catch(function(){}); }
+      setTimeout(function(){
+        if(mv.networkState === 3){ hideWelcomeMovie(); }
+      }, 3000);
+    }
+
     document.querySelectorAll('a.line-link').forEach(function(a){ a.setAttribute('href', LINE_URL); });
 
     document.querySelectorAll('.copy-btn').forEach(function(btn){
