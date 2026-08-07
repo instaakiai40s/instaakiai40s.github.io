@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!-- 経路メモ：リール経由（1ページ1経路） -->
+<!-- ファイル管理：index046.html／header046.PNG（台本046対応） -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<title>スマホ写真を“資産”に変える ストックフォト仕上げプロンプト｜無料特典</title>
+<meta property="og:title" content="スマホ写真を“資産”に変える ストックフォト仕上げプロンプト">
+<meta property="og:description" content="いつもの何気ない1枚が、海外で求められる「日本の日常」になります。コピーして貼るだけの専用プロンプトと手順まとめを無料でお渡しします。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://instaakiai40s.github.io/header046.PNG">
+<style>
+:root{
+  --bg:#F7F1E6;
+  --card:#FFFFFF;
+  --navy:#1E2A44;
+  --navy-deep:#1B2640;
+  --navy-deep2:#243050;
+  --gold:#A9834A;
+  --gold-light:#D9C08A;
+  --champagne1:#F3E8CC;
+  --champagne2:#E7D3A8;
+  --em-red:#C43D3D;
+  --line-green:#06C755;
+  --text:#2B2B2B;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;color-scheme:only light;background:var(--bg);}
+body{font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;color:var(--text);line-height:1.9;background:var(--bg);}
+.wrap{max-width:560px;margin:0 auto;padding:0 18px;}
+.zone1{background:var(--bg);padding-bottom:56px;}
+.visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);border:0;}
+
+/* ① ヘッダー */
+.header-area img{width:100%;display:block;}
+.header-text{display:none;background:linear-gradient(135deg,#FBF6EA,#F0E5CC);padding:44px 22px 40px;text-align:center;}
+.header-text .badge{display:inline-block;background:var(--navy);color:#fff;font-size:12px;letter-spacing:.12em;padding:5px 16px;border-radius:999px;margin-bottom:16px;}
+.header-text .ht-title{font-size:24px;font-weight:800;color:var(--navy);line-height:1.5;margin-bottom:12px;}
+.header-text .ht-title em{font-style:normal;color:var(--gold);}
+.header-text .ht-sub{font-size:14px;color:#5A5244;}
+
+/* ② 発信者ブロック */
+.profile-block{display:flex;gap:16px;align-items:flex-start;margin-top:28px;}
+.profile-block img{width:72px;height:72px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid var(--gold-light);}
+.profile-block p{font-size:14px;line-height:1.95;}
+.profile-block p + p{margin-top:10px;}
+
+/* 白カード共通 */
+.card{background:var(--card);border-radius:16px;padding:26px 22px;margin-top:26px;box-shadow:0 2px 14px rgba(30,42,68,.07);}
+
+/* ③ ウェルカムカード */
+.welcome p{font-size:15px;}
+.welcome p + *{margin-top:16px;}
+.welcome .loc{font-weight:700;color:var(--navy);}
+.welcome .movie-wrap{display:block;border-radius:12px;overflow:hidden;line-height:0;}
+.welcome video{width:100%;max-height:40vh;object-fit:cover;display:block;}
+.welcome .reason-img{width:100%;border-radius:10px;display:block;}
+.reason-fallback{display:none;background:var(--navy);color:#F5EFE2;border-radius:10px;padding:18px 16px;font-size:13.5px;line-height:1.8;}
+.anchor-link{display:block;text-align:center;margin-top:18px;color:var(--gold);font-weight:700;font-size:15px;text-decoration:underline;}
+
+/* ④-0 特典ヘッドライン */
+.gift-head{text-align:center;margin-top:52px;}
+.gift-head .label{display:inline-block;color:var(--gold);font-size:13px;letter-spacing:.18em;font-weight:700;}
+.gift-head h2{font-size:25px;font-weight:800;color:var(--navy);line-height:1.55;margin-top:10px;}
+.gift-head .sub{font-size:14px;color:#6B6152;margin-top:10px;}
+
+/* ④ 特典カード */
+.card h3{font-size:18px;color:var(--navy);border-left:5px solid var(--gold);padding-left:12px;margin-bottom:16px;line-height:1.5;}
+.flow{display:flex;flex-direction:column;gap:0;}
+.flow-box{background:#FBF7EE;border:1px solid var(--gold-light);border-radius:12px;padding:16px 16px;}
+.flow-box .step-tag{display:inline-block;background:var(--gold);color:#fff;font-size:11px;font-weight:700;letter-spacing:.1em;padding:2px 10px;border-radius:999px;margin-bottom:6px;}
+.flow-box b{color:var(--navy);}
+.flow-box p{font-size:13.5px;margin-top:4px;}
+.flow-arrow{text-align:center;color:var(--gold);font-size:18px;padding:4px 0;}
+.checklist li{list-style:none;font-size:14px;padding:7px 0;border-bottom:1px dashed #E5DAC2;}
+.checklist li:last-child{border-bottom:none;}
+.checklist li::before{content:"✔";color:var(--gold);font-weight:700;margin-right:10px;}
+.note-s{font-size:12.5px;color:#8A7E6A;margin-top:12px;}
+.prompt-box{background:#20293E;color:#EDE7D8;font-family:"SFMono-Regular",Menlo,Consolas,monospace;font-size:12.5px;line-height:1.85;border-radius:12px;padding:18px 16px;white-space:pre-wrap;word-break:break-word;margin-top:6px;}
+.copy-btn{display:block;width:100%;margin-top:14px;background:var(--navy);color:#fff;border:none;border-radius:10px;padding:14px;font-size:15px;font-weight:700;cursor:pointer;}
+.copy-btn:active{transform:translateY(1px);}
+
+/* ④-2 ブリッジ */
+.bridge{border-left:6px solid var(--gold);background:#FCF8EF;border-radius:16px;padding:26px 22px;margin-top:40px;box-shadow:0 2px 14px rgba(30,42,68,.06);}
+.bridge p{font-size:15px;}
+.bridge p + p{margin-top:14px;}
+.bridge .em-free{font-weight:800;color:var(--navy);}
+.bridge .em-book{font-weight:800;color:var(--em-red);}
+.tease-head{text-align:center;font-weight:800;color:var(--navy);font-size:16px;margin:26px 0 14px;}
+.textbook-img{width:100%;border-radius:14px;box-shadow:0 6px 20px rgba(30,42,68,.18);display:block;}
+.tb-fallback{display:none;flex-direction:column;gap:10px;}
+.tb-fallback .ch{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--gold-light);border-radius:10px;padding:12px 14px;font-size:14px;color:var(--navy);font-weight:600;}
+.tb-fallback .ch span{background:var(--gold);color:#fff;font-size:11px;border-radius:999px;padding:2px 10px;flex-shrink:0;}
+.voice{display:flex;gap:12px;align-items:flex-start;margin-top:20px;}
+.voice img{width:42px;height:42px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1.5px solid var(--gold-light);}
+.voice .bubble{background:#FBF4E3;border:1.5px solid var(--gold);border-radius:14px;padding:14px 16px;font-size:14.5px;color:var(--navy);font-weight:600;position:relative;}
+
+/* ゾーン1→2境界 */
+.zone-border1{height:3px;background:var(--gold);}
+
+/* ⑤ ゾーン2 ストーリー */
+.zone2{background:linear-gradient(180deg,var(--navy-deep),var(--navy-deep2)),url("https://instaakiai40s.github.io/story_bg.JPG");background-blend-mode:normal;position:relative;padding:64px 0 70px;}
+.zone2::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,38,64,.88),rgba(36,48,80,.9));z-index:0;}
+.zone2 .wrap{position:relative;z-index:1;}
+.zone2 .story-label{color:var(--gold-light);font-size:12px;letter-spacing:.3em;text-align:center;font-weight:300;}
+.zone2 h2{color:#F5EFE2;font-size:22px;text-align:center;margin-top:12px;line-height:1.6;}
+.zone2 .story-body{color:#E8E2D2;font-size:15px;margin-top:30px;}
+.zone2 .story-body p + p{margin-top:16px;}
+.zone2 .story-close{color:#F5EFE2;font-weight:800;font-size:16px;margin-top:24px;line-height:2;}
+.acc-btn{display:block;width:100%;margin-top:30px;background:transparent;border:1.5px solid var(--gold-light);color:var(--gold-light);border-radius:999px;padding:13px;font-size:14.5px;font-weight:700;cursor:pointer;}
+.acc-body{display:none;margin-top:26px;color:#DDD6C4;font-size:14.5px;border-top:1px solid rgba(217,192,138,.35);padding-top:26px;}
+.acc-body h3{color:var(--gold-light);font-size:16.5px;margin:28px 0 12px;line-height:1.6;}
+.acc-body p + p{margin-top:14px;}
+
+/* ゾーン2→3境界＋光 */
+.zone-border2{height:3px;background:linear-gradient(90deg,var(--gold-light),var(--gold),var(--gold-light));}
+.zone3{background:linear-gradient(180deg,var(--champagne1),var(--champagne2));padding:0 0 40px;position:relative;}
+.zone3 .bloom{height:56px;background:radial-gradient(ellipse at 50% 0%,rgba(255,244,214,.95),rgba(255,244,214,0) 70%);}
+
+/* ⑥-0 分かれ道 */
+.fork-card{background:#fff;border-radius:16px;padding:18px;box-shadow:0 4px 18px rgba(30,42,68,.12);}
+.fork-card img{width:100%;border-radius:12px;display:block;}
+.fork-fallback{display:none;flex-direction:column;gap:16px;}
+.fork-row{display:flex;gap:14px;align-items:center;}
+.fork-row .icon{width:48px;height:48px;border-radius:50%;background:#FBF4E3;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.fork-row .icon svg{width:30px;height:30px;stroke:#A9834A;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.fork-row p{font-size:14px;color:var(--navy);}
+.fork-close{text-align:center;font-size:19px;font-weight:800;color:var(--navy);margin-top:22px;position:relative;padding-bottom:26px;background:radial-gradient(ellipse at 50% 100%,rgba(255,241,200,.9),rgba(255,241,200,0) 75%);}
+
+/* ⑥ CTA */
+.cta-call{font-size:15.5px;color:var(--navy);text-align:center;margin-top:8px;font-weight:600;line-height:2;}
+.cta-card{background:#fff;border:2px solid var(--gold);border-radius:18px;padding:24px 20px;margin-top:26px;box-shadow:0 8px 30px rgba(169,131,74,.35);}
+.cta-card .line-banner{width:100%;border-radius:10px;display:block;}
+.benefits{margin-top:20px;}
+.benefits li{list-style:none;font-size:14.5px;padding:10px 0;border-bottom:1px dashed #E5DAC2;line-height:1.8;}
+.benefits li:last-child{border-bottom:none;}
+.benefits li::before{content:"✔";color:var(--gold);font-weight:800;margin-right:9px;}
+.limited{background:#FBF4E3;border-radius:10px;font-size:13px;color:#7A6236;padding:12px 14px;margin-top:16px;text-align:center;}
+.line-btn{display:block;width:100%;margin-top:18px;background:var(--line-green);color:#fff;text-align:center;text-decoration:none;font-size:17px;font-weight:800;border-radius:14px;padding:19px 10px;box-shadow:0 6px 16px rgba(6,199,85,.4);transition:transform .1s, box-shadow .2s;}
+.line-btn:active{transform:translateY(2px);box-shadow:0 2px 8px rgba(6,199,85,.5);}
+.micro{font-size:12.5px;color:#8A7E6A;text-align:center;margin-top:14px;line-height:1.8;}
+
+/* ⑦ 向きません */
+.notfor{background:rgba(255,255,255,.55);border-radius:14px;padding:22px 20px;margin-top:44px;}
+.notfor h3{font-size:16px;color:var(--navy);text-align:center;margin-bottom:14px;}
+.notfor li{list-style:none;font-size:13.5px;padding:6px 0;color:#5A5244;}
+.notfor li::before{content:"×";color:#B0693F;font-weight:800;margin-right:9px;}
+.notfor hr{border:none;border-top:1px solid #D8CBAA;margin:14px 0;}
+.notfor .flip{font-size:13.5px;color:var(--navy);font-weight:600;}
+
+footer{text-align:center;font-size:12px;color:#8A7E6A;padding:34px 0 40px;}
+</style>
+<!-- ここにアクセス解析タグ（Googleアナリティクス等）を貼り付け -->
+</head>
+<body>
+
+<h1 class="visually-hidden">スマホ写真を“資産”に変える ストックフォト仕上げプロンプト｜いつもの何気ない1枚が、海外で求められる「日本の日常」になります</h1>
+
+<div class="zone1">
+
+  <!-- ① ヘッダー（自動フォールバック方式） -->
+  <div class="header-area">
+    <img id="headerImg" alt="スマホ写真を“資産”に変える ストックフォト仕上げプロンプト（保存版・無料特典）">
+    <div class="header-text" id="headerText">
+      <span class="badge">保存版・無料特典</span>
+      <div class="ht-title">スマホ写真を<em>“資産”</em>に変える<br>ストックフォト仕上げプロンプト</div>
+      <div class="ht-sub">いつもの何気ない1枚が、海外で求められる「日本の日常」になります</div>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <!-- ② 発信者ブロック（定型文・固定） -->
+    <div class="profile-block">
+      <img id="profileImg1" alt="あきのプロフィール写真">
+      <div>
+        <p>はじめまして、あきです。40代、福祉の仕事をしながら3人の子どもを育てています。</p>
+        <p>特別な才能はありません。使えたのは子どもが寝てからの1〜2時間だけ。それでも投稿開始20日でフォロワー5,000人という結果が出ました。</p>
+        <p>この特典は、時間も体力もお金の余裕もない、それでも家族のために何かを変えたい40代のために作りました。</p>
+      </div>
+    </div>
+
+    <!-- ③ ウェルカムカード（6要素・v2.6） -->
+    <div class="card welcome">
+      <p>リールをご覧いただき、そして受け取っていただき、ありがとうございます。</p>
+      <p class="loc">今回の動画の特典は、少しスクロールした先にまとめてあります。</p>
+      <p>また、ページの後半では皆さんへ<b>無料で受け取れる『更なる特典』</b>をご用意しました。</p>
+      <a href="#cta" class="movie-wrap" id="movieWrap">
+        <video id="welcomeMovie" muted autoplay loop playsinline>
+          <source src="https://instaakiai40s.github.io/welcome_movie.MP4" type="video/mp4">
+          <source src="https://instaakiai40s.github.io/welcome_movie.MOV" id="lastSource">
+        </video>
+      </a>
+      <img id="reasonImg" class="reason-img" alt="このページの最後に、僕がこの発信を始めた“本当の理由”を書きました。特典と合わせて、最後まで読んでもらえたら嬉しいです。">
+      <div class="reason-fallback" id="reasonFallback">このページの最後に、僕がこの発信を始めた“本当の理由”を書きました。特典と合わせて、最後まで読んでもらえたら嬉しいです。</div>
+      <a href="#cta" class="anchor-link">▼先にAIマネタイズ教科書の案内を見る</a>
+    </div>
+
+    <!-- ④-0 特典ヘッドライン -->
+    <div class="gift-head">
+      <span class="label">― 今回の無料特典 ―</span>
+      <h2>スマホ写真を“資産”に変える<br>ストックフォト仕上げプロンプト</h2>
+      <p class="sub">コピーして貼るだけ。今夜、スマホの中の1枚から始められます。</p>
+    </div>
+
+    <!-- ④ 特典カード群 -->
+    <div class="card">
+      <h3>特典1｜写真が“資産”になるまでの3ステップ</h3>
+      <div class="flow">
+        <div class="flow-box">
+          <span class="step-tag">STEP 1</span>
+          <b>選ぶ</b>
+          <p>スマホの中から「日本っぽい日常の景色」を選びます。旅行先の特別な1枚でなくて大丈夫です。</p>
+        </div>
+        <div class="flow-arrow">▼</div>
+        <div class="flow-box">
+          <span class="step-tag">STEP 2</span>
+          <b>補正する</b>
+          <p>ChatGPTに写真を送り、下の専用プロンプトを貼るだけ。プロが仕上げたような自然な1枚に整います。</p>
+        </div>
+        <div class="flow-arrow">▼</div>
+        <div class="flow-box">
+          <span class="step-tag">STEP 3</span>
+          <b>投稿する</b>
+          <p>シャッターストックなどのストックフォトサイトへ投稿。誰かにダウンロードされるたびに、収益が発生する仕組みです。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>特典2｜海外から需要がある「日本の日常」被写体リスト</h3>
+      <ul class="checklist">
+        <li>住宅街の細い路地・電柱と電線のある空</li>
+        <li>商店街・のれん・自動販売機のある風景</li>
+        <li>駅のホーム・踏切・通勤の風景</li>
+        <li>コンビニの灯り・夜の住宅街</li>
+        <li>神社の鳥居・お寺の参道</li>
+        <li>田んぼ・あぜ道・地方のバス停</li>
+      </ul>
+      <p class="note-s">※ポイントは「自分にとっては当たり前の景色」ほど、海外からは“リアルな日本”として価値があること。人の顔がはっきり写っている写真は避けてください。</p>
+    </div>
+
+    <div class="card">
+      <h3>特典3｜ストックフォト仕上げ専用プロンプト</h3>
+      <div class="prompt-box" id="promptText">あなたは世界で活躍するストックフォト作家であり、レタッチのプロでもあります。
+送られてきた写真を読み解き、ストックフォトサイトで販売する前提で、自然かつ高品質な一枚に整えてください。
+めざすのは「AIっぽい画像」ではなく、「腕のいいプロが丁寧に仕上げた写真」に見える自然な質感です。
+次の条件は必ず守ってください。
+
+【守ること】
+・その写真がもともと持つ空気感は残す
+・盛りすぎ・やりすぎの加工はしない
+・現実にはありえない表現は使わない
+・人物・建物・木・道路などの形を勝手にいじらない
+・色合いは不自然にならない範囲で整える
+・明るさをちょうどいい加減に調整する
+・白飛び・黒つぶれを目立たなくする
+・コントラストは自然な範囲で引き締める
+・ザラつき(ノイズ)をおさえる
+・くっきり感(解像感)を高める
+・地平線や建物が傾いていたらまっすぐに直す
+・目立つゴミや小さな汚れは、違和感が出ない範囲で消す
+・全体として「海外の広告・Webサイト・パンフレットにそのまま使える写真」を意識する
+
+仕上げた画像だけを出してください。
+説明文はいりません。</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">プロンプトをコピー</button>
+    </div>
+
+    <!-- ④-2 ブリッジセクション（パターンA） -->
+    <div class="bridge">
+      <p>まずは今夜、上の特典をどれか1つ試してみてください。</p>
+      <p>ただ、正直にお伝えすると、この特典は“部品”です。部品を組み上げて収入という形にするには、これだけでは足りません。実は、別の部品と、全体の設計図が必要です。</p>
+      <p>その“別の部品”と設計図を、<span class="em-free">無料プレゼント</span>しているのが——LINEの<span class="em-book">『AIマネタイズの教科書』</span>です。</p>
+      <p class="tease-head">教科書の中身を、少しだけ。</p>
+      <img id="textbookImg" class="textbook-img" alt="AIマネタイズの教科書（全5章）のモックアップ">
+      <div class="tb-fallback" id="tbFallback">
+        <div class="ch"><span>第一章</span>いま一番始めやすいAIマネタイズ手法</div>
+        <div class="ch"><span>第二章</span>ChatGPT収益化プロンプト3選</div>
+        <div class="ch"><span>第三章</span>AIマネタイズ神テンプレート</div>
+        <div class="ch"><span>第四章</span>マネタイズのための生成AIツール3選</div>
+        <div class="ch"><span>第五章</span>AI×SNSで収益を生むリアル事例</div>
+      </div>
+      <div class="voice">
+        <img id="profileImg2" alt="あき">
+        <div class="bubble">子どもが寝てからの1〜2時間しかない、僕と同じ40代の生活時間に合わせて組んだ内容です。</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="zone-border1"></div>
+
+<!-- ⑤ ストーリー（ゾーン2・全幅） -->
+<section class="zone2">
+  <div class="wrap">
+    <p class="story-label">MY STORY</p>
+    <h2>僕がこの発信を始めた、“本当の理由”</h2>
+    <div class="story-body">
+      <p>数年前、僕は投資詐欺で家族にも言えない大きな失敗をしました。</p>
+      <p>子どもが「ディズニー行きたいね」と話すのに、「行こうね」の一言が言えない。そんな毎日でした。</p>
+      <p>転機は、同じどん底から立ち直った人の動画を、たまたま見た夜。</p>
+      <p>子どもが寝てからの1〜2時間、言われたことをやっただけで、投稿開始20日でフォロワー5,000人。</p>
+      <p class="story-close">あの日言えなかった「行こうね」を、今の僕は言えます。同じ40代に、遠回りしてほしくない。だから、この特典を作りました。</p>
+    </div>
+    <button class="acc-btn" id="accBtn">▼ 僕の話の全文はこちら（2分）</button>
+    <div class="acc-body" id="accBody">
+      <p>はじめまして、あきです。</p>
+      <p>40代、福祉の仕事をしながら、3人の子どもを育てています。</p>
+      <p>夜勤明けに子どもの歯磨き、洗濯、寝かしつけ。やっと自分の時間が持てるのは、子どもが寝てから。</p>
+      <p>きっとこの文章を読んでいるあなたも、似たような毎日を送っているのではないでしょうか。</p>
+      <h3>家族にも言えない過去</h3>
+      <p>そんな僕には、家族にも言えない過去があります。</p>
+      <p>数年前、投資詐欺で2,700万円を失いました。残ったのは、700万円の借金。</p>
+      <p>騙されたのは、怪しい話に飛びついたからではありません。信頼していた人からの紹介で、実際に何年も利益が振り込まれ続けていた仕組みでした。</p>
+      <p>少額から始めて、利益が入るのを確認して、「家族の将来のために」と金額を増やしていった。</p>
+      <p>その仕組みは、ポンジスキームと呼ばれる詐欺でした。</p>
+      <p>ある日の電話一本で、すべてが終わりました。子どもの教育資金。夫婦の老後資金。家族旅行のための貯え。一瞬で消えました。</p>
+      <h3>一番辛かったのは、失った瞬間ではありません</h3>
+      <p>その事実を家族に言えないまま、笑顔で食卓を囲んでいた時間です。</p>
+      <p>ある日、テレビでディズニーランドの特集が流れて、子どもたちが「行きたいね」と楽しそうに話していました。</p>
+      <p>僕は「じゃあ今度行こうね」の一言が、どうしても言えませんでした。</p>
+      <p>自分がいなくなった方が家族のためになるのではないか。そこまで追い詰められた時期もありました。</p>
+      <h3>転機は、夜の寝室でした</h3>
+      <p>ある夜、一人でスマホを見ていた時、たまたま流れてきた動画に釘付けになりました。</p>
+      <p>僕と同じポンジスキームで、大金を失った人。豊岡さんという方でした。</p>
+      <p>感じたのは、希望ではなく共感でした。</p>
+      <p>そして、気づいてしまったんです。</p>
+      <p>僕は詐欺に遭った時点で、すべてを諦めて、おとなしく生きていこうとしていた。</p>
+      <p>でもこの人は、そこからさらに挑戦して、失敗を「上書き」していた。</p>
+      <p>同じどん底から、正反対の道を選んだ人が、そこにいました。</p>
+      <h3>言われたことを、ただやっただけです</h3>
+      <p>借金がある中で、さらにお金を払って学ぶ環境に入る。怖くないはずがありません。</p>
+      <p>でも、思ったんです。</p>
+      <p>この失敗を「失敗」のまま終わらせるのか。自分の人生の主導権を、自分以外に渡したまま生きるのか。</p>
+      <p>僕は環境に入り、言われたことを、ただやりました。特別な才能もセンスも使っていません。使ったのは、子どもが寝てからの1〜2時間だけです。</p>
+      <p>すると、ある日。携帯の通知が鳴り止まなくなりました。</p>
+      <p>投稿開始20日で、フォロワー5,000人。</p>
+      <p>数字よりも嬉しかったのは、「自分も同じです」というDMが届いたことでした。</p>
+      <h3>失敗は消せません。でも、上書きはできます。</h3>
+      <p>僕と同じように、時間も体力もお金の余裕もない40代に、遠回りしてほしくない。</p>
+      <p>その一心で、この資料を作りました。</p>
+    </div>
+  </div>
+</section>
+
+<div class="zone-border2"></div>
+
+<!-- ⑥〜⑧ ゾーン3 -->
+<div class="zone3">
+  <div class="bloom"></div>
+  <div class="wrap">
+
+    <!-- ⑥-0 分かれ道ブロック -->
+    <div id="cta" class="fork-card">
+      <img id="forkImg" alt="物価は上がるのに給料は変わらない現実、AIで本業とは別の収入をつくれる時代への変化、知って動くか後回しにするかの分かれ道">
+      <div class="fork-fallback" id="forkFallback">
+        <div class="fork-row">
+          <div class="icon"><svg viewBox="0 0 48 48"><path d="M14 36V16m0 0l-6 6m6-6l6 6"/><path d="M26 30h14m0 0l-6-6m6 6l-6 6"/></svg></div>
+          <p>物価は上がる。でも、給料はほとんど変わらない。</p>
+        </div>
+        <div class="fork-row">
+          <div class="icon"><svg viewBox="0 0 48 48"><rect x="14" y="8" width="17" height="30" rx="3"/><path d="M20 33h5"/><path d="M38 12l1.6 3.4L43 17l-3.4 1.6L38 22l-1.6-3.4L33 17l3.4-1.6z"/></svg></div>
+          <p>その一方で、AIを使えば、子どもが寝てからの1〜2時間でも、本業とは別の収入をつくれる時代になりました。</p>
+        </div>
+        <div class="fork-row">
+          <div class="icon"><svg viewBox="0 0 48 48"><path d="M24 42V26"/><path d="M24 26L13 13m0 0v7m0-7h7"/><path d="M24 26l11-13m0 0v7m0-7h-7"/></svg></div>
+          <p>この変化は待ってくれません。知って動くか、後回しにするか——</p>
+        </div>
+      </div>
+    </div>
+    <p class="fork-close">分かれ道は、ここです。</p>
+
+    <!-- ⑥ メインCTA -->
+    <p class="cta-call">ここまで読んでいただき、ありがとうございます。あとは教科書を受け取って、今夜の1〜2時間から始めるだけです。</p>
+
+    <div class="cta-card">
+      <a id="lineBannerLink" href="#"><img id="lineBannerImg" class="line-banner" alt="AIマネタイズの教科書を無料で受け取る（LINE登録）"></a>
+      <ul class="benefits">
+        <li>時間のない40代の生活時間に合わせて組んだ『AIマネタイズの教科書』（全5章）が届きます</li>
+        <li>特典で受け取った“部品”に、足りなかった“別の部品”と全体の設計図を足せます</li>
+        <li>無料の個別相談で、あなたの状況に合わせた始め方を直接質問できます</li>
+      </ul>
+      <p class="limited">※個別相談の枠に限りがあるため、教科書の配布は予告なく終了する場合があります</p>
+      <a id="lineBtn" class="line-btn" href="#">AIマネタイズの教科書を無料で受け取る</a>
+      <p class="micro">登録は10秒ほどで完了します。合わないと感じたら、いつでもブロックしていただいて大丈夫です。</p>
+    </div>
+
+    <!-- ⑦ 向きません枠 -->
+    <div class="notfor">
+      <h3>こんな方には向きません</h3>
+      <ul>
+        <li>今日明日で結果を求める方</li>
+        <li>コピペすら面倒で、自分では一切手を動かしたくない方</li>
+        <li>AIに丸投げすれば全部うまくいく、と考えている方</li>
+      </ul>
+      <hr>
+      <p class="flip">逆に、「1日30分でも、コツコツ積み上げる覚悟がある」という方なら、この教科書はきっとお役に立てます。</p>
+    </div>
+
+    <!-- ⑧ フッター -->
+    <footer>© あき</footer>
+  </div>
+</div>
+
+<script>
+// LINEリンクの一元管理（全導線がこの定数を参照）
+const LINE_URL = "https://utage-system.com/line/open/nj3MC6diybeh?mtid=E3ZSdNvSlw1p";
+document.getElementById("lineBannerLink").href = LINE_URL;
+document.getElementById("lineBtn").href = LINE_URL;
+
+// §8-2 画像読み込みの共通フォールバック関数
+const IMG_BASE = "https://instaakiai40s.github.io/";
+const IMG_EXTS = [".PNG", ".png", ".JPG", ".jpg", ".jpeg"];
+function attachImageFallback(img, basename, firstExt, onAllFail) {
+  const order = [firstExt].concat(IMG_EXTS.filter(function(e){ return e !== firstExt; }));
+  let i = 0;
+  img.onerror = function () {
+    i++;
+    if (i < order.length) {
+      img.src = IMG_BASE + basename + order[i];
+    } else {
+      img.onerror = null;
+      img.style.display = "none";
+      if (onAllFail) onAllFail();
+    }
+  };
+  img.src = IMG_BASE + basename + order[0];
+}
+
+// ① ヘッダー：全滅時のみテキスト見出しを表示
+attachImageFallback(document.getElementById("headerImg"), "header046", ".PNG", function () {
+  document.getElementById("headerText").style.display = "block";
+});
+// ② プロフィール（発信者ブロック）
+attachImageFallback(document.getElementById("profileImg1"), "profile", ".JPG", null);
+// ③ 本当の理由バナー：全滅時のみ代替テキスト
+attachImageFallback(document.getElementById("reasonImg"), "reason_banner", ".PNG", function () {
+  document.getElementById("reasonFallback").style.display = "block";
+});
+// ④-2 教科書モックアップ：全滅時のみCSS章リスト
+attachImageFallback(document.getElementById("textbookImg"), "textbook", ".PNG", function () {
+  document.getElementById("tbFallback").style.display = "flex";
+});
+// ④-2 吹き出し用プロフィール
+attachImageFallback(document.getElementById("profileImg2"), "profile", ".JPG", null);
+// ⑥-0 分かれ道：全滅時のみSVG3行構成
+attachImageFallback(document.getElementById("forkImg"), "fork", ".PNG", function () {
+  document.getElementById("forkFallback").style.display = "flex";
+});
+// ⑥ LINEバナー
+attachImageFallback(document.getElementById("lineBannerImg"), "line_banner", ".PNG", null);
+
+// ③ ウェルカム動画：読み込み失敗時はコンテナごと非表示
+(function () {
+  const wrap = document.getElementById("movieWrap");
+  const video = document.getElementById("welcomeMovie");
+  const lastSource = document.getElementById("lastSource");
+  function hideMovie() { wrap.style.display = "none"; }
+  video.addEventListener("error", hideMovie);
+  if (lastSource) lastSource.addEventListener("error", hideMovie);
+})();
+
+// ⑤ ストーリー全文アコーディオン
+document.getElementById("accBtn").addEventListener("click", function () {
+  const body = document.getElementById("accBody");
+  const open = body.style.display === "block";
+  body.style.display = open ? "none" : "block";
+  this.textContent = open ? "▼ 僕の話の全文はこちら（2分）" : "▲ 閉じる";
+});
+
+// 特典プロンプトのコピー
+function copyPrompt(btn) {
+  const text = document.getElementById("promptText").innerText;
+  navigator.clipboard.writeText(text).then(function () {
+    btn.textContent = "コピーしました✓";
+    setTimeout(function () { btn.textContent = "プロンプトをコピー"; }, 2000);
+  });
+}
+</script>
+</body>
+</html>
