@@ -5,18 +5,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
 <title>AIのプロが隠しておきたい“神サイト”|コピペで使えるプロンプトがぎっしり</title>
 <meta property="og:title" content="AIのプロが隠しておきたい“神サイト”">
 <meta property="og:description" content="コピペで使えるプロンプトがぎっしり|使い方3ステップつき【保存版・無料特典】">
 <meta property="og:image" content="https://instaakiai40s.github.io/header043.PNG">
 <style>
 :root{
+  color-scheme: only light;
   --bg:#F7F2E9;
   --bg-deep:#EFE6D5;
   --card:#FFFFFF;
   --main:#1E2A44;
   --accent:#A9834A;
   --accent-light:#C9A96A;
+  --em-red:#C43D3D;
   --zone2-a:#1B2640;
   --zone2-b:#243050;
   --zone2-text:#F4EFE4;
@@ -25,6 +28,7 @@
   --green:#06C755;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
+html{background:var(--bg);}
 body{
   font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
   background:var(--bg);
@@ -32,14 +36,14 @@ body{
   line-height:1.9;
   font-size:16px;
 }
+.zone1{background:var(--bg);}
 .wrap{max-width:560px;margin:0 auto;padding:0 18px;}
 .visually-hidden{
   position:absolute;width:1px;height:1px;margin:-1px;padding:0;
   overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
 }
 
-/* ===== ゾーン1:ヘッダー ===== */
-.header-area{padding:0;}
+/* ===== ①ヘッダー ===== */
 .header-banner{width:100%;display:block;}
 .header-fallback{
   display:none;
@@ -59,38 +63,19 @@ body{
   margin-bottom:16px;
 }
 .header-fallback h2{
-  font-size:25px;
-  line-height:1.5;
-  font-weight:800;
-  margin-bottom:12px;
+  font-size:25px;line-height:1.5;font-weight:800;margin-bottom:12px;
 }
 .header-fallback h2 .gold{color:var(--accent);}
-.header-fallback p{
-  font-size:14px;
-  color:#5A5346;
-  font-weight:600;
-}
+.header-fallback p{font-size:14px;color:#5A5346;font-weight:600;}
 
-/* ===== 共通カード ===== */
-section{padding:34px 0;}
+/* ===== 共通 ===== */
+section{padding:30px 0;}
 .card{
   background:var(--card);
   border-radius:14px;
   padding:24px 20px;
   box-shadow:0 2px 12px rgba(30,42,68,.07);
   margin-bottom:20px;
-}
-h3.sec-title{
-  font-size:20px;
-  font-weight:800;
-  text-align:center;
-  margin-bottom:22px;
-  line-height:1.6;
-}
-h3.sec-title span{
-  display:inline-block;
-  border-bottom:3px solid var(--accent);
-  padding-bottom:6px;
 }
 
 /* ===== ②発信者ブロック ===== */
@@ -103,29 +88,63 @@ h3.sec-title span{
 .profile-text{font-size:14.5px;}
 .profile-text .name{font-weight:800;font-size:16px;margin-bottom:6px;}
 
-/* ===== ③挨拶 ===== */
-.greeting p{margin-bottom:14px;font-size:15.5px;}
-.greeting strong{color:var(--accent);font-weight:800;}
-.small-cta{
+/* ===== ③ウェルカムカード ===== */
+.welcome p{margin-bottom:18px;font-size:15.5px;}
+.welcome .loc{font-weight:800;}
+.movie-wrap{margin-bottom:18px;}
+.movie-wrap a{display:block;}
+.movie-wrap video{
+  width:100%;
+  max-height:40vh;
+  object-fit:cover;
+  border-radius:12px;
   display:block;
-  background:var(--green);
-  color:#fff;
-  text-align:center;
-  text-decoration:none;
-  font-weight:700;
-  font-size:14.5px;
-  padding:13px 16px;
-  border-radius:999px;
-  margin:20px auto 18px;
-  max-width:330px;
-  box-shadow:0 3px 10px rgba(6,199,85,.3);
 }
-.foreshadow{
+.reason-wrap{margin-bottom:18px;}
+.reason-wrap img{width:100%;display:block;border-radius:10px;}
+.reason-alt{
+  display:none;
+  background:var(--main);
+  color:#F4EFE4;
+  border-radius:10px;
+  padding:16px 18px;
   font-size:14px;
-  color:#6B6252;
-  border-left:3px solid var(--accent-light);
-  padding-left:12px;
 }
+.anchor-link{
+  display:block;
+  text-align:center;
+  color:var(--accent);
+  font-weight:800;
+  font-size:15px;
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+
+/* ===== ④-0 特典ヘッドライン ===== */
+.gift-headline{text-align:center;padding:6px 0 24px;}
+.gift-label{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:var(--accent);
+  font-size:13.5px;
+  font-weight:800;
+  letter-spacing:.14em;
+  margin-bottom:14px;
+}
+.gift-label::before,.gift-label::after{
+  content:"";
+  width:26px;height:1.5px;
+  background:var(--accent-light);
+}
+.gift-headline h2{
+  font-size:24px;
+  line-height:1.55;
+  font-weight:800;
+  margin-bottom:12px;
+}
+.gift-headline h2 .gold{color:var(--accent);}
+.gift-headline .sub{font-size:14.5px;color:#6B6252;font-weight:600;}
 
 /* ===== ④特典カード ===== */
 .gift-badge{
@@ -139,12 +158,7 @@ h3.sec-title span{
   border-radius:999px;
   margin-bottom:12px;
 }
-.gift-card h4{
-  font-size:18px;
-  font-weight:800;
-  line-height:1.6;
-  margin-bottom:14px;
-}
+.gift-card h4{font-size:18px;font-weight:800;line-height:1.6;margin-bottom:14px;}
 .gift-card p{font-size:15px;margin-bottom:12px;}
 .site-btn{
   display:block;
@@ -160,9 +174,7 @@ h3.sec-title span{
   box-shadow:0 4px 12px rgba(30,42,68,.25);
 }
 .url-box{
-  display:flex;
-  align-items:center;
-  gap:8px;
+  display:flex;align-items:center;gap:8px;
   background:#F4F1EA;
   border:1px solid #E0D8C6;
   border-radius:10px;
@@ -170,40 +182,23 @@ h3.sec-title span{
 }
 .url-box code{
   font-family:Menlo,Consolas,monospace;
-  font-size:13px;
-  word-break:break-all;
-  flex:1;
-  color:#4A4336;
+  font-size:13px;word-break:break-all;flex:1;color:#4A4336;
 }
 .copy-btn{
   flex-shrink:0;
   background:var(--accent);
-  color:#fff;
-  border:none;
-  border-radius:8px;
-  font-size:12.5px;
-  font-weight:700;
-  padding:8px 14px;
-  cursor:pointer;
+  color:#fff;border:none;border-radius:8px;
+  font-size:12.5px;font-weight:700;padding:8px 14px;cursor:pointer;
 }
 .steps{list-style:none;margin-top:6px;}
 .steps li{
-  display:flex;
-  gap:12px;
-  margin-bottom:16px;
-  font-size:15px;
-  align-items:flex-start;
+  display:flex;gap:12px;margin-bottom:16px;font-size:15px;align-items:flex-start;
 }
 .step-num{
-  flex-shrink:0;
-  width:30px;height:30px;
-  background:var(--main);
-  color:#fff;
-  border-radius:50%;
+  flex-shrink:0;width:30px;height:30px;
+  background:var(--main);color:#fff;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  font-weight:800;
-  font-size:14px;
-  margin-top:3px;
+  font-weight:800;font-size:14px;margin-top:3px;
 }
 .tip-box{
   background:#FBF7EE;
@@ -220,62 +215,109 @@ h3.sec-title span{
   background:var(--bg-deep);
   border-left:5px solid var(--accent);
   border-radius:0 14px 14px 0;
-  padding:24px 20px;
-  margin-bottom:0;
+  padding:26px 20px;
 }
-.bridge p{font-size:15.5px;margin-bottom:14px;}
-.bridge p:last-child{margin-bottom:0;}
-.bridge strong{color:var(--accent);font-weight:800;}
+.bridge > p{font-size:15.5px;margin-bottom:16px;}
+.bridge .connect strong.free{font-weight:800;}
+.bridge .connect strong.bookname{color:var(--em-red);font-weight:800;}
+.teaser-title{
+  text-align:center;
+  font-weight:800;
+  font-size:16px;
+  margin:22px 0 14px;
+}
+.textbook-img{
+  width:100%;
+  display:block;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(30,42,68,.18);
+  margin-bottom:18px;
+}
+.chapter-list{display:none;margin-bottom:18px;}
+.chapter-list .ch{
+  display:flex;align-items:center;gap:10px;
+  background:#fff;
+  border:1px solid #E4DAC4;
+  border-radius:10px;
+  padding:10px 14px;
+  margin-bottom:8px;
+  font-size:14px;
+  font-weight:700;
+}
+.ch-badge{
+  flex-shrink:0;
+  background:var(--main);
+  color:#F0E3C2;
+  font-size:11.5px;
+  font-weight:800;
+  border-radius:6px;
+  padding:3px 8px;
+}
+.bubble{
+  display:flex;align-items:flex-start;gap:10px;
+}
+.bubble img{
+  width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0;
+  border:1.5px solid var(--accent-light);
+}
+.bubble .balloon{
+  background:#FBF6EA;
+  border:1.5px solid var(--accent-light);
+  border-radius:12px;
+  padding:12px 14px;
+  font-size:15px;
+  font-weight:700;
+  color:var(--main);
+  position:relative;
+}
+.bubble .balloon::before{
+  content:"";
+  position:absolute;
+  left:-8px;top:14px;
+  border:8px solid transparent;
+  border-right-color:var(--accent-light);
+  border-left:0;
+}
 
-/* ===== ゾーン2:ストーリー ===== */
+/* ===== ⑤ゾーン2:ストーリー ===== */
 .zone2{
-  background:linear-gradient(180deg,var(--zone2-a) 0%,var(--zone2-b) 100%);
-  padding:56px 0 60px;
-  margin-top:44px;
+  background:
+    linear-gradient(180deg,rgba(27,38,64,.86) 0%,rgba(36,48,80,.9) 100%),
+    url("https://instaakiai40s.github.io/story_bg.JPG") center/cover no-repeat,
+    linear-gradient(180deg,var(--zone2-a) 0%,var(--zone2-b) 100%);
+  background-color:var(--zone2-a);
+  padding:58px 0 60px;
+  margin-top:46px;
   position:relative;
 }
 .zone2::before{
   content:"";
-  position:absolute;
-  top:0;left:0;right:0;
-  height:3px;
+  position:absolute;top:0;left:0;right:0;height:3px;
   background:linear-gradient(90deg,transparent,var(--accent-light),transparent);
 }
-.zone2 .wrap{color:var(--zone2-text);}
-.zone2 h3{
-  font-size:20px;
-  font-weight:800;
+.story-label{
   text-align:center;
+  color:var(--accent-light);
+  font-size:12.5px;
+  font-weight:400;
+  letter-spacing:.28em;
+  margin-bottom:10px;
+}
+.zone2 h3{
+  font-size:21px;font-weight:800;text-align:center;
   color:var(--zone2-text);
-  margin-bottom:28px;
-  line-height:1.7;
+  margin-bottom:28px;line-height:1.7;
 }
-.zone2 h3 span{
-  border-bottom:2px solid var(--accent-light);
-  padding-bottom:6px;
-}
-.zone2 p{
-  font-size:15.5px;
-  margin-bottom:18px;
-  color:var(--zone2-text);
-}
-.zone2 .story-close{
-  font-weight:800;
-  color:#FFF6E0;
-  font-size:16.5px;
-}
+.zone2 h3 span{border-bottom:2px solid var(--accent-light);padding-bottom:6px;}
+.zone2 p{font-size:15.5px;margin-bottom:18px;color:var(--zone2-text);}
+.zone2 .story-close{font-weight:800;color:#FFF6E0;font-size:16.5px;}
 .accordion-toggle{
-  display:block;
-  width:100%;
+  display:block;width:100%;
   background:transparent;
   border:1.5px solid var(--accent-light);
   color:#F0E3C2;
-  font-size:15px;
-  font-weight:700;
-  padding:14px;
-  border-radius:999px;
-  cursor:pointer;
-  margin-top:26px;
+  font-size:15px;font-weight:700;
+  padding:14px;border-radius:999px;cursor:pointer;margin-top:26px;
 }
 .accordion-body{
   display:none;
@@ -284,19 +326,15 @@ h3.sec-title span{
   padding-top:28px;
 }
 .accordion-body h4{
-  font-size:17px;
-  font-weight:800;
-  color:#F0E3C2;
-  margin:26px 0 12px;
-  line-height:1.7;
+  font-size:17px;font-weight:800;color:#F0E3C2;
+  margin:26px 0 12px;line-height:1.7;
 }
-.accordion-body p{font-size:15px;}
+.accordion-body p{font-size:15px;color:var(--zone2-text);}
 
-/* ===== ゾーン3:CTA ===== */
+/* ===== ⑥〜⑧ゾーン3 ===== */
 .zone3{
   background:linear-gradient(180deg,var(--zone3-a) 0%,var(--zone3-b) 100%);
   padding:0 0 44px;
-  position:relative;
 }
 .zone3-divider{
   height:3px;
@@ -305,7 +343,46 @@ h3.sec-title span{
 .glow{
   height:90px;
   background:radial-gradient(ellipse at center,rgba(255,244,210,.95) 0%,rgba(255,244,210,0) 70%);
-  margin-bottom:-40px;
+  margin-bottom:-46px;
+}
+.fork-card{
+  background:#FFFDF7;
+  border-radius:16px;
+  padding:18px;
+  box-shadow:0 4px 16px rgba(140,110,50,.2);
+  margin-bottom:18px;
+}
+.fork-card img{
+  width:100%;display:block;border-radius:10px;
+  box-shadow:0 3px 10px rgba(30,42,68,.12);
+}
+.fork-fallback{display:none;}
+.fork-row{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px;}
+.fork-row:last-child{margin-bottom:0;}
+.fork-icon{
+  flex-shrink:0;
+  width:48px;height:48px;
+  border-radius:50%;
+  background:#FBF6EA;
+  border:1.5px solid var(--accent-light);
+  display:flex;align-items:center;justify-content:center;
+}
+.fork-icon svg{
+  width:30px;height:30px;
+  stroke:#A9834A;stroke-width:2.5;fill:none;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+.fork-row p{font-size:14.5px;line-height:1.8;}
+.fork-close{
+  text-align:center;
+  font-weight:800;
+  font-size:19px;
+  margin:6px 0 4px;
+}
+.fork-glow{
+  height:60px;
+  background:radial-gradient(ellipse at center,rgba(255,244,210,.9) 0%,rgba(255,244,210,0) 70%);
+  margin:-6px 0 -18px;
 }
 .cta-card{
   background:#FFFDF7;
@@ -315,11 +392,11 @@ h3.sec-title span{
   box-shadow:0 8px 30px rgba(140,110,50,.3);
   text-align:center;
 }
-.cta-card h3{
-  font-size:20px;
-  font-weight:800;
-  line-height:1.6;
+.cta-call{
+  font-size:15.5px;
+  font-weight:700;
   margin-bottom:18px;
+  text-align:left;
 }
 .line-banner{width:100%;border-radius:12px;display:block;margin-bottom:18px;}
 .benefits{
@@ -331,33 +408,19 @@ h3.sec-title span{
   list-style:none;
 }
 .benefits li{
-  font-size:14.5px;
-  margin-bottom:12px;
-  padding-left:26px;
-  position:relative;
+  font-size:14.5px;margin-bottom:12px;padding-left:26px;position:relative;
 }
 .benefits li:last-child{margin-bottom:0;}
 .benefits li::before{
-  content:"✔";
-  position:absolute;
-  left:0;top:0;
-  color:var(--accent);
-  font-weight:800;
+  content:"✔";position:absolute;left:0;top:0;color:var(--accent);font-weight:800;
 }
-.limited{
-  font-size:13px;
-  color:#8A6A2E;
-  margin-bottom:16px;
-}
+.limited{font-size:13px;color:#8A6A2E;margin-bottom:16px;}
 .main-cta{
   display:block;
   background:var(--green);
-  color:#fff;
-  text-decoration:none;
-  font-weight:800;
-  font-size:17.5px;
-  padding:19px 16px;
-  border-radius:14px;
+  color:#fff;text-decoration:none;
+  font-weight:800;font-size:17.5px;
+  padding:19px 16px;border-radius:14px;
   box-shadow:0 5px 16px rgba(6,199,85,.4);
   transition:transform .12s ease,box-shadow .12s ease;
 }
@@ -365,8 +428,11 @@ h3.sec-title span{
   transform:translateY(2px);
   box-shadow:0 2px 8px rgba(6,199,85,.5);
 }
-
-/* ===== ⑦向きません ===== */
+.micro{
+  font-size:12.5px;
+  color:#7A6A4A;
+  margin-top:12px;
+}
 .filter-box{
   background:rgba(255,255,255,.55);
   border-radius:14px;
@@ -374,32 +440,14 @@ h3.sec-title span{
   margin-top:30px;
   font-size:14px;
 }
-.filter-box h4{
-  font-size:15.5px;
-  font-weight:800;
-  text-align:center;
-  margin-bottom:14px;
-}
+.filter-box h4{font-size:15.5px;font-weight:800;text-align:center;margin-bottom:14px;}
 .filter-box ul{list-style:none;margin-bottom:14px;}
-.filter-box li{
-  padding-left:24px;
-  position:relative;
-  margin-bottom:8px;
-}
+.filter-box li{padding-left:24px;position:relative;margin-bottom:8px;}
 .filter-box li::before{
-  content:"×";
-  position:absolute;left:2px;top:0;
-  color:#B0483C;
-  font-weight:800;
+  content:"×";position:absolute;left:2px;top:0;color:#B0483C;font-weight:800;
 }
-.filter-box hr{
-  border:none;
-  border-top:1px solid #D8CBAE;
-  margin:14px 0;
-}
+.filter-box hr{border:none;border-top:1px solid #D8CBAE;margin:14px 0;}
 .filter-box .positive{color:#6B5A34;}
-
-/* ===== フッター ===== */
 footer{
   text-align:center;
   font-size:12.5px;
@@ -408,23 +456,52 @@ footer{
   background:var(--zone3-b);
 }
 </style>
+<script>
+// §8-2 画像読み込み共通フォールバック(拡張子を .PNG→.png→.JPG→.jpg→.jpeg の順で試行)
+var GH_BASE = "https://instaakiai40s.github.io/";
+var FB_EXTS = [".PNG",".png",".JPG",".jpg",".jpeg"];
+function imgFB(img){
+  var orig = img.getAttribute("data-orig") || "";
+  var exts = FB_EXTS.filter(function(e){ return e !== orig; });
+  var i = parseInt(img.getAttribute("data-i") || "-1", 10) + 1;
+  if(i < exts.length){
+    img.setAttribute("data-i", i);
+    img.src = GH_BASE + img.getAttribute("data-base") + exts[i];
+    return;
+  }
+  // 全滅:素材ごとの代替表示へ
+  img.onerror = null;
+  img.style.display = "none";
+  var fbId = img.getAttribute("data-fb");
+  if(fbId){
+    var el = document.getElementById(fbId);
+    if(el){ el.style.display = "block"; }
+  }
+  var wrapId = img.getAttribute("data-hidewrap");
+  if(wrapId){
+    var w = document.getElementById(wrapId);
+    if(w){ w.style.display = "none"; }
+  }
+}
+</script>
 <!-- ここにアクセス解析タグ(Googleアナリティクス等)を貼り付け -->
 </head>
 <body>
 
 <h1 class="visually-hidden">AIのプロが隠しておきたい“神サイト”|コピペで使えるプロンプトがぎっしり・使い方3ステップつき【保存版・無料特典】</h1>
 
+<div class="zone1">
+
 <!-- ===== ①ヘッダー(自動フォールバック) ===== -->
-<div class="header-area">
-  <img src="https://instaakiai40s.github.io/header043.PNG"
-       alt="AIのプロが隠しておきたい神サイト|保存版・無料特典"
-       class="header-banner"
-       onerror="this.style.display='none';document.getElementById('headerFallback').style.display='block';">
-  <div class="header-fallback" id="headerFallback">
-    <span class="badge">保存版・無料特典</span>
-    <h2>AIのプロが隠しておきたい<br><span class="gold">“神サイト”</span></h2>
-    <p>コピペで使えるプロンプトがぎっしり|使い方3ステップつき</p>
-  </div>
+<img src="https://instaakiai40s.github.io/header043.PNG"
+     alt="AIのプロが隠しておきたい神サイト|保存版・無料特典"
+     class="header-banner"
+     data-base="header043" data-orig=".PNG" data-fb="headerFallback"
+     onerror="imgFB(this)">
+<div class="header-fallback" id="headerFallback">
+  <span class="badge">保存版・無料特典</span>
+  <h2>AIのプロが隠しておきたい<br><span class="gold">“神サイト”</span></h2>
+  <p>コピペで使えるプロンプトがぎっしり|使い方3ステップつき</p>
 </div>
 
 <div class="wrap">
@@ -432,7 +509,9 @@ footer{
 <!-- ===== ②発信者ブロック ===== -->
 <section>
   <div class="card profile">
-    <img src="https://instaakiai40s.github.io/profile.JPG" alt="あきのプロフィール写真">
+    <img src="https://instaakiai40s.github.io/profile.JPG" alt="あきのプロフィール写真"
+         data-base="profile" data-orig=".JPG"
+         onerror="imgFB(this)">
     <div class="profile-text">
       <div class="name">あき</div>
       はじめまして、あきです。40代、福祉の仕事をしながら3人の子どもを育てています。<br>
@@ -442,21 +521,40 @@ footer{
   </div>
 </section>
 
-<!-- ===== ③挨拶・お礼・上部CTA・伏線 ===== -->
-<section class="greeting" style="padding-top:0;">
-  <div class="card">
+<!-- ===== ③ウェルカムカード(6要素) ===== -->
+<section style="padding-top:0;">
+  <div class="card welcome">
     <p>リールをご覧いただき、そして受け取っていただき、ありがとうございます。</p>
-    <p>今回の特典は、このすぐ下にまとめてあります。<strong>神サイトの場所と、使い方3ステップ</strong>——すべて今日からそのまま使えます。</p>
-    <p>そして今、この特典を“知って終わり”にせず、AIを使いこなせるようになる全体の地図——『AIマネタイズの教科書』も無料でお配りしています。</p>
-    <a href="#" class="small-cta js-line">AIマネタイズの教科書を無料で受け取る</a>
-    <p class="foreshadow">このページの最後に、僕がこの発信を始めた“本当の理由”を書きました。特典と合わせて、最後まで読んでもらえたら嬉しいです。</p>
+    <p class="loc">今回の動画の特典は、少しスクロールした先にまとめてあります。</p>
+    <p>また、ページの後半では皆さんへ<strong>無料で受け取れる『更なる特典』</strong>をご用意しました。</p>
+    <div class="movie-wrap" id="movieWrap">
+      <a href="#cta">
+        <video muted autoplay loop playsinline id="welcomeMovie">
+          <source src="https://instaakiai40s.github.io/welcome_movie.MP4" type="video/mp4">
+          <source src="https://instaakiai40s.github.io/welcome_movie.MOV" type="video/quicktime">
+        </video>
+      </a>
+    </div>
+    <div class="reason-wrap">
+      <img src="https://instaakiai40s.github.io/reason_banner.PNG"
+           alt="このページの最後に、僕がこの発信を始めた本当の理由を書きました"
+           data-base="reason_banner" data-orig=".PNG" data-fb="reasonAlt"
+           onerror="imgFB(this)">
+      <div class="reason-alt" id="reasonAlt">このページの最後に、僕がこの発信を始めた“本当の理由”を書きました。特典と合わせて、最後まで読んでもらえたら嬉しいです。</div>
+    </div>
+    <a href="#cta" class="anchor-link">▼先にAIマネタイズ教科書の案内を見る</a>
   </div>
 </section>
 
+<!-- ===== ④-0 特典ヘッドライン ===== -->
+<div class="gift-headline">
+  <span class="gift-label">― 今回の無料特典 ―</span>
+  <h2>AIのプロが隠しておきたい<br><span class="gold">“神サイト”</span></h2>
+  <p class="sub">探して、コピーして、貼るだけ。今夜そのまま使えます。</p>
+</div>
+
 <!-- ===== ④特典カード群 ===== -->
 <section style="padding-top:0;">
-  <h3 class="sec-title"><span>本日の特典はこちら</span></h3>
-
   <div class="card gift-card">
     <span class="gift-badge">特典 1</span>
     <h4>コピペで使えるプロンプトがぎっしり詰まった“神サイト”</h4>
@@ -471,7 +569,7 @@ footer{
   <div class="card gift-card">
     <span class="gift-badge">特典 2</span>
     <h4>初心者でも今夜から使える|使い方3ステップ</h4>
-    <!-- 推奨画像:サイトのジャンル一覧(左メニュー)が写ったスクリーンショット。
+    <!-- 推奨画像:サイトのジャンル一覧(メニュー)が写ったスクリーンショット。
          理由:「自分の欲しいジャンルがある」と一目でわかり、開く前に使い方のイメージがつくため -->
     <ol class="steps">
       <li><span class="step-num">1</span><span>上のボタンからサイトを開く(登録もアプリも不要です)</span></li>
@@ -483,21 +581,41 @@ footer{
     </div>
   </div>
 
-  <!-- ===== ④-2 ブリッジセクション ===== -->
+  <!-- ===== ④-2 ブリッジセクション(肯定→ギャップ→接続→ちょい出し→距離感) ===== -->
   <div class="bridge">
-    <p>まずは今夜、上の神サイトからプロンプトを1つコピペして試してみてください。それだけで、AIの返答の質がはっきり変わるはずです。</p>
-    <p>ただ、同じサイトを知っても、その後は大きく2つに分かれます。<strong>「便利だな」で終わる人</strong>と、仕事や生活で毎日使える<strong>“自分の道具”にできる人</strong>。分かれ目は、プロンプトの質ではなく、使い方の順番を知っているかどうかです。</p>
-    <p>その順番——コピペの先の使いこなし方から、その気になれば“家計の選択肢”にまで繋げる道筋まで——を1冊にまとめたのが、LINEでお渡ししている<strong>『AIマネタイズの教科書』</strong>です。</p>
-    <p>子どもが寝てからの1〜2時間しかない、僕と同じ40代の生活時間に合わせて組んだ内容です。</p>
+    <p>まずは今夜、上の神サイトからプロンプトを1つコピペして試してみてください。</p>
+    <p>ただ、正直にお伝えすると、同じサイトを知っても「便利だな」で終わる人と、毎日使える“自分の道具”にできる人に分かれます——分かれ目は、使い方の順番を知っているかどうかです。</p>
+    <p class="connect">その“使い方の順番”と設計図を、<strong class="free">無料プレゼント</strong>しているのが——LINEの<strong class="bookname">『AIマネタイズの教科書』</strong>です。</p>
+    <p class="teaser-title">教科書の中身を、少しだけ。</p>
+    <img src="https://instaakiai40s.github.io/textbook.PNG"
+         alt="AIマネタイズの教科書(全5章)のモックアップ。スマホで今夜から読めます"
+         class="textbook-img"
+         data-base="textbook" data-orig=".PNG" data-fb="chapterList"
+         onerror="imgFB(this)">
+    <div class="chapter-list" id="chapterList">
+      <div class="ch"><span class="ch-badge">第一章</span>いま一番始めやすいAIマネタイズ手法</div>
+      <div class="ch"><span class="ch-badge">第二章</span>ChatGPT収益化プロンプト3選</div>
+      <div class="ch"><span class="ch-badge">第三章</span>AIマネタイズ神テンプレート</div>
+      <div class="ch"><span class="ch-badge">第四章</span>マネタイズのための生成AIツール3選</div>
+      <div class="ch"><span class="ch-badge">第五章</span>AI×SNSで収益を生むリアル事例</div>
+    </div>
+    <div class="bubble">
+      <img src="https://instaakiai40s.github.io/profile.JPG" alt="あき"
+           data-base="profile" data-orig=".JPG"
+           onerror="imgFB(this)">
+      <div class="balloon">子どもが寝てからの1〜2時間しかない、僕と同じ40代の生活時間に合わせて組んだ内容です。</div>
+    </div>
   </div>
 </section>
 
 </div><!-- /.wrap -->
+</div><!-- /.zone1 -->
 
 <!-- ===== ⑤ストーリー(ゾーン2) ===== -->
 <div class="zone2">
   <div class="wrap">
-    <h3><span>僕がこの発信を始めた、本当の理由</span></h3>
+    <p class="story-label">MY STORY</p>
+    <h3><span>僕がこの発信を始めた、“本当の理由”</span></h3>
     <p>数年前、僕は投資詐欺で家族にも言えない大きな失敗をしました。</p>
     <p>子どもが「ディズニー行きたいね」と話すのに、「行こうね」の一言が言えない。そんな毎日でした。</p>
     <p>転機は、同じどん底から立ち直った人の動画を、たまたま見た夜。</p>
@@ -551,24 +669,53 @@ footer{
   </div>
 </div>
 
-<!-- ===== ⑥〜⑧ CTA(ゾーン3) ===== -->
+<!-- ===== ⑥〜⑧(ゾーン3・決断のフェーズ) ===== -->
 <div class="zone3">
   <div class="zone3-divider"></div>
   <div class="glow"></div>
   <div class="wrap">
+
+    <!-- ⑥-0 分かれ道ブロック -->
+    <div id="cta" class="fork-card">
+      <img src="https://instaakiai40s.github.io/fork.PNG"
+           alt="物価は上がるが給料はほとんど変わらない現実、AIを使えば子どもが寝てからの1〜2時間でも本業とは別の収入をつくれる時代の変化、知って動くか後回しにするかで差は開く一方という分かれ道"
+           data-base="fork" data-orig=".PNG" data-fb="forkFallback"
+           onerror="imgFB(this)">
+      <div class="fork-fallback" id="forkFallback">
+        <div class="fork-row">
+          <div class="fork-icon"><svg viewBox="0 0 48 48"><path d="M14 36V16m0 0l-6 6m6-6l6 6"/><path d="M26 30h14m0 0l-6-6m6 6l-6 6"/></svg></div>
+          <p>物価は上がる。でも、給料はほとんど変わらない。</p>
+        </div>
+        <div class="fork-row">
+          <div class="fork-icon"><svg viewBox="0 0 48 48"><rect x="14" y="8" width="17" height="30" rx="3"/><path d="M20 33h5"/><path d="M38 12l1.6 3.4L43 17l-3.4 1.6L38 22l-1.6-3.4L33 17l3.4-1.6z"/></svg></div>
+          <p>その一方で、AIを使えば、子どもが寝てからの1〜2時間でも、本業とは別の収入をつくれる時代になりました。</p>
+        </div>
+        <div class="fork-row">
+          <div class="fork-icon"><svg viewBox="0 0 48 48"><path d="M24 42V26"/><path d="M24 26L13 13m0 0v7m0-7h7"/><path d="M24 26l11-13m0 0v7m0-7h-7"/></svg></div>
+          <p>この変化は待ってくれません。知って動くか、後回しにするか——</p>
+        </div>
+      </div>
+    </div>
+    <p class="fork-close">分かれ道は、ここです。</p>
+    <div class="fork-glow"></div>
+
+    <!-- ⑥ メインCTA -->
     <div class="cta-card">
-      <h3>『AIマネタイズの教科書』を<br>無料でお渡ししています</h3>
-      <a href="#" class="js-line"><img src="https://instaakiai40s.github.io/line_banner.PNG" alt="LINE登録で教科書を受け取る" class="line-banner"></a>
+      <p class="cta-call">ここまで読んでいただき、ありがとうございます。あとは教科書を受け取って、今夜の1〜2時間から始めるだけです。</p>
+      <a href="#" class="js-line"><img src="https://instaakiai40s.github.io/line_banner.PNG" alt="LINE登録で教科書を受け取る" class="line-banner"
+           data-base="line_banner" data-orig=".PNG"
+           onerror="imgFB(this)"></a>
       <ul class="benefits">
-        <li>時間のない40代の生活時間に合わせて組んだ、ここでしか受け取れない『AIマネタイズの教科書』が届きます</li>
+        <li>時間のない40代の生活時間に合わせて組んだ、ここでしか受け取れない『AIマネタイズの教科書』(全5章)が届きます</li>
         <li>特典で受け取った“部品”を結果につなげるロードマップがわかります</li>
         <li>無料の個別相談をご案内。わからないことは、LINEでそのまま質問できます</li>
       </ul>
       <p class="limited">※個別相談の枠に限りがあるため、教科書の配布は予告なく終了する場合があります</p>
       <a href="#" class="main-cta js-line">AIマネタイズの教科書を無料で受け取る</a>
+      <p class="micro">登録は10秒ほどで完了します。合わないと感じたら、いつでもブロックしていただいて大丈夫です。</p>
     </div>
 
-    <!-- ===== ⑦向きません枠 ===== -->
+    <!-- ⑦ 向きません枠 -->
     <div class="filter-box">
       <h4>こんな方には向きません</h4>
       <ul>
@@ -587,10 +734,23 @@ footer{
 
 <script>
 // LINEリンクは以下の1箇所で一元管理(変更時はここだけ修正)
-const LINE_URL = "https://sub.aione.co.jp/line/open/ISEBuerKAyih?mtid=5pvXPtVKFnEL";
+const LINE_URL = "https://utage-system.com/line/open/nj3MC6diybeh?mtid=E3ZSdNvSlw1p";
 document.querySelectorAll(".js-line").forEach(function(el){
   el.setAttribute("href", LINE_URL);
 });
+
+// ③ウェルカム動画:読み込み失敗時はコンテナごと非表示(ページ成立に動画は必須ではない)
+(function(){
+  var v = document.getElementById("welcomeMovie");
+  var wrapEl = document.getElementById("movieWrap");
+  if(!v || !wrapEl){ return; }
+  function hideMovie(){ wrapEl.style.display = "none"; }
+  v.addEventListener("error", hideMovie);
+  var sources = v.querySelectorAll("source");
+  if(sources.length){
+    sources[sources.length - 1].addEventListener("error", hideMovie);
+  }
+})();
 
 function toggleStory(btn){
   var body = document.getElementById("storyFull");

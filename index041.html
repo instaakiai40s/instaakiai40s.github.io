@@ -16,38 +16,37 @@
 <!-- ここにアクセス解析タグ（Googleアナリティクス等）を貼り付け -->
 <style>
   :root{
-    color-scheme:only light;   /* 端末のダーク設定に関係なくライト表示に固定 */
-    /* モードC：参考画像（ブルー系・保険LP）から抽出 */
-    --bg:#EEF4FB;          /* ゾーン1 基調（淡いブルー） */
-    --bg-soft:#E4EDF8;     /* セクション変化用 */
+    color-scheme:only light;
+    /* モードC：参考画像（ブルー系）から抽出。ゾーン1＝基調ブルー／ゾーン2＝最暗紺／ゾーン3＝アンバーの光 */
+    --bg:#EEF4FB;
+    --bg-soft:#E4EDF8;
     --card:#FFFFFF;
-    --main:#2A6DB0;        /* 基調ブルー：見出し・枠 */
-    --main-2:#1E5A99;      /* 深いブルー */
-    --ink:#22314A;         /* 本文（濃紺グレー） */
-    --ink-soft:#5A6B84;    /* 補足テキスト */
-    --navy:#14294C;        /* ゾーン2 最暗色 */
-    --navy-2:#0E1E3B;      /* ゾーン2 グラデ終点 */
-    --paper:#EEF3FB;       /* 暗背景上の本文 */
-    --paper-soft:#B9C6DC;  /* 暗背景上の補足 */
-    --accent:#F0902A;      /* アクセント（オレンジ／アンバー） */
-    --accent-2:#DD7A12;    /* 深いアンバー */
-    --amber-hi:#F6B15A;    /* 暗背景上の見出しアクセント */
-    --glow-1:#FDEEDA;      /* ゾーン3 光だまり（明） */
-    --glow-2:#FBDCB2;      /* ゾーン3 グラデ */
-    --line:#06C755;        /* LINEグリーン（全モード固定） */
+    --main:#2A6DB0;
+    --main-2:#1E5A99;
+    --ink:#22314A;
+    --ink-soft:#5A6B84;
+    --navy:#14294C;
+    --navy-2:#0E1E3B;
+    --paper:#EEF3FB;
+    --paper-soft:#B9C6DC;
+    --accent:#F0902A;
+    --accent-2:#DD7A12;
+    --amber-hi:#F6B15A;
+    --gold:#A9834A;
+    --em-red:#C43D3D;
+    --glow-1:#FDEEDA;
+    --glow-2:#FBDCB2;
+    --line:#06C755;
     --line-d:#05A648;
     --shadow:0 10px 30px rgba(20,41,76,.10);
     --shadow-lg:0 18px 48px rgba(20,41,76,.20);
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;background:var(--bg);}
-  /* アプリ内ブラウザの自動ダーク化に対する保険（地の文の背景と文字色を明示的にライトへ固定） */
   @media (prefers-color-scheme: dark){
     html,body{background:var(--bg)!important;color:var(--ink)!important;}
-    .greet p,.foreshadow,.card p,.card h3,.steplist li,.themes li,.author p{color:var(--ink)!important;}
-    .foreshadow{color:var(--ink-soft)!important;}
-    .gift-box .g-title,.gift-box .g-sub{color:#fff!important;}
-    .gift-box .g-mark{color:var(--amber-hi)!important;}
+    .zone1{background:var(--bg)!important;}
+    .welcome p,.card p,.card h3,.steplist li,.themes li,.author p,.bridge p{color:var(--ink)!important;}
   }
   body{
     font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic","YuGothic","Meiryo",sans-serif;
@@ -59,6 +58,7 @@
     word-break:break-word;
     overflow-x:hidden;
   }
+  .zone1{background:linear-gradient(180deg,var(--bg) 0%,var(--bg-soft) 100%);padding-bottom:46px;}
   .wrap{max-width:560px;margin:0 auto;padding:0 20px;}
   .visually-hidden{
     position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;
@@ -70,13 +70,12 @@
   /* ================= ① ヘッダー（自動フォールバック） ================= */
   .site-header{
     background:linear-gradient(160deg,#F4F8FD 0%,#E4EEFA 100%);
-    padding:0;
     border-bottom:1px solid rgba(42,109,176,.10);
   }
   .header-inner{max-width:640px;margin:0 auto;}
   .header-banner{display:block;width:100%;height:auto;}
   .header-fallback{
-    display:none; /* 画像読込成功時は非表示のまま。onerrorでflexに切替 */
+    display:none;
     flex-direction:column;align-items:center;text-align:center;
     padding:52px 24px 46px;position:relative;
   }
@@ -90,10 +89,7 @@
     font-size:12.5px;font-weight:700;letter-spacing:.06em;
     padding:6px 16px;border-radius:999px;margin-bottom:18px;
   }
-  .hf-title{
-    font-size:25px;line-height:1.5;font-weight:800;color:var(--main-2);
-    margin:0 0 14px;letter-spacing:.01em;
-  }
+  .hf-title{font-size:25px;line-height:1.5;font-weight:800;color:var(--main-2);margin:0 0 14px;}
   .hf-sub{font-size:14.5px;color:var(--ink-soft);margin:0 0 20px;line-height:1.7;}
   .hf-count{
     display:inline-flex;align-items:center;justify-content:center;
@@ -103,350 +99,357 @@
     box-shadow:0 8px 18px rgba(221,122,18,.35);
   }
 
-  /* 共通：セクション見出し */
-  .sec{padding:40px 0;}
-  .kicker{
-    display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;
-    color:var(--accent-2);margin-bottom:8px;
+  /* ================= ② 発信者ブロック ================= */
+  .author{
+    display:flex;gap:15px;align-items:flex-start;
+    background:var(--card);border:1px solid rgba(42,109,176,.12);
+    border-radius:16px;padding:20px 18px;margin:24px 0 22px;box-shadow:var(--shadow);
   }
-  .h2{font-size:21px;font-weight:800;color:var(--main-2);line-height:1.5;margin:0 0 6px;}
-  /* ④の入口：ここから特典であることを大きく明示する区切り */
-  .gift-start{
-    text-align:center;margin:0 0 22px;padding:26px 18px 22px;
+  .author img{width:76px;height:76px;border-radius:50%;object-fit:cover;flex:0 0 76px;border:2px solid rgba(42,109,176,.18);}
+  .author .lead{font-weight:800;color:var(--main-2);margin:0 0 6px;font-size:15px;}
+  .author p{margin:0;font-size:13.5px;line-height:1.85;color:var(--ink);}
+
+  /* ================= ③ ウェルカムカード（6要素・v2.6） ================= */
+  .welcome{
+    background:var(--card);border:1px solid rgba(42,109,176,.12);
+    border-radius:16px;padding:24px 20px;margin-bottom:34px;box-shadow:var(--shadow);
+  }
+  .welcome p{margin:0 0 22px;font-size:15px;}
+  .welcome .w-place{font-weight:800;color:var(--main-2);}
+  .welcome .w-tease strong{color:var(--main-2);}
+  .movie-box{margin:0 0 22px;}
+  .movie-box a{display:block;}
+  .movie-box video{display:block;width:100%;max-height:40vh;object-fit:cover;border-radius:12px;background:#DDE7F3;}
+  .reason-box{margin:0 0 22px;}
+  .reason-box img{display:block;width:100%;height:auto;border-radius:10px;}
+  .reason-alt{
+    display:none;font-size:13.5px;color:var(--ink-soft);
+    border-left:3px solid var(--accent);padding-left:14px;margin:0;
+  }
+  .anchor-link{
+    display:block;text-align:center;font-size:15px;font-weight:800;
+    color:var(--accent-2);text-decoration:underline;text-underline-offset:4px;
+  }
+
+  /* ================= ④-0 特典ヘッドライン ================= */
+  .gift-head{
+    text-align:center;margin:0 0 24px;padding:26px 18px 22px;
     background:linear-gradient(180deg,#FFFFFF 0%,#F4F8FD 100%);
     border:1px solid rgba(42,109,176,.14);border-top:4px solid var(--accent);
     border-radius:16px;box-shadow:0 8px 22px rgba(20,41,76,.06);
   }
-  .gs-badge{
-    display:inline-block;background:linear-gradient(145deg,var(--accent),var(--accent-2));
-    color:#fff;font-size:13px;font-weight:800;letter-spacing:.06em;
-    padding:7px 20px;border-radius:999px;margin-bottom:14px;
-    box-shadow:0 6px 14px rgba(221,122,18,.28);
+  .gh-label{
+    display:inline-block;font-size:13px;font-weight:800;letter-spacing:.16em;
+    color:var(--accent-2);margin-bottom:12px;
   }
-  .gs-title{font-size:22px;font-weight:800;color:var(--main-2);line-height:1.5;margin:0 0 10px;}
-  .gs-title .u{
+  .gh-title{font-size:24px;font-weight:800;color:var(--main-2);line-height:1.5;margin:0 0 12px;}
+  .gh-title .u{
     background:linear-gradient(transparent 62%,rgba(240,144,42,.35) 62%);
     padding:0 2px;
   }
-  .gs-sub{
-    display:inline-block;font-size:13px;font-weight:700;color:var(--main-2);
-    background:#EAF2FB;border-radius:999px;padding:6px 16px;margin:0;
-  }
-
-  /* ================= ② 発信者ブロック ================= */
-  .author{
-    background:var(--card);border-radius:18px;box-shadow:var(--shadow);
-    padding:26px 22px;margin:34px 0 8px;display:flex;flex-direction:column;align-items:center;text-align:center;
-  }
-  .author img{
-    width:92px;height:92px;border-radius:50%;object-fit:cover;
-    border:3px solid #fff;box-shadow:0 6px 16px rgba(20,41,76,.18);margin-bottom:14px;
-  }
-  .author p{margin:0;font-size:14.5px;color:var(--ink);line-height:1.9;}
-  .author .lead{font-weight:700;font-size:16px;color:var(--main-2);margin-bottom:8px;}
-
-  /* ================= ③ 挨拶・お礼＋上部CTA（小）＋伏線 ================= */
-  .greet{padding-top:26px;}
-  .greet p{margin:0 0 16px;font-size:15.5px;}
-  .give-line{
-    background:#F3F8FD;border-left:4px solid var(--main);
-    padding:14px 16px;border-radius:0 12px 12px 0;font-weight:600;color:var(--main-2);
-  }
-  /* ③：特典ブロック（青）とLINEブロック（緑）。色＋中身で役割を区別（ラベルは置かない） */
-  .gift-box{
-    background:linear-gradient(150deg,var(--main) 0%,var(--main-2) 100%);
-    border-radius:16px;padding:24px 20px 22px;margin:0 0 16px;text-align:center;
-    box-shadow:0 10px 24px rgba(30,90,153,.28);
-  }
-  .gift-box .g-title{margin:0;font-weight:800;color:#fff;font-size:18px;line-height:1.7;}
-  .gift-box .g-mark{color:var(--amber-hi);font-weight:800;}
-  .gift-box .g-sub{margin:10px 0 0;font-size:13px;color:rgba(255,255,255,.88);font-weight:700;letter-spacing:.02em;}
-  .line-box{
-    background:#F0FBF4;border:1.5px solid rgba(6,199,85,.35);border-radius:14px;
-    padding:20px 18px;margin:0 0 22px;
-  }
-  .line-box .l-text{margin:0 0 15px;font-size:14.5px;color:var(--ink);line-height:1.85;}
-  .line-box .btn-line{margin:0;}
-  .btn-line{
-    display:block;text-decoration:none;text-align:center;
-    background:linear-gradient(180deg,var(--line),var(--line-d));
-    color:#fff;font-weight:700;border-radius:12px;
-    box-shadow:0 8px 18px rgba(6,199,85,.30);
-    transition:transform .12s ease,box-shadow .12s ease,filter .12s ease;
-    line-height:1.4;
-  }
-  .btn-line:active{transform:translateY(3px);box-shadow:0 3px 8px rgba(6,199,85,.3);filter:brightness(1.05);}
-  .btn-line .ico{font-weight:800;margin-right:6px;}
-  .btn-sub{font-size:11.5px;font-weight:600;opacity:.92;display:block;margin-top:2px;}
-  .btn-small{font-size:15px;padding:15px 18px;margin:6px 0 22px;}
-  .foreshadow{
-    font-size:13.5px;color:var(--ink-soft);background:transparent;
-    border-top:1px dashed rgba(42,109,176,.3);padding-top:16px;line-height:1.8;
-  }
+  .gh-sub{font-size:14px;color:var(--ink-soft);margin:0;}
 
   /* ================= ④ 特典カード群 ================= */
   .card{
-    background:var(--card);border-radius:16px;box-shadow:var(--shadow);
-    padding:22px 20px;margin-bottom:18px;position:relative;overflow:hidden;
-    border:1px solid rgba(42,109,176,.06);
+    position:relative;background:var(--card);border:1px solid rgba(42,109,176,.12);
+    border-radius:16px;padding:26px 18px 22px;margin:0 0 22px;box-shadow:var(--shadow);
   }
   .card-no{
-    display:inline-flex;align-items:center;justify-content:center;
-    min-width:30px;height:30px;padding:0 4px;border-radius:8px;
-    background:var(--main);color:#fff;font-weight:800;font-size:15px;margin-bottom:10px;
+    position:absolute;top:-14px;left:18px;
+    width:38px;height:38px;border-radius:50%;
+    background:linear-gradient(145deg,var(--main),var(--main-2));
+    color:#fff;font-weight:800;font-size:17px;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 14px rgba(30,90,153,.32);
   }
   .card-tag{
-    display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;
-    padding:3px 10px;border-radius:999px;margin-left:8px;vertical-align:2px;
+    position:absolute;top:-11px;right:16px;
+    font-size:11.5px;font-weight:800;letter-spacing:.04em;
+    padding:4px 12px;border-radius:999px;color:#fff;
   }
-  .tag-prompt{background:#EAF2FB;color:var(--main-2);}
-  .tag-howto{background:#FDEEDA;color:var(--accent-2);}
-  .card h3{font-size:17px;font-weight:800;color:var(--ink);margin:0 0 8px;line-height:1.5;}
-  .card p{margin:0 0 12px;font-size:14px;color:var(--ink);line-height:1.8;}
-  .card p:last-child{margin-bottom:0;}
-
-  /* プロンプトボックス＋コピー */
-  .prompt-card{margin-top:12px;}
-  .prompt-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;gap:10px;}
-  .prompt-label{font-size:12px;font-weight:700;color:var(--ink-soft);}
+  .tag-prompt{background:var(--accent-2);}
+  .tag-howto{background:var(--main);}
+  .card h3{font-size:18px;font-weight:800;color:var(--main-2);line-height:1.5;margin:14px 0 10px;}
+  .card p{font-size:14.5px;margin:0 0 12px;}
+  .prompt-card{
+    background:#F3F7FC;border:1px solid rgba(42,109,176,.16);
+    border-radius:12px;padding:14px;margin-top:6px;
+  }
+  .prompt-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;}
+  .prompt-label{font-size:12px;font-weight:700;color:var(--main-2);}
   .copy-btn{
-    background:var(--main);color:#fff;border:none;border-radius:8px;
-    font-size:12.5px;font-weight:700;padding:7px 14px;cursor:pointer;white-space:nowrap;
-    transition:background .15s ease,transform .1s ease;
+    background:var(--main-2);color:#fff;border:0;
+    font-size:12px;font-weight:800;padding:8px 16px;border-radius:999px;cursor:pointer;
   }
-  .copy-btn:active{transform:scale(.96);}
-  .copy-btn.copied{background:var(--line);}
+  .copy-btn.copied{background:var(--line-d);}
   .prompt-text{
-    font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
-    background:#0F1E36;color:#DCE7F5;font-size:12.5px;line-height:1.7;
-    padding:14px 15px;border-radius:10px;white-space:pre-wrap;overflow-x:auto;
-    border:1px solid rgba(255,255,255,.06);
+    background:#fff;border:1px solid rgba(42,109,176,.14);border-radius:10px;
+    padding:14px;font-family:"SFMono-Regular",Consolas,"Osaka-Mono",Menlo,monospace;
+    font-size:12.5px;line-height:1.8;color:#2C3A52;white-space:pre-wrap;
+    max-height:340px;overflow-y:auto;
   }
-  .prompt-note{font-size:11.5px;color:var(--ink-soft);margin-top:8px;line-height:1.6;}
-  /* 画風の候補ヒント */
+  .prompt-note{font-size:13px;color:var(--ink-soft);margin:10px 0 0;}
   .style-hint{
-    margin-top:12px;background:#F3F8FD;border:1px solid rgba(42,109,176,.16);
-    border-radius:12px;padding:14px 15px;
+    margin-top:14px;background:#fff;border:1px dashed rgba(240,144,42,.55);
+    border-radius:10px;padding:14px;
   }
-  .sh-lead{margin:0 0 10px;font-size:13px;color:var(--ink);line-height:1.75;font-weight:600;}
-  .sh-list{margin:0;padding:0;list-style:none;}
-  .sh-list li{
-    font-size:13px;line-height:1.6;padding:7px 0;border-top:1px dashed rgba(42,109,176,.22);
-    color:var(--ink);
-  }
-  .sh-list li:first-child{border-top:none;}
-  .sh-list b{color:var(--main-2);}
-  .sh-list .cap{color:var(--ink-soft);font-size:12px;}
-  .sh-foot{margin:10px 0 0;font-size:12px;color:var(--ink-soft);line-height:1.6;}
-
-  /* 図解プレースホルダー */
-  .card-img{margin:10px 0 4px;}
-  .card-img img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid rgba(42,109,176,.14);}
-  .img-ph{
-    width:100%;min-height:120px;border:2px dashed rgba(42,109,176,.35);
-    border-radius:12px;background:#F5F9FD;color:var(--main);
-    display:none;align-items:center;justify-content:center;text-align:center; /* 画像未アップ時のみonerrorでflex表示 */
-    font-size:12.5px;font-weight:600;padding:16px;line-height:1.6;
-  }
-  .steplist{margin:6px 0 0;padding:0;list-style:none;counter-reset:st;}
-  .steplist li{
-    position:relative;padding:8px 0 8px 34px;font-size:14px;line-height:1.7;
-    border-top:1px solid #EEF2F7;
-  }
-  .steplist li:first-child{border-top:none;}
-  .steplist li::before{
-    counter-increment:st;content:counter(st);
-    position:absolute;left:0;top:8px;width:24px;height:24px;border-radius:50%;
-    background:var(--accent);color:#fff;font-size:12.5px;font-weight:800;
-    display:flex;align-items:center;justify-content:center;
-  }
-  .themes{margin:6px 0 0;padding:0;list-style:none;}
+  .sh-lead{font-size:13px;font-weight:800;color:var(--accent-2);margin:0 0 8px;}
+  .sh-list{list-style:none;margin:0 0 8px;padding:0;}
+  .sh-list li{font-size:13.5px;padding:6px 0;border-bottom:1px solid rgba(42,109,176,.10);}
+  .sh-list li:last-child{border-bottom:0;}
+  .sh-list .cap{display:block;font-size:12px;color:var(--ink-soft);}
+  .sh-foot{font-size:12.5px;color:var(--ink-soft);margin:0;}
+  .themes{list-style:none;margin:0 0 14px;padding:0;}
   .themes li{
-    padding:9px 0;font-size:14px;border-top:1px solid #EEF2F7;display:flex;align-items:center;gap:10px;
+    display:flex;gap:10px;align-items:flex-start;
+    font-size:14.5px;padding:10px 12px;margin-bottom:8px;
+    background:#F3F7FC;border-radius:10px;
   }
-  .themes li:first-child{border-top:none;}
-  .themes .dot{color:var(--accent-2);font-weight:800;}
+  .themes .dot{color:var(--accent-2);font-weight:800;flex:0 0 auto;}
+  .steplist{list-style:none;counter-reset:st;margin:0 0 14px;padding:0;}
+  .steplist li{
+    counter-increment:st;position:relative;padding-left:2.4em;
+    font-size:14.5px;margin-bottom:12px;
+  }
+  .steplist li::before{
+    content:counter(st);position:absolute;left:0;top:3px;
+    width:1.7em;height:1.7em;line-height:1.7em;text-align:center;
+    background:var(--accent);color:#fff;font-weight:800;font-size:12.5px;border-radius:50%;
+  }
+  .card-img{margin:12px 0 0;}
+  .card-img img{display:block;width:100%;border-radius:10px;border:1px solid rgba(42,109,176,.12);}
+  .img-ph{
+    display:none;align-items:center;justify-content:center;text-align:center;
+    min-height:120px;background:#F3F7FC;border:1px dashed rgba(42,109,176,.35);
+    border-radius:10px;font-size:12.5px;color:var(--ink-soft);padding:14px;
+  }
 
-  /* ================= ④-2 ブリッジ（必要性） ================= */
+  /* ================= ④-2 ブリッジ ================= */
   .bridge{
-    background:#F7FAFE;border:1px solid rgba(240,144,42,.25);
-    border-left:5px solid var(--accent);border-radius:0 14px 14px 0;
-    padding:22px 20px;margin:6px 0 40px;box-shadow:0 6px 18px rgba(20,41,76,.06);
+    background:#F7FAFE;border-left:4px solid var(--accent);
+    border-radius:0 16px 16px 0;padding:26px 20px;margin-top:34px;box-shadow:var(--shadow);
   }
-  .bridge p{margin:0 0 12px;font-size:14.5px;line-height:1.85;}
-  .bridge p:last-child{margin-bottom:0;}
-  .bridge .b-lead{font-weight:700;color:var(--main-2);}
+  .bridge p{font-size:15px;margin:0 0 18px;}
+  .b-connect strong{color:var(--main-2);}
+  .b-connect .bookname{color:var(--em-red);font-weight:800;}
+  .tease-head{text-align:center;font-size:16.5px;font-weight:800;color:var(--main-2);margin:26px 0 16px!important;}
+  .textbook-img{display:block;width:82%;max-width:340px;margin:0 auto 20px;border-radius:14px;box-shadow:var(--shadow-lg);}
+  .textbook-list{display:none;margin:0 auto 20px;max-width:400px;}
+  .tl-row{
+    display:flex;align-items:center;gap:10px;
+    background:#fff;border:1px solid rgba(42,109,176,.16);border-radius:10px;
+    padding:10px 12px;margin-bottom:8px;font-size:13.5px;color:var(--main-2);
+  }
+  .tl-badge{
+    flex:0 0 auto;background:var(--main-2);color:#fff;
+    font-size:11px;font-weight:800;border-radius:6px;padding:3px 8px;
+  }
+  .distance{display:flex;align-items:flex-start;gap:10px;}
+  .distance img{width:40px;height:40px;border-radius:50%;object-fit:cover;flex:0 0 40px;margin-top:4px;}
+  .bubble{
+    background:#FFF8EE;border:1px solid var(--accent);border-radius:14px;
+    padding:14px 16px;font-size:14.5px;color:var(--main-2);line-height:1.8;margin:0!important;
+  }
 
-  /* ================= ⑤ ストーリー（ゾーン2・全幅反転） ================= */
+  /* ================= ⑤ ゾーン2（ストーリー・全幅反転） ================= */
   .zone2{
-    background:linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 100%);
-    border-top:3px solid var(--accent);            /* 1→2 境界の独立した合図 */
-    padding:56px 0 60px;position:relative;
+    border-top:3px solid var(--accent);
+    background:
+      linear-gradient(180deg,rgba(20,41,76,.88) 0%,rgba(14,30,59,.93) 100%),
+      url("https://instaakiai40s.github.io/story_bg.JPG") center/cover no-repeat,
+      linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 100%);
+    background-color:var(--navy);
+    padding:60px 0 64px;
   }
-  .zone2 .wrap{max-width:520px;}
+  .zone2 p,.zone2 h2,.zone2 h4,.zone2 summary{color:var(--paper);}
   .story-eyebrow{
-    color:var(--amber-hi);font-size:12px;font-weight:700;letter-spacing:.14em;
-    text-align:center;display:block;margin-bottom:10px;
+    display:block;text-align:center;font-size:12.5px;font-weight:700;
+    letter-spacing:.3em;color:var(--amber-hi);margin-bottom:12px;
   }
-  .story-title{
-    color:var(--paper);font-size:22px;font-weight:800;text-align:center;
-    line-height:1.5;margin:0 0 26px;
-  }
-  .story-body p{color:var(--paper);font-size:15px;line-height:2;margin:0 0 16px;}
-  .story-body .close{color:#fff;font-weight:700;}
-  .story-body .close .say{color:var(--amber-hi);}
-
-  /* 折りたたみ全文 */
-  .story-full{margin-top:26px;border-top:1px solid rgba(255,255,255,.14);padding-top:22px;}
+  .story-title{text-align:center;font-size:22px;font-weight:800;line-height:1.55;margin:0 0 30px;}
+  .story-body p{font-size:15px;line-height:2.05;margin:0 0 18px;}
+  .story-body .close{font-size:16px;margin-top:26px;}
+  .story-body .say{font-weight:800;color:var(--amber-hi);}
+  .story-full{margin-top:30px;}
   .story-full summary{
     list-style:none;cursor:pointer;text-align:center;
-    color:var(--amber-hi);font-weight:700;font-size:14.5px;
-    background:rgba(255,255,255,.05);border:1px solid rgba(246,177,90,.35);
-    border-radius:999px;padding:12px 18px;transition:background .15s ease;
+    border:1px solid var(--amber-hi);color:var(--amber-hi);
+    font-size:14.5px;font-weight:800;padding:14px 10px;border-radius:999px;
   }
   .story-full summary::-webkit-details-marker{display:none;}
-  .story-full summary:hover{background:rgba(255,255,255,.09);}
-  .story-full[open] summary{margin-bottom:20px;}
-  .story-full-body h4{
-    color:var(--amber-hi);font-size:16px;font-weight:800;line-height:1.5;
-    margin:24px 0 10px;
-  }
-  .story-full-body .ftitle{
-    color:#fff;font-size:18px;font-weight:800;text-align:center;line-height:1.5;
-    margin:0 0 22px;
-  }
-  .story-full-body p{color:var(--paper-soft);font-size:14px;line-height:1.95;margin:0 0 14px;}
-  .story-full-body p.hi{color:var(--paper);}
-  .story-full-body blockquote{
-    border-left:3px solid var(--amber-hi);margin:0 0 14px;padding:2px 0 2px 14px;
-    color:#fff;font-weight:600;font-size:14px;line-height:1.9;
-  }
+  .story-full-body{margin-top:28px;border-top:1px solid rgba(246,177,90,.35);padding-top:26px;}
+  .story-full-body p{font-size:14.5px;line-height:2;margin:0 0 16px;color:var(--paper-soft);}
+  .story-full-body .ftitle{font-size:17px;font-weight:800;color:var(--paper);line-height:1.6;}
+  .story-full-body h4{font-size:16px;font-weight:800;color:var(--amber-hi);margin:26px 0 12px;}
+  .story-full-body .hi{color:var(--paper);}
 
   /* ================= ⑥⑦⑧ ゾーン3（本命CTA・一番光る場所） ================= */
   .zone3{
-    position:relative;
-    border-top:3px solid var(--accent);            /* 2→3 境界の金線 */
+    border-top:3px solid var(--accent-2);
     background:
-      radial-gradient(circle at 50% 0,rgba(255,255,255,.9),transparent 55%),
+      radial-gradient(ellipse 92% 260px at 50% 0%,var(--glow-1) 0%,rgba(253,238,218,0) 72%),
       linear-gradient(180deg,var(--glow-1) 0%,var(--glow-2) 100%);
-    padding:54px 0 44px;
+    padding:56px 0 46px;
   }
-  .cta-card{
-    background:#fff;border:2px solid var(--accent);border-radius:20px;
-    box-shadow:var(--shadow-lg);padding:24px 20px 26px;position:relative;
+  .fork-card{
+    background:#FFFDF8;border-radius:16px;padding:14px;
+    box-shadow:0 8px 24px rgba(140,95,35,.18);margin-bottom:16px;
   }
-  .cta-banner{display:block;margin:0 -4px 20px;border-radius:12px;overflow:hidden;box-shadow:0 8px 20px rgba(20,41,76,.15);}
-  .cta-banner img{display:block;width:100%;height:auto;}
-  .cta-lead{
+  .fork-card img{display:block;width:100%;height:auto;border-radius:10px;}
+  .fork-rows{display:none;}
+  .fr{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
+  .fr:last-child{margin-bottom:0;}
+  .fr-icon{
+    flex:0 0 48px;width:48px;height:48px;border-radius:50%;
+    background:#FCF6EA;border:1.5px solid var(--gold);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .fr-icon svg{width:26px;height:26px;stroke:var(--gold);stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+  .fr p{font-size:14px;color:var(--ink);line-height:1.75;margin:0;}
+  .fork-close{
     text-align:center;font-size:19px;font-weight:800;color:var(--main-2);
-    line-height:1.5;margin:0 0 18px;
+    margin:6px 0 0;padding-bottom:34px;
+    background:radial-gradient(ellipse 70% 60px at 50% 100%,rgba(255,240,200,.95) 0%,rgba(255,240,200,0) 75%);
   }
-  .benefits{margin:0 0 18px;padding:0;list-style:none;}
-  .benefits li{
-    position:relative;padding:12px 0 12px 34px;font-size:14.5px;line-height:1.75;
-    border-top:1px solid #F0E7D8;color:var(--ink);
+  .cta-call{text-align:center;font-size:15.5px;font-weight:800;color:var(--main-2);line-height:1.9;margin:0 0 24px;}
+  .cta-card{
+    background:#FFFFFF;border:2px solid var(--accent-2);border-radius:20px;
+    padding:24px 18px 28px;box-shadow:var(--shadow-lg);
   }
-  .benefits li:first-child{border-top:none;}
-  .benefits li::before{
-    content:"✓";position:absolute;left:0;top:11px;width:24px;height:24px;border-radius:50%;
-    background:linear-gradient(145deg,var(--accent),var(--accent-2));color:#fff;
-    font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;
+  .cta-banner{display:block;margin-bottom:20px;}
+  .cta-banner img{display:block;width:100%;border-radius:12px;}
+  .benefits{list-style:none;margin:0 0 16px;padding:18px 16px;background:#F7FAFE;border-radius:14px;}
+  .benefits li{position:relative;padding-left:1.6em;font-size:14.5px;margin-bottom:10px;}
+  .benefits li:last-child{margin-bottom:0;}
+  .benefits li::before{content:"✔";position:absolute;left:0;color:var(--accent-2);font-weight:800;}
+  .benefits li b{color:var(--main-2);}
+  .limit-note{text-align:center;font-size:12.5px;font-weight:700;color:var(--accent-2);margin:0 0 14px;}
+  .btn-line{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    width:100%;background:var(--line);color:#fff;text-decoration:none;
+    font-size:17px;font-weight:800;padding:19px 12px;border-radius:999px;
+    box-shadow:0 8px 20px rgba(5,166,72,.42);
+    animation:btnGlow 2.6s ease-in-out infinite;transition:transform .12s ease;
   }
-  .limit-note{
-    background:#FCF3E5;border:1px dashed var(--accent-2);border-radius:10px;
-    padding:11px 14px;font-size:12.5px;color:#8A5A12;line-height:1.7;margin:0 0 18px;
+  .btn-line:active{transform:translateY(3px);box-shadow:0 2px 8px rgba(5,166,72,.4);}
+  .btn-line .ico{
+    background:#fff;color:var(--line-d);font-size:11px;font-weight:800;
+    padding:3px 8px;border-radius:6px;letter-spacing:.02em;
   }
-  .btn-main{font-size:18px;font-weight:800;padding:19px 18px;}
-  .btn-main .ico{font-size:19px;}
-
-  /* ⑦ 向きません枠：CTAより明確に控えめ */
+  @keyframes btnGlow{
+    0%,100%{box-shadow:0 8px 20px rgba(5,166,72,.42);}
+    50%{box-shadow:0 8px 28px rgba(6,199,85,.72);}
+  }
+  .micro{text-align:center;font-size:12.5px;color:var(--ink-soft);line-height:1.8;margin:14px 0 0;}
   .unfit{
-    margin:30px auto 0;max-width:480px;
-    background:rgba(255,255,255,.55);border:1px solid rgba(20,41,76,.10);
-    border-radius:14px;padding:20px 20px 22px;
+    margin-top:36px;background:rgba(255,255,255,.55);
+    border:1px solid rgba(221,122,18,.28);border-radius:14px;padding:20px 18px;
   }
-  .unfit h3{font-size:15.5px;font-weight:700;color:var(--ink);margin:0 0 12px;text-align:center;}
-  .unfit ul{margin:0;padding:0;list-style:none;}
-  .unfit li{
-    position:relative;padding:6px 0 6px 26px;font-size:13.5px;color:var(--ink-soft);line-height:1.7;
-  }
-  .unfit li::before{content:"×";position:absolute;left:2px;top:6px;color:#C0563E;font-weight:800;}
-  .unfit .flip{
-    margin-top:14px;padding-top:14px;border-top:1px solid rgba(20,41,76,.12);
-    font-size:13.5px;color:var(--main-2);font-weight:600;line-height:1.8;
-  }
-
-  /* ⑧ フッター */
-  .foot{text-align:center;font-size:12px;color:#9AA6B8;padding:26px 0 30px;}
-
-  @media(max-width:400px){
-    .hf-title{font-size:22px;}
-    .h2,.story-title{font-size:20px;}
-    .cta-lead{font-size:17px;}
-  }
+  .unfit h3{text-align:center;font-size:15px;font-weight:800;color:var(--main-2);margin:0 0 14px;}
+  .unfit ul{list-style:none;margin:0 0 14px;padding:0;}
+  .unfit li{position:relative;padding-left:1.6em;font-size:13px;color:var(--ink-soft);margin-bottom:8px;}
+  .unfit li::before{content:"×";position:absolute;left:2px;color:var(--accent-2);font-weight:800;}
+  .unfit .flip{border-top:1px solid rgba(221,122,18,.28);padding-top:12px;font-size:13.5px;color:var(--ink);margin:0;}
+  .foot{text-align:center;font-size:12px;color:var(--ink-soft);padding:30px 0 10px;}
 </style>
+<script>
+  /* ===== §8-2 画像の拡張子フォールバック（共通関数） ===== */
+  var IMG_EXTS = [".PNG",".png",".JPG",".jpg",".jpeg"];
+  function imgFB(img){
+    var i = parseInt(img.dataset.i || "0", 10) + 1;
+    if (i < IMG_EXTS.length) {
+      img.dataset.i = i;
+      img.src = img.dataset.base + IMG_EXTS[i];
+    } else {
+      img.onerror = null;
+      img.style.display = "none";
+      if (img.dataset.fail) {
+        var el = document.getElementById(img.dataset.fail);
+        if (el) el.style.display = (el.dataset.disp || "block");
+      }
+    }
+  }
+</script>
 </head>
 <body>
 
 <!-- 検索・読み上げ用（常設）。バナー文字と一致 -->
 <h1 class="visually-hidden">AI×Etsy「完全無在庫」デジタルステッカー販売 ゼロイチ構築ガイド｜動画の3ステップを、“出品完了”までまるごと再現する全手順</h1>
 
-<!-- ① ヘッダー：バナー画像を読み込み、失敗時はテキスト見出しへ自動切替 -->
-<header class="site-header">
-  <div class="header-inner">
-    <img class="header-banner" src="https://instaakiai40s.github.io/header041.PNG"
-         alt="AI×Etsy「完全無在庫」デジタルステッカー販売 ゼロイチ構築ガイド"
-         onerror="this.onerror=null;this.style.display='none';var f=document.getElementById('headerFallback');if(f){f.style.display='flex';}">
-    <div class="header-fallback" id="headerFallback">
-      <span class="hf-badge">保存版・無料特典</span>
-      <h2 class="hf-title">AI×Etsy「完全無在庫」<br>デジタルステッカー販売<br>ゼロイチ構築ガイド</h2>
-      <p class="hf-sub">動画の3ステップを、“出品完了”までまるごと再現する全手順</p>
-      <span class="hf-count">全5点</span>
+<!-- ===================== ゾーン1（受け取り） ===================== -->
+<div class="zone1">
+
+  <!-- ① ヘッダー：バナー画像を読み込み、失敗時はテキスト見出しへ自動切替 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <img class="header-banner"
+           src="https://instaakiai40s.github.io/header041.PNG"
+           data-base="https://instaakiai40s.github.io/header041"
+           data-fail="headerFallback"
+           alt="AI×Etsy「完全無在庫」デジタルステッカー販売 ゼロイチ構築ガイド"
+           onerror="imgFB(this)">
+      <div class="header-fallback" id="headerFallback" data-disp="flex">
+        <span class="hf-badge">保存版・無料特典</span>
+        <p class="hf-title">AI×Etsy「完全無在庫」<br>デジタルステッカー販売<br>ゼロイチ構築ガイド</p>
+        <p class="hf-sub">動画の3ステップを、“出品完了”までまるごと再現する全手順</p>
+        <span class="hf-count">全5点</span>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<div class="wrap">
+  <div class="wrap">
 
-  <!-- ② 発信者ブロック -->
-  <div class="author">
-    <img src="https://instaakiai40s.github.io/profile.JPG" alt="発信者 あき">
-    <p class="lead">はじめまして、あきです。</p>
-    <p>40代、福祉の仕事をしながら3人の子どもを育てています。特別な才能はありません。使えたのは子どもが寝てからの1〜2時間だけ。それでも投稿開始20日でフォロワー5,000人という結果が出ました。この特典は、時間も体力もお金の余裕もない、それでも家族のために何かを変えたい40代のために作りました。</p>
-  </div>
-
-  <!-- ③ 挨拶・お礼＋上部CTA（小）＋伏線 -->
-  <section class="greet sec">
-    <p>リールをご覧いただき、そして受け取っていただき、ありがとうございます。</p>
-
-    <div class="gift-box">
-      <p class="g-title">今回の特典は、<span class="g-mark">登録不要</span>で、<br>下にスクロールするだけ。</p>
-      <p class="g-sub">全5点／今日からそのまま使えます</p>
-    </div>
-
-    <div class="line-box">
-      <p class="l-text">そして今、この特典を“点”で終わらせず、“もう一つの給料日”まで繋げる全体の地図——『AIマネタイズの教科書』も無料でお配りしています。受け取りはLINEから。</p>
-      <a class="btn-line btn-small js-line" href="https://sub.aione.co.jp/line/open/ISEBuerKAyih?mtid=5pvXPtVKFnEL">
-        <span class="ico">LINE</span>AIマネタイズの教科書を無料で受け取る
-      </a>
+    <!-- ② 発信者ブロック（定型文・毎回固定） -->
+    <div class="author">
+      <img src="https://instaakiai40s.github.io/profile.JPG"
+           data-base="https://instaakiai40s.github.io/profile"
+           alt="発信者 あき" onerror="imgFB(this)">
+      <div>
+        <p class="lead">はじめまして、あきです。</p>
+        <p>40代、福祉の仕事をしながら3人の子どもを育てています。特別な才能はありません。使えたのは子どもが寝てからの1〜2時間だけ。それでも投稿開始20日でフォロワー5,000人という結果が出ました。この特典は、時間も体力もお金の余裕もない、それでも家族のために何かを変えたい40代のために作りました。</p>
+      </div>
     </div>
 
-    <p class="foreshadow">このページの最後に、僕がこの発信を始めた“本当の理由”を書きました。特典と合わせて、最後まで読んでもらえたら嬉しいです。</p>
-  </section>
+    <!-- ③ ウェルカムカード（6要素・v2.6） -->
+    <section class="welcome">
+      <p>リールをご覧いただき、そして受け取っていただき、ありがとうございます。</p>
+      <p class="w-place"><strong>今回の動画の特典は、少しスクロールした先にまとめてあります。</strong></p>
+      <p class="w-tease">また、ページの後半では皆さんへ<strong>無料で受け取れる『更なる特典』</strong>をご用意しました。</p>
 
-  <!-- ④ 特典カード群 -->
-  <section class="sec" style="padding-top:8px;">
-    <div class="gift-start">
-      <span class="gs-badge">▼ ここから無料特典</span>
-      <h2 class="gs-title">ゼロから<span class="u">“出品完了”</span>まで。<br>この5つのステップで完了です。</h2>
-      <span class="gs-sub">全5点・登録不要／今日からそのまま使えます</span>
+      <div class="movie-box" id="movieBox">
+        <a href="#cta">
+          <video id="welcomeVideo" muted autoplay loop playsinline>
+            <source id="srcMp4" src="https://instaakiai40s.github.io/welcome_movie.MP4" type="video/mp4">
+            <source id="srcMov" src="https://instaakiai40s.github.io/welcome_movie.MOV" type="video/quicktime">
+          </video>
+        </a>
+      </div>
+
+      <div class="reason-box">
+        <img src="https://instaakiai40s.github.io/reason_banner.PNG"
+             data-base="https://instaakiai40s.github.io/reason_banner"
+             data-fail="reasonAlt"
+             alt="このページの最後に、僕がこの発信を始めた“本当の理由”を書きました。特典と合わせて、最後まで読んでもらえたら嬉しいです。"
+             onerror="imgFB(this)">
+        <p class="reason-alt" id="reasonAlt">このページの最後に、僕がこの発信を始めた“本当の理由”を書きました。特典と合わせて、最後まで読んでもらえたら嬉しいです。</p>
+      </div>
+
+      <a class="anchor-link" href="#cta">▼先にAIマネタイズ教科書の案内を見る</a>
+    </section>
+
+    <!-- ④-0 特典ヘッドライン -->
+    <div class="gift-head">
+      <span class="gh-label">― 今回の無料特典 ―</span>
+      <p class="gh-title">AI×Etsy「完全無在庫」<br>デジタルステッカー販売<br><span class="u">ゼロイチ構築ガイド</span>（全5点）</p>
+      <p class="gh-sub">ゼロから“出品完了”まで。この5つで完了です。今夜そのまま使えます。</p>
     </div>
 
+    <!-- ④ 特典カード群 -->
     <!-- ①ステッカー生成プロンプト -->
     <div class="card">
       <span class="card-no">1</span><span class="card-tag tag-prompt">コピペOK</span>
       <h3>ステッカー作成プロンプト（動画と同じもの）</h3>
-      <p>動画のステップ1で使った、あのプロンプトです。ChatGPTに貼って、テーマ欄に作りたいものを入れるだけ。動画と同じく「海外に刺さる猫のステッカー」と入れれば、あの仕上がりを再現できます。</p>
+      <p>動画のステップ1で使った、あのプロンプト（AIへの指示文）です。ChatGPTに貼って、テーマ欄に作りたいものを入れるだけ。動画と同じく「海外に刺さる猫のステッカー」と入れれば、あの仕上がりを再現できます。</p>
       <div class="prompt-card">
         <div class="prompt-head">
           <span class="prompt-label">▼ そのままコピーして使えます</span>
@@ -511,9 +514,11 @@
       <!-- 推奨画像：5テーマそれぞれのステッカー完成イメージを並べたサムネ一覧。
            理由：「これなら自分にも作れそう」という完成イメージを先に見せて着手のハードルを下げるため -->
       <div class="card-img">
-        <img src="https://instaakiai40s.github.io/img041a.PNG" alt="5テーマの完成イメージ一覧"
-             onerror="this.onerror=null;this.style.display='none';var f=this.nextElementSibling;if(f){f.style.display='flex';}">
-        <div class="img-ph">【画像】5テーマの完成イメージ一覧（作例サムネを横並び）</div>
+        <img src="https://instaakiai40s.github.io/img041a.PNG"
+             data-base="https://instaakiai40s.github.io/img041a"
+             data-fail="ph041a"
+             alt="5テーマの完成イメージ一覧" onerror="imgFB(this)">
+        <div class="img-ph" id="ph041a" data-disp="flex">【画像】5テーマの完成イメージ一覧（作例サムネを横並び）</div>
       </div>
     </div>
 
@@ -531,14 +536,18 @@
       <!-- 推奨画像2枚：①Canva「背景透過」before→after ②透過PNGのダウンロード設定。
            理由：操作→保存の2段階を実物で見せ「本当に数タップだ」と実感させるため -->
       <div class="card-img">
-        <img src="https://instaakiai40s.github.io/img041b.PNG" alt="Canvaの背景透過の操作画面 before→after"
-             onerror="this.onerror=null;this.style.display='none';var f=this.nextElementSibling;if(f){f.style.display='flex';}">
-        <div class="img-ph">【画像①】Canva「背景透過」の操作画面（before→after）</div>
+        <img src="https://instaakiai40s.github.io/img041b.PNG"
+             data-base="https://instaakiai40s.github.io/img041b"
+             data-fail="ph041b"
+             alt="Canvaの背景透過の操作画面 before→after" onerror="imgFB(this)">
+        <div class="img-ph" id="ph041b" data-disp="flex">【画像①】Canva「背景透過」の操作画面（before→after）</div>
       </div>
       <div class="card-img">
-        <img src="https://instaakiai40s.github.io/img041c.PNG" alt="透過PNGで保存する方法（ダウンロード設定）"
-             onerror="this.onerror=null;this.style.display='none';var f=this.nextElementSibling;if(f){f.style.display='flex';}">
-        <div class="img-ph">【画像②】透過PNGで保存する方法（ダウンロード設定）</div>
+        <img src="https://instaakiai40s.github.io/img041c.PNG"
+             data-base="https://instaakiai40s.github.io/img041c"
+             data-fail="ph041c"
+             alt="透過PNGで保存する方法（ダウンロード設定）" onerror="imgFB(this)">
+        <div class="img-ph" id="ph041c" data-disp="flex">【画像②】透過PNGで保存する方法（ダウンロード設定）</div>
       </div>
     </div>
 
@@ -556,23 +565,43 @@
       </ul>
       <p>ここまで進めば、動画でお話しした「在庫を持たない自動販売機」の1台目が完成です。</p>
     </div>
-  </section>
 
-  <!-- ④-2 ブリッジ（必要性・パターンB：段階提示型） -->
-  <div class="bridge">
-    <p class="b-lead">この特典だけでも、最初の1セットを“出品完了”まで持っていくことは、今日からできます。</p>
-    <p>ただ、正直にお伝えします。“たまに1つ売れる”と“毎月コツコツ積み上がる”の間には、ハッキリとしたやり方の違いがあります。多くの方がつまずくのは、実はここです。</p>
-    <p>その“積み上がる側”の設計図については、LINEでお渡ししている『AIマネタイズの教科書』の中でお話ししています。</p>
-    <p>子どもが寝てからの1〜2時間しかない、僕と同じ40代の生活時間に合わせて組んだ内容です。</p>
-  </div>
+    <!-- ④-2 ブリッジセクション（パターンB：段階提示型＋ちょい出し） -->
+    <div class="bridge">
+      <p>この特典だけでも、最初の一歩は今日から踏み出せます。</p>
+      <p>ただ、“たまに成果が出る”と“毎月コツコツ積み上がる”の間には、はっきりしたやり方の違いがあります。</p>
+      <p class="b-connect">その“安定させる側”の設計図を、<strong>無料プレゼント</strong>しているのが——LINEの<span class="bookname">『AIマネタイズの教科書』</span>です。</p>
 
-</div><!-- /.wrap ゾーン1ここまで -->
+      <p class="tease-head">教科書の中身を、少しだけ。</p>
+      <img class="textbook-img"
+           src="https://instaakiai40s.github.io/textbook.PNG"
+           data-base="https://instaakiai40s.github.io/textbook"
+           data-fail="textbookList"
+           alt="AIマネタイズの教科書（全5章）のイメージ" onerror="imgFB(this)">
+      <div class="textbook-list" id="textbookList">
+        <div class="tl-row"><span class="tl-badge">第一章</span>いま一番始めやすいAIマネタイズ手法</div>
+        <div class="tl-row"><span class="tl-badge">第二章</span>ChatGPT収益化プロンプト3選</div>
+        <div class="tl-row"><span class="tl-badge">第三章</span>AIマネタイズ神テンプレート</div>
+        <div class="tl-row"><span class="tl-badge">第四章</span>マネタイズのための生成AIツール3選</div>
+        <div class="tl-row"><span class="tl-badge">第五章</span>AI×SNSで収益を生むリアル事例</div>
+      </div>
 
-<!-- ⑤ ストーリー（ゾーン2・全幅反転） -->
+      <div class="distance">
+        <img src="https://instaakiai40s.github.io/profile.JPG"
+             data-base="https://instaakiai40s.github.io/profile"
+             alt="あき" onerror="imgFB(this)">
+        <p class="bubble">子どもが寝てからの1〜2時間しかない、僕と同じ40代の生活時間に合わせて組んだ内容です。</p>
+      </div>
+    </div>
+
+  </div><!-- /.wrap -->
+</div><!-- /.zone1 -->
+
+<!-- ===================== ⑤ ゾーン2（ストーリー・全幅反転） ===================== -->
 <section class="zone2">
   <div class="wrap">
     <span class="story-eyebrow">MY STORY</span>
-    <h2 class="story-title">なぜ、僕がこれを<br>渡したいのか</h2>
+    <h2 class="story-title">僕がこの発信を始めた、<br>“本当の理由”</h2>
     <div class="story-body">
       <p>数年前、僕は投資詐欺で、家族にも言えない大きな失敗をしました。</p>
       <p>子どもが「ディズニー行きたいね」と話すのに、「行こうね」の一言が、どうしても言えない。そんな毎日でした。</p>
@@ -614,25 +643,60 @@
   </div>
 </section>
 
-<!-- ⑥⑦⑧ ゾーン3（本命CTA・一番光る場所） -->
+<!-- ===================== ⑥⑦⑧ ゾーン3（本命CTA・一番光る場所） ===================== -->
 <section class="zone3">
   <div class="wrap">
 
+    <!-- ⑥-0 分かれ道ブロック -->
+    <div id="cta">
+      <div class="fork-card">
+        <img src="https://instaakiai40s.github.io/fork.PNG"
+             data-base="https://instaakiai40s.github.io/fork"
+             data-fail="forkRows"
+             alt="物価は上がるのに給料はほとんど変わらない現実。その一方で、AIを使えば子どもが寝てからの1〜2時間でも本業とは別の収入をつくれる時代になりました。知って動くか、後回しにするかの分かれ道。"
+             onerror="imgFB(this)">
+        <div class="fork-rows" id="forkRows">
+          <div class="fr">
+            <span class="fr-icon"><svg viewBox="0 0 48 48"><path d="M14 36V16m0 0l-6 6m6-6l6 6"/><path d="M26 30h14m0 0l-6-6m6 6l-6 6"/></svg></span>
+            <p>物価は上がる。でも、給料はほとんど変わらない。</p>
+          </div>
+          <div class="fr">
+            <span class="fr-icon"><svg viewBox="0 0 48 48"><rect x="14" y="8" width="17" height="30" rx="3"/><path d="M20 33h5"/><path d="M38 12l1.6 3.4L43 17l-3.4 1.6L38 22l-1.6-3.4L33 17l3.4-1.6z"/></svg></span>
+            <p>その一方で、AIを使えば、子どもが寝てからの1〜2時間でも、本業とは別の収入をつくれる時代になりました。</p>
+          </div>
+          <div class="fr">
+            <span class="fr-icon"><svg viewBox="0 0 48 48"><path d="M24 42V26"/><path d="M24 26L13 13m0 0v7m0-7h7"/><path d="M24 26l11-13m0 0v7m0-7h-7"/></svg></span>
+            <p>この変化は待ってくれません。知って動くか、後回しにするか——</p>
+          </div>
+        </div>
+      </div>
+      <p class="fork-close">分かれ道は、ここです。</p>
+    </div>
+
+    <!-- 決断の呼びかけ（固定文言） -->
+    <p class="cta-call">ここまで読んでいただき、ありがとうございます。<br>あとは教科書を受け取って、今夜の1〜2時間から始めるだけです。</p>
+
     <!-- ⑥ メインCTA -->
     <div class="cta-card">
-      <a class="cta-banner js-line" href="https://sub.aione.co.jp/line/open/ISEBuerKAyih?mtid=5pvXPtVKFnEL">
-        <img src="https://instaakiai40s.github.io/line_banner.PNG" alt="AIマネタイズの教科書を無料で受け取る">
+      <a class="cta-banner js-line" href="https://utage-system.com/line/open/nj3MC6diybeh?mtid=E3ZSdNvSlw1p">
+        <img src="https://instaakiai40s.github.io/line_banner.PNG"
+             data-base="https://instaakiai40s.github.io/line_banner"
+             alt="AIマネタイズの教科書を無料で受け取る" onerror="imgFB(this)">
       </a>
-      <p class="cta-lead">“もう一つの給料日”までの<br>全体の地図を、無料で。</p>
+
       <ul class="benefits">
-        <li>時間のない40代の生活時間に合わせて組んだ『AIマネタイズの教科書』が届きます。</li>
-        <li>特典で受け取った“部品”を結果につなげるロードマップがわかります。</li>
-        <li>登録後は無料の個別相談も。テーマ選びや最初の一歩の疑問に、直接お答えします。</li>
+        <li>時間のない40代の生活時間に合わせて組んだ<b>『AIマネタイズの教科書』（全5章）</b>が届きます。</li>
+        <li>特典で受け取った“部品”を<b>結果につなげるロードマップ</b>がわかります。</li>
+        <li>登録後は<b>無料の個別相談</b>も。テーマ選びや最初の一歩の疑問に、直接お答えします。</li>
       </ul>
+
       <p class="limit-note">※個別相談の枠に限りがあるため、教科書の配布は予告なく終了する場合があります。</p>
-      <a class="btn-line btn-main js-line" href="https://sub.aione.co.jp/line/open/ISEBuerKAyih?mtid=5pvXPtVKFnEL">
+
+      <a class="btn-line btn-main js-line" href="https://utage-system.com/line/open/nj3MC6diybeh?mtid=E3ZSdNvSlw1p">
         <span class="ico">LINE</span>AIマネタイズの教科書を無料で受け取る
       </a>
+
+      <p class="micro">登録は10秒ほどで完了します。合わないと感じたら、いつでもブロックしていただいて大丈夫です。</p>
     </div>
 
     <!-- ⑦ こんな方には向きません -->
@@ -643,7 +707,7 @@
         <li>コピペや、ワンクリックの作業すら面倒だと感じる方</li>
         <li>AIに丸投げすれば、全部うまくいくと考えている方</li>
       </ul>
-      <p class="flip">逆に、「1日30分でも、コツコツ手を動かす覚悟がある」という方なら、この教科書はきっとお役に立てます。</p>
+      <p class="flip">逆に、「1日30分でも、コツコツ積み上げる覚悟がある」という方なら、この教科書はきっとお役に立てます。</p>
     </div>
 
     <!-- ⑧ フッター -->
@@ -654,9 +718,22 @@
 
 <script>
   /* ===== LINE遷移先は、この定数1箇所で一元管理 ===== */
-  /* URL変更時は、この LINE_URL の値だけ書き換えればOK（各ボタンのhrefはこのJSが上書きします） */
-  var LINE_URL = "https://sub.aione.co.jp/line/open/ISEBuerKAyih?mtid=5pvXPtVKFnEL";
+  var LINE_URL = "https://utage-system.com/line/open/nj3MC6diybeh?mtid=E3ZSdNvSlw1p";
   document.querySelectorAll('.js-line').forEach(function(a){ a.setAttribute('href', LINE_URL); });
+
+  /* ===== ③ウェルカム動画：読み込み失敗時はコンテナごと非表示 ===== */
+  (function(){
+    var box = document.getElementById('movieBox');
+    var v = document.getElementById('welcomeVideo');
+    function hideMovie(){ if (box) box.style.display = 'none'; }
+    if (v) {
+      v.addEventListener('error', hideMovie);
+      var s1 = document.getElementById('srcMp4');
+      var s2 = document.getElementById('srcMov');
+      if (s2) s2.addEventListener('error', hideMovie);
+      if (s1) s1.addEventListener('error', function(){ if (!s2) hideMovie(); });
+    }
+  })();
 
   /* ===== プロンプトのワンタップコピー ===== */
   function copyPrompt(btn){
@@ -665,7 +742,7 @@
     var box = card.querySelector('.prompt-text');
     var text = box ? box.innerText : '';
     function done(){
-      var original = btn.textContent;
+      var original = 'コピー';
       btn.textContent = 'コピーしました ✓';
       btn.classList.add('copied');
       setTimeout(function(){ btn.textContent = original; btn.classList.remove('copied'); }, 1600);
