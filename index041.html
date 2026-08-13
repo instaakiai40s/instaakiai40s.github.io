@@ -224,6 +224,125 @@
     border-radius:10px;font-size:12.5px;color:var(--ink-soft);padding:14px;
   }
 
+  /* ================= ④-b Etsy手順（STEP見出し・準備・表・注意） ================= */
+  .step-head{
+    display:flex;align-items:center;gap:10px;
+    margin:26px 0 12px;padding:11px 13px;
+    background:linear-gradient(90deg,#E7F0FA 0%,#F7FAFE 100%);
+    border-left:4px solid var(--main);border-radius:0 10px 10px 0;
+  }
+  .step-head .sh-no{
+    flex:0 0 auto;background:var(--main-2);color:#fff;
+    font-size:11.5px;font-weight:800;letter-spacing:.06em;
+    padding:4px 9px;border-radius:6px;white-space:nowrap;
+  }
+  .step-head .sh-ttl{font-size:15px;font-weight:800;color:var(--main-2);line-height:1.5;}
+  .card .step-lead{font-size:14.5px;color:var(--ink);margin:0 0 12px!important;}
+  .prep{
+    background:#FFF8EE;border:1px solid rgba(240,144,42,.45);
+    border-radius:10px;padding:14px 16px;margin:0 0 14px;
+  }
+  .prep .p-ttl{font-size:13px;font-weight:800;color:var(--accent-2);margin:0 0 8px!important;}
+  .prep ul{list-style:none;margin:0;padding:0;}
+  .prep li{position:relative;padding-left:1.5em;font-size:13.5px;margin-bottom:6px;line-height:1.7;}
+  .prep li:last-child{margin-bottom:0;}
+  .prep li::before{content:"□";position:absolute;left:0;color:var(--accent-2);font-weight:800;}
+  .card .subnote{
+    font-size:13px;color:var(--ink-soft);line-height:1.8;
+    border-left:3px solid rgba(42,109,176,.35);padding-left:12px;margin:0 0 14px!important;
+  }
+  .note-warn{
+    background:#FDF3F3;border:1px solid rgba(196,61,61,.35);
+    border-radius:10px;padding:14px 16px;margin:14px 0 0;
+  }
+  .note-warn .nw-ttl{font-size:13px;font-weight:800;color:var(--em-red);margin:0 0 8px!important;}
+  .note-warn p{font-size:13.5px;margin:0 0 8px!important;line-height:1.8;}
+  .note-warn p:last-child{margin:0!important;}
+  .fee-table{width:100%;border-collapse:collapse;margin:0 0 12px;font-size:13px;}
+  .fee-table th,.fee-table td{
+    border:1px solid rgba(42,109,176,.16);padding:8px 9px;text-align:left;vertical-align:top;line-height:1.6;
+  }
+  .fee-table th{background:#EAF2FB;color:var(--main-2);font-weight:800;white-space:nowrap;}
+  .fee-table td b{color:var(--main-2);}
+  .fee-table tr:nth-child(even) td{background:#F8FBFE;}
+  .sim{
+    background:#F3F7FC;border:1px solid rgba(42,109,176,.16);
+    border-radius:10px;padding:14px 16px;margin:0 0 12px;
+  }
+  .sim .s-ttl{font-size:13px;font-weight:800;color:var(--main-2);margin:0 0 8px!important;}
+  .sim ul{list-style:none;margin:0 0 8px;padding:0;}
+  .sim li{font-size:13.5px;display:flex;justify-content:space-between;gap:10px;padding:4px 0;border-bottom:1px dashed rgba(42,109,176,.18);}
+  .sim li:last-child{border-bottom:0;}
+  .sim .s-total{font-size:14px;font-weight:800;color:var(--accent-2);margin:8px 0 0!important;}
+  .setting-list{list-style:none;margin:0 0 12px;padding:0;}
+  .setting-list li{
+    font-size:13.5px;background:#F3F7FC;border-radius:8px;
+    padding:9px 12px;margin-bottom:7px;line-height:1.7;
+  }
+  .setting-list b{color:var(--main-2);}
+
+  /* ===== 入金設定（つまづきNo.1）専用パーツ ===== */
+  .step-head-hot{
+    background:linear-gradient(90deg,#FDEEDA 0%,#FFF8EE 100%);
+    border-left-color:var(--accent-2);
+  }
+  .step-head-hot .sh-no{background:var(--accent-2);}
+  .step-head-hot .sh-ttl{color:var(--accent-2);}
+  .hot-tag{
+    display:inline-block;background:var(--em-red);color:#fff;
+    font-size:10.5px;font-weight:800;letter-spacing:.04em;
+    padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:2px;white-space:nowrap;
+  }
+  .roles{display:grid;gap:10px;margin:0 0 14px;}
+  .role{
+    background:#fff;border:1px solid rgba(42,109,176,.18);
+    border-left:4px solid var(--main);border-radius:0 12px 12px 0;padding:13px 15px;
+  }
+  .role .r-name{font-size:14px;font-weight:800;color:var(--main-2);margin:0 0 5px!important;}
+  .role .r-body{font-size:13.5px;margin:0!important;line-height:1.8;}
+  .role-b{border-left-color:var(--accent-2);}
+  .role-b .r-name{color:var(--accent-2);}
+  .keypoint{
+    background:#FFF8EE;border:2px solid var(--accent);border-radius:12px;
+    padding:15px 16px;margin:0 0 16px;
+  }
+  .keypoint .k-ttl{font-size:13.5px;font-weight:800;color:var(--accent-2);margin:0 0 8px!important;}
+  .keypoint p{font-size:14px;margin:0!important;line-height:1.85;}
+  .qa{margin:0 0 12px;}
+  .qa-item{
+    background:#F3F7FC;border-radius:10px;padding:13px 15px;margin-bottom:9px;
+  }
+  .qa-item .q{font-size:13.5px;font-weight:800;color:var(--main-2);margin:0 0 6px!important;}
+  .qa-item .a{font-size:13.5px;margin:0!important;line-height:1.85;}
+  .jump-pay{
+    display:block;text-align:center;font-size:14px;font-weight:800;
+    background:#FFF8EE;border:1px solid var(--accent);border-radius:999px;
+    color:var(--accent-2);text-decoration:none;padding:13px 12px;margin:0 0 14px;
+  }
+
+  .safebox{
+    background:#F1F8F2;border:1px solid rgba(6,199,85,.35);
+    border-radius:12px;padding:16px 16px 14px;margin:0 0 16px;
+  }
+  .safebox .sb-ttl{font-size:14px;font-weight:800;color:var(--line-d);margin:0 0 10px!important;}
+  .safebox .sb-item{margin:0 0 12px;}
+  .safebox .sb-item:last-child{margin-bottom:0;}
+  .safebox .sb-q{font-size:13.5px;font-weight:800;color:var(--ink);margin:0 0 4px!important;}
+  .safebox .sb-a{font-size:13.5px;margin:0!important;line-height:1.85;color:var(--ink);}
+  .safebox .sb-a b{color:var(--line-d);}
+  .touch3{list-style:none;counter-reset:t3;margin:0 0 12px;padding:0;}
+  .touch3 li{
+    counter-increment:t3;position:relative;padding:11px 12px 11px 44px;
+    background:#fff;border:1px solid rgba(42,109,176,.18);border-radius:10px;
+    font-size:14px;margin-bottom:8px;line-height:1.7;
+  }
+  .touch3 li::before{
+    content:counter(t3);position:absolute;left:12px;top:11px;
+    width:22px;height:22px;line-height:22px;text-align:center;
+    background:var(--main-2);color:#fff;font-weight:800;font-size:12px;border-radius:50%;
+  }
+  .touch3 li b{color:var(--main-2);}
+
   /* ================= ④-2 ブリッジ ================= */
   .bridge{
     background:#F7FAFE;border-left:4px solid var(--accent);
@@ -434,6 +553,7 @@
         <p class="reason-alt" id="reasonAlt">このページの最後に、僕がこの発信を始めた“本当の理由”を書きました。特典と合わせて、最後まで読んでもらえたら嬉しいです。</p>
       </div>
 
+      <a class="jump-pay" href="#pay">▼「入金・支払いの設定」でつまづいている方はこちら</a>
       <a class="anchor-link" href="#cta">▼先にAIマネタイズ教科書の案内を見る</a>
     </section>
 
@@ -487,16 +607,52 @@
     <!-- ②Etsy出品データ生成プロンプト -->
     <div class="card">
       <span class="card-no">2</span><span class="card-tag tag-prompt">コピペOK</span>
-      <h3>売るときの英語紹介文を作る“ひとこと指示”（動画と同じもの）</h3>
-      <p>動画のステップ2です。ステッカーを作ったのと同じ画面のまま、続けてこの一文を送るだけ。ステッカーの魅力が最大限に伝わる英語の紹介文が、一瞬で完成します。英語ができなくても大丈夫です。</p>
+      <h3>出品画面にそのまま貼れる英語を、4項目まとめて作る</h3>
+      <p>動画のステップ2です。ステッカーを作ったのと同じ画面のまま、続けてこの指示を送るだけ。英語ができなくても大丈夫です。</p>
+      <p>動画では「これを検索で見つけてもらいやすく、購買意欲をそそる文章を英語で書いて」という一文を紹介しました。ただ、実際のEtsyの出品画面を触ってみると入力欄が項目ごとに分かれていたので、<strong>画面の欄と同じ順番・同じ名前で出てくる形</strong>に作り直しています。出てきたものを上から順に貼ってください。</p>
       <div class="prompt-card">
         <div class="prompt-head">
           <span class="prompt-label">▼ そのままコピーして使えます</span>
           <button class="copy-btn" type="button" onclick="copyPrompt(this)">コピー</button>
         </div>
-        <div class="prompt-text">これを検索で見つけてもらいやすく、購買意欲をそそる文章を英語で書いて</div>
-        <p class="prompt-note">画面を切り替えないのがコツです。同じチャットに送ると、AIが直前に作ったステッカーを踏まえて文章を書いてくれます。</p>
+        <div class="prompt-text">さっき作ったステッカーを、Etsyでダウンロード商品として出品します。
+デジタル手帳やプランナーに貼って使う素材として売ります。
+下の3項目を、Etsyの入力欄にそのまま貼れる形で英語で出力してください。
+※カテゴリーは「クリップアート＆画像ファイル」を選ぶので、出力は不要です。
+
+【1】タイトル
+・14単語以内、かつ140文字以内
+・検索されやすいキーワードを前半に置く
+・記号の羅列や、意味のない単語の詰め込みはしない
+
+【2】詳細
+購入者は最初の数行しか読みません。冒頭3行に情報を凝縮してください。
+・1行目：何が手に入るのか（ステッカーの内容と枚数）
+・2行目：ファイル形式（透過PNG・高解像度）
+・3行目：ダウンロード商品で、発送はないこと
+そのあとに、デジタル手帳・プランナー・スクラップブッキングでの使い方の例を続けてください。
+
+【3】タグ
+Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
+1個につき1つのコードブロックに分けて、13個のコードブロックで出力してください。
+まとめて1つのコードブロックに入れないでください。
+・1個につき20文字以内（スペースを含む）
+・2〜3語の組み合わせを中心にする（1単語だけのタグは競合が多く埋もれます）
+・digital planner、goodnotes、digital stickers など、デジタル手帳で素材を探している人が実際に打つ言葉を必ず含める
+・ステッカーの題材（例：ocean、tropical など）も入れる
+・タイトルと同じ言葉ばかりにならないよう、探し方の違う言葉も混ぜる
+
+【1】【2】のような見出しは残したまま、項目ごとに分けて出力してください。</div>
+        <p class="prompt-note">画面を切り替えないのがコツです。同じチャットに送ると、AIが直前に作ったステッカーを踏まえて書いてくれます。</p>
       </div>
+      <p class="step-lead"><strong>▼ 出てきた英語の貼り先（Etsyの「商品詳細」タブ）</strong></p>
+      <ul class="setting-list">
+        <li><b>カテゴリー</b>は<b>「クリップアート＆画像ファイル」</b>を選びます（AIに出させる必要はありません）</li>
+        <li>【1】→ <b>タイトル</b>欄</li>
+        <li>【2】→ <b>詳細</b>欄。<b>最後にカード5のAI使用の一文を貼り足します</b></li>
+        <li>【3】→ <b>タグ</b>欄（「商品のオプション」タブ）。<b>1個ずつコピーして貼り、そのつど「追加する」を押します</b>。13個まとめて貼るとエラーになります</li>
+      </ul>
+      <p class="subnote">タグは「商品のオプション」タブにあります。13個まで入れられて、ここが検索で見つけてもらえるかどうかに直結するので、全部埋めてください。<b>1個ずつしか入りません</b>。まとめて貼ると「タグは1文字から20文字の間でなくてはなりません」というエラーが出るので、面倒でも13回に分けて入れてください。同じタブの<b>「クラフトの種類」は必須</b>なので、<b>スクラップブッキング</b>と<b>コラージュ</b>を選んでおけば大丈夫です。</p>
     </div>
 
     <!-- ③売れるテーマ鉄板5パターン -->
@@ -551,19 +707,332 @@
       </div>
     </div>
 
-    <!-- ⑤Etsy出品の設定手順 -->
+    <!-- ⑤Etsy登録〜支払い設定〜出品（STEP A/B/C の3段構成） -->
     <div class="card">
       <span class="card-no">5</span><span class="card-tag tag-howto">図解</span>
-      <h3>Etsy出品の設定手順（デジタル商品設定〜アップロードまで）</h3>
-      <p>最後の関門、Etsy側の設定です。ここまで来れば出品完了。順番どおりに進めれば迷いません。</p>
+      <h3>Etsyの登録・入金設定・出品まで、画面どおりに進める全手順</h3>
+      <p>最後がEtsy側の設定です。先日「Etsyペイメントの設定でわけがわからず止まっています」というご相談をもらいました。実は私も同じところで一度手が止まったので、自分で最初から最後まで登録し直して、画面を全部確認してきました。その順番のまま、<strong>「登録」「入金・支払い」「出品」の3つ</strong>に分けて書いていきます。</p>
+      <p class="subnote">入金設定だけ知りたい方は、<a href="#pay" style="color:var(--accent-2);font-weight:800;">STEP B（入金と支払いの設定）</a>まで飛んでください。</p>
+
+      <!-- ===== STEP A：アカウント登録・ショップ開設 ===== -->
+      <div class="step-head">
+        <span class="sh-no">STEP A</span>
+        <span class="sh-ttl">アカウント登録とショップ開設（15〜20分）</span>
+      </div>
+      <div class="prep">
+        <p class="p-ttl">▼ 先に手元へ用意しておくもの（これで途中で止まりません）</p>
+        <ul>
+          <li>メールアドレス（Googleアカウントでも登録できます）</li>
+          <li>クレジットカード（開設料と出品料の支払い用）</li>
+          <li>本人確認書類（パスポートまたは運転免許証）</li>
+          <li>ご自身の銀行口座（売上を最終的に受け取る口座）</li>
+          <li>ショップ名の候補（英数字4〜20文字・あとから変更できます）</li>
+        </ul>
+      </div>
       <ul class="steplist">
-        <li>Etsyでショップを用意し、新規リスティングを作成</li>
-        <li>商品タイプを「デジタル商品（Digital）」に設定</li>
-        <li>カード2で作った英語の紹介文を貼り付け</li>
-        <li>透過PNGのデータをアップロード</li>
-        <li>価格を設定して公開 → 出品完了</li>
+        <li>Etsy公式サイトの「Sell on Etsy（販売を始める）」から、メールまたはGoogleアカウントで登録します</li>
+        <li>ショップの初期設定は<b>言語：English／国：Japan／通貨：USD（米ドル）</b>が基本です</li>
+        <li>ショップ名を決めます（使用済みの名前は弾かれるので、候補は3つほど用意しておくと安心）</li>
+        <li>支払い用のクレジットカードを登録します</li>
+        <li>ここで<b>ショップ開設料（初回1回のみ・19ドル）</b>の案内が出ます</li>
       </ul>
-      <p>ここまで進めば、動画でお話しした「在庫を持たない自動販売機」の1台目が完成です。</p>
+      <!-- 【画像①】ショップの初期設定画面（言語English／国Japan／通貨USDが見える状態）
+           理由：「英語だらけで不安」を、実際の画面で先に潰すため -->
+      <div class="card-img">
+        <img src="https://instaakiai40s.github.io/img041d.PNG"
+             data-base="https://instaakiai40s.github.io/img041d"
+             data-fail="ph041d"
+             alt="Etsyショップの初期設定画面（言語・国・通貨の選択）" onerror="imgFB(this)">
+        <div class="img-ph" id="ph041d" data-disp="flex">図解：最初の設定はこの3つだけ</div>
+      </div>
+      <p class="subnote">管理画面は日本語表示に切り替えられるので、英語が苦手でも進められます。</p>
+
+      <!-- ===== STEP B：お金まわり（つまづきNo.1・入金設定） ===== -->
+      <div class="step-head step-head-hot" id="pay">
+        <span class="sh-no">STEP B</span>
+        <span class="sh-ttl">入金と支払いの設定<span class="hot-tag">つまづきNo.1</span></span>
+      </div>
+      <p class="step-lead">いちばん質問が多いのがここです。つまづく原因ははっきりしていて、<strong>似た名前のものが2つ出てくる</strong>せいで、何をどこに登録すればいいのか分からなくなるんですね。先にこの2つの違いだけ押さえてください。</p>
+
+      <div class="roles">
+        <div class="role">
+          <p class="r-name">Etsyペイメント ＝ Etsyが預かる「財布」</p>
+          <p class="r-body">お客様が払ったお金は、まずここに入ります。手数料はこの財布の中で自動的に差し引かれます。自分で開け閉めするものではありません。</p>
+        </div>
+        <div class="role role-b">
+          <p class="r-name">Payoneer（ペイオニア） ＝ 受け取る「口座」</p>
+          <p class="r-body">その財布から売上を受け取るための、海外送金用の口座です。ここを経由して、あなたの銀行口座に日本円で届きます。無料でつくれます。</p>
+        </div>
+      </div>
+
+      <div class="keypoint">
+        <p class="k-ttl">▼ 多くの人がここで勘違いします</p>
+        <p>日本のセラーは、<b>Etsyに日本の銀行口座を直接登録できません</b>（2026年8月時点）。必ずPayoneerを間にはさむ仕組みになっています。<br>なので「銀行口座の入力欄が見つからない」と探し続けている方は、操作を間違えているわけではなく、<b>そもそもその欄がない</b>んです。私も最初は探しました。見つからなくて正常なので、Payoneerの作成に進んでください。</p>
+      </div>
+
+      <!-- 【画像②】売上の流れ図：購入者 → Etsyペイメント → Payoneer → 日本の銀行口座
+           理由：日本セラー最大のつまずきポイント。図1枚で構造が腹落ちするため -->
+      <div class="card-img">
+        <img src="https://instaakiai40s.github.io/img041e.PNG"
+             data-base="https://instaakiai40s.github.io/img041e"
+             data-fail="ph041e"
+             alt="売上の流れ（購入者→Etsyペイメント→Payoneer→日本の銀行口座）" onerror="imgFB(this)">
+        <div class="img-ph" id="ph041e" data-disp="flex">図解：売上金はこの順番で届きます</div>
+      </div>
+      <p class="subnote">なお、自分が<b>払う側</b>（ショップ開設料と1商品0.20ドルの出品料）は、登録したクレジットカードから引き落とされます。カードを1枚登録すれば、そちらは完了です。</p>
+
+      <!-- B-1 -->
+      <p class="step-lead"><strong>▼ B-1：先にPayoneerをつくる（入力10分＋審査）</strong></p>
+      <div class="prep">
+        <p class="p-ttl">▼ 手元に用意するもの</p>
+        <ul>
+          <li>本人確認書類（運転免許証かパスポート）</li>
+          <li>受け取り用の銀行口座（ゆうちょ銀行でも大丈夫です）</li>
+          <li>スマートフォン</li>
+        </ul>
+      </div>
+      <ul class="steplist">
+        <li>Payoneer公式サイトから無料でアカウントを作成します（<b>登録画面は日本語</b>です）</li>
+        <li>最初に「法人は登録されていますか？」と聞かれます。副業・個人なら<b>「いいえ」</b>です</li>
+        <li>氏名は<b>ローマ字</b>で。上が名、下が姓の順です。本人確認書類と綴りをそろえてください</li>
+        <li>電話番号の認証は<b>「SMSで送信」に変更</b>し、番号は<b>先頭の0を外して</b>入れます</li>
+        <li>本人確認書類をアップロードします（審査に数日かかる場合があります）</li>
+        <li>受け取り用の銀行口座を登録します</li>
+      </ul>
+      <!-- 【画像③】Payoneerの登録画面（日本語表示が見えるスクショ）
+           理由：「英語だらけで無理そう」という思い込みを、その場で壊すため -->
+      <div class="card-img">
+        <img src="https://instaakiai40s.github.io/img041i.PNG"
+             data-base="https://instaakiai40s.github.io/img041i"
+             data-fail="ph041i"
+             alt="Payoneerの登録画面（日本語表示）" onerror="imgFB(this)">
+        <div class="img-ph" id="ph041i" data-disp="flex">図解：登録画面は日本語。英語は不要です</div>
+      </div>
+      <div class="card-img">
+        <img src="https://instaakiai40s.github.io/img041k.PNG"
+             data-base="https://instaakiai40s.github.io/img041k"
+             data-fail="ph041k"
+             alt="SMS認証はWhatsAppではなくSMSを選び、電話番号は先頭の0を外す" onerror="imgFB(this)">
+        <div class="img-ph" id="ph041k" data-disp="flex">図解：SMS認証はここだけ確認</div>
+      </div>
+      <div class="note-warn">
+        <p class="nw-ttl">⚠ ここだけは後回しにしないでください</p>
+        <p>Payoneerの本人確認が終わっていないと、Etsy側のショップが<b>「おやすみモード」になって販売できない</b>ことがあります。審査は数日かかることがあるので、出品の準備より先に、書類だけ出しておいてください。</p>
+      </div>
+
+      <!-- B-2 -->
+      <p class="step-lead"><strong>▼ B-2：「入金方法」の画面で、実際にやること</strong></p>
+      <p class="step-lead">文字がぎっしりで身構えると思いますが、実際に触るのは<strong>3か所だけ</strong>でした。残りは全部Etsy側の説明文です。</p>
+      <ul class="touch3">
+        <li><b>銀行の所在地</b>を「日本」にする</li>
+        <li><b>居住国</b>を「日本」にする</li>
+        <li>黒いボタン<b>「Payoneerアカウントを接続しましょう」</b>を押す</li>
+      </ul>
+      <p class="subnote">チェックマーク（✓）がずらっと並んでいる部分は、選択肢ではなく<b>Etsyペイメントの良いところの紹介文</b>です。読み飛ばして大丈夫です。</p>
+      <!-- 【画像④】Etsy「入金方法」の画面（銀行の所在地＝日本、居住国＝日本、黒い接続ボタンを赤枠で）
+           理由：「どれを触るのか分からない」を、1枚で終わらせるため -->
+      <div class="card-img">
+        <img src="https://instaakiai40s.github.io/img041f.PNG"
+             data-base="https://instaakiai40s.github.io/img041f"
+             data-fail="ph041f"
+             alt="Etsyの入金方法の画面（銀行の所在地・居住国・Payoneer接続ボタン）" onerror="imgFB(this)">
+        <div class="img-ph" id="ph041f" data-disp="flex">図解：この画面で触るのは3か所だけ</div>
+      </div>
+
+      <div class="keypoint">
+        <p class="k-ttl">▼ 「保存して続行する」が押せない！となったら</p>
+        <p>故障でもミスでもありません。<b>Payoneerの接続が終わるまで、このボタンはグレーのまま</b>という仕様です。黒いボタンからPayoneerの画面に移動して、作成またはログインを済ませてEtsyに戻ってくると押せるようになっています。</p>
+      </div>
+
+      <div class="keypoint">
+        <p class="k-ttl">▼ 赤いエラーが出ても、慌てないでください</p>
+        <p>接続の途中で「あらら、何かうまくいかなかったようです」という赤い表示が出ることがあります。私も出ました。サーバー側の一時的な不具合で、<b>ページを再読み込みするだけでほぼ直ります</b>。うまくいかないからといって<b>Payoneerアカウントを作り直すのだけは絶対にやめてください</b>。同じ人の口座が2つできると、確認が長引く原因になります。</p>
+      </div>
+      <div class="card-img">
+        <img src="https://instaakiai40s.github.io/img041m.PNG"
+             data-base="https://instaakiai40s.github.io/img041m"
+             data-fail="ph041m"
+             alt="赤いエラーは再読み込みで直る。アカウントの作り直しはNG" onerror="imgFB(this)">
+        <div class="img-ph" id="ph041m" data-disp="flex">図解：このエラー、再読み込みで直ります</div>
+      </div>
+
+      <div class="note-warn">
+        <p class="nw-ttl">⚠ 保存する前に、ここだけ確認してください</p>
+        <p><b>銀行口座の国は、一度保存すると変更できません。</b>日本にお住まいなら「日本」で確定して問題ありません。</p>
+        <p>それから、画面に「新規ショップは収益の一部が一時的に留保される場合があります」という一文があります。リザーブという仕組みで、対象は主に発送をともなう物理商品です。デジタル商品ならあまり気にしなくていいのですが、新しいショップは最初の入金までに少し日数がかかることがある、というのだけ知っておいてください。売れたのにお金が見当たらない、と焦らないためです。</p>
+      </div>
+
+      <!-- 海外サービスへの不安を先に潰す -->
+      <div class="safebox">
+        <p class="sb-ttl">✓ 「海外のサービスって正直こわい」という方へ</p>
+        <div class="sb-item">
+          <p class="sb-q">Payoneerって、そもそも何者？</p>
+          <p class="sb-a">2005年からある国際送金サービスで、<b>200以上の国と地域</b>で使われています。Etsyが<b>公式に提携している唯一の入金手段</b>で、Etsyの画面の中にPayoneerの名前が出てくるのはそのためです。自分で怪しい業者を探してきたわけではないので、そこは安心してください。</p>
+        </div>
+        <div class="sb-item">
+          <p class="sb-q">本人確認書類を海外に出すのが不安です</p>
+          <p class="sb-a">気持ちはよく分かります。ただPayoneerは米国やEUの<b>金融ライセンスを取得</b>していて、二段階認証やデータの暗号化にも対応しています。身元確認は、銀行で口座を作るときと同じで<b>法律上必要な手続き</b>です。むしろこれを求めてこないサービスのほうが危ないです。</p>
+        </div>
+        <div class="sb-item">
+          <p class="sb-q">知らないうちに請求されたりしませんか</p>
+          <p class="sb-a">カードから引き落とされるのは<b>ショップ開設料（初回のみ）と出品料（1商品0.20ドル）だけ</b>です。<b>月額の固定費はありません</b>し、売れたときの手数料は売上から先に引かれてから振り込まれるので、あとから請求書が届くようなこともありません。</p>
+        </div>
+        <div class="sb-item">
+          <p class="sb-q">ドルで表示されるのが不安です</p>
+          <p class="sb-a">Etsyからの入金は米ドルですが、最終的には<b>日本円になって、いつもの銀行口座に振り込まれます</b>。ドルのまま持っておく必要はありません。買う側にも、それぞれの国の通貨に換算されて表示されます。</p>
+        </div>
+        <div class="sb-item">
+          <p class="sb-q">英語でやり取りすることになりませんか</p>
+          <p class="sb-a">Payoneerの登録画面もサポートも<b>日本語対応</b>ですし、Etsyの管理画面も日本語で使えます。英語が必要になるのはお客様に見せる商品説明くらいで、そこはカード2のプロンプトに任せられます。</p>
+        </div>
+        <div class="sb-item">
+          <p class="sb-q">それでも途中で分からなくなったら</p>
+          <p class="sb-a">止まった画面のスクリーンショットを送ってください。どこで詰まっているか一緒に見ます。ここまで来て諦めるのがいちばんもったいないので、遠慮しないでください。</p>
+        </div>
+      </div>
+
+      <!-- B-3 -->
+      <p class="step-lead"><strong>▼ B-3：売上が手元に届くまで</strong></p>
+      <ul class="steplist">
+        <li>Etsyペイメント → Payoneerは、選んだサイクルで<b>自動送金</b>されます（毎日・毎週・隔週・毎月から選べます）</li>
+        <li>Payoneer → 銀行口座は、自分で「出金」を押します</li>
+        <li>出金は<b>50ドル以上</b>から。通常1〜3営業日で、日本円で着金します</li>
+      </ul>
+
+
+      <!-- B-4 手数料 -->
+      <p class="step-lead"><strong>▼ B-4：手数料は、結局いくら引かれるのか</strong></p>
+      <div class="keypoint">
+        <p class="k-ttl">▼ 手数料でいちばん多い誤解</p>
+        <p>手数料は<b>すべてEtsyペイメントの中で先に差し引かれてから</b>送金されます。あとから請求書が届く仕組みではありません。<br>それと<b>月額の固定費はゼロ</b>です。売れない月に出ていくのは出品料の0.20ドル（30円ほど）くらいで、持っているだけでお金が減っていくタイプのビジネスではないです。</p>
+      </div>
+      <div class="card-img">
+        <img src="https://instaakiai40s.github.io/img041n.PNG"
+             data-base="https://instaakiai40s.github.io/img041n"
+             data-fail="ph041n"
+             alt="Etsyの手数料一覧。今払うのは19ドルだけで、あとから請求書は届かない" onerror="imgFB(this)">
+        <div class="img-ph" id="ph041n" data-disp="flex">図解：今払うのは19ドルだけ</div>
+      </div>
+      <p class="subnote">下の表は項目が多く見えますが、覚えることは2つだけです。<b>①カードから引かれるのは開設料と出品料だけ。②残りは売れたときに売上から自動で引かれる。</b>この2つさえ頭に入っていれば大丈夫です。</p>
+      <table class="fee-table">
+        <tr><th>費用</th><th>金額の目安</th><th>タイミング</th></tr>
+        <tr><td>ショップ開設料</td><td><b>19ドル</b>（初回のみ）</td><td>開設手続きの中で</td></tr>
+        <tr><td>出品手数料</td><td><b>1商品 0.20ドル</b>（約30円・4ヶ月有効）</td><td>出品したとき</td></tr>
+        <tr><td>取引手数料</td><td><b>売れた金額の6.5%</b></td><td>売れたとき</td></tr>
+        <tr><td>入金手数料</td><td><b>6%＋0.30ドル</b>（日本の場合）</td><td>売れたとき</td></tr>
+        <tr><td>為替手数料</td><td>2〜3%程度</td><td>日本円に替えるとき</td></tr>
+        <tr><td>Payoneer年間手数料</td><td>29.95ドル<br>（年間の受取が2,000ドル以上なら不要）</td><td>年1回</td></tr>
+      </table>
+      <div class="sim">
+        <p class="s-ttl">▼ 10ドルのステッカーが1つ売れたら？（1ドル＝150円で計算）</p>
+        <ul>
+          <li><span>売上</span><span>10.00ドル</span></li>
+          <li><span>取引手数料（6.5%）</span><span>−0.65ドル</span></li>
+          <li><span>入金手数料（6%＋0.30）</span><span>−0.90ドル</span></li>
+          <li><span>出品手数料</span><span>−0.20ドル</span></li>
+          <li><span>為替手数料（2.5%目安）</span><span>−0.21ドル</span></li>
+        </ul>
+        <p class="s-total">手元に残るのは、約8.0ドル（約1,200円）</p>
+      </div>
+      <p class="subnote">ざっくり<b>売上の2割前後</b>が手数料、と覚えておけば大きくは外れません。デジタル商品は配送料も材料費も在庫もないので、残りはそのまま利益になります。</p>
+      <p class="subnote">2割は高いと感じるかもしれません。私も最初はそう思いました。ただこれは、世界中の買い手が集まる場所に自分の店を置かせてもらう場所代です。自分でネットショップを立ち上げると集客が全部自力になるので、最初の1個を売るまでの距離を考えると、ここは払っていい2割だと思っています。</p>
+
+      <!-- B-5 よくあるつまづき -->
+      <p class="step-lead"><strong>▼ B-5：ここでよく出る質問、まとめました</strong></p>
+      <div class="qa">
+        <div class="qa-item">
+          <p class="q">Q. 銀行口座を入れる欄が見当たりません</p>
+          <p class="a">A. 日本ではEtsyに直接登録できない仕様です。Payoneerを作れば、その中で銀行口座を登録します。</p>
+        </div>
+        <div class="qa-item">
+          <p class="q">Q. Payoneerは安全なんでしょうか</p>
+          <p class="a">A. 200以上の国と地域で使われている送金サービスで、Etsyと公式に提携しています。日本語のサポート窓口もあります。</p>
+        </div>
+        <div class="qa-item">
+          <p class="q">Q. 登録にお金はかかりますか</p>
+          <p class="a">A. 作成も維持も無料です。ただし、年間の受取が2,000ドル未満だと年間手数料29.95ドルがかかります。</p>
+        </div>
+        <div class="qa-item">
+          <p class="q">Q. 売れたのに、お金が入ってきません</p>
+          <p class="a">A. 売上はまずEtsyペイメントにたまり、選んだサイクルでPayoneerに移って、最後に自分で出金します。3段階あるので、いまどこまで来ているかを順に見てみてください。</p>
+        </div>
+        <div class="qa-item">
+          <p class="q">Q. 途中で分からなくなったら</p>
+          <p class="a">A. 画面のスクリーンショットを送ってもらえれば、どこで止まっているか一緒に見ます。遠慮なくどうぞ。</p>
+        </div>
+      </div>
+            <div class="note-warn">
+        <p class="nw-ttl">⚠ 最後に「Etsyプラス」というオファーが出ます。断ってOKです</p>
+        <p>カード登録の後に「今日登録すると19ドル分のポイント」という案内が出ます。中身は<b>月10ドルのサブスク</b>で、6ヶ月続けて60ドル払い、戻りは19ドル分。商品がまだない段階で入る理由はありません。<b>「この限定オファーを希望しない」</b>を選んでください。必要になったら、あとからいつでも入れます。</p>
+      </div>
+      <div class="card-img">
+        <img src="https://instaakiai40s.github.io/img041p.PNG"
+             data-base="https://instaakiai40s.github.io/img041p"
+             data-fail="ph041p"
+             alt="Etsyプラスのオファーは「この限定オファーを希望しない」を選んで断ってよい" onerror="imgFB(this)">
+        <div class="img-ph" id="ph041p" data-disp="flex">図解：このオファーは断ってOK</div>
+      </div>
+      <p class="subnote">ちなみに、既存セラーの紹介リンクから開設すると<b>出品料40件分（約8ドル）が無料</b>になる制度があります。使える方は使ってください。</p>
+
+      <!-- ===== STEP C：出品設定 ===== -->
+      <div class="step-head">
+        <span class="sh-no">STEP C</span>
+        <span class="sh-ttl">デジタル商品として出品する（ここまでで完了です）</span>
+      </div>
+      <div class="keypoint">
+        <p class="k-ttl">▼ 出品画面でいちばん迷うところ</p>
+        <p>デジタル商品にする切り替えは、<b>「商品詳細」タブのカテゴリー欄</b>にあります。私はこれをかなり探しました。<br>カテゴリーの検索窓に「ステッカー」と打つと候補が並びますが、ほとんどが<b>「有形商品」</b>、つまり実物のシールの棚です。ここを選ぶと、あとで出てくる「クラフトの種類」も的外れなものばかりになります。<br>デジタル手帳やプランナーに貼る素材として売るなら、選ぶのは<b>「クリップアート＆画像ファイル」</b>です。<b>「ダウンロード商品」</b>のラベルが付いていて、配送の設定が消え、ファイルの添付欄に切り替わります。</p>
+      </div>
+      <ul class="steplist">
+        <li>「商品を追加（新規リスティングを作成）」を開きます</li>
+        <li>まず<b>「写真および動画」に見本画像をアップロード</b>します（正方形・2000px以上が目安。※販売する透過PNG本体ではなく、お客様に見せる見本です）</li>
+        <li>「商品詳細」タブのカテゴリーで<b>「クリップアート＆画像ファイル」</b>を選びます（<b>「ダウンロード商品」</b>と書かれているもの）</li>
+        <li>「いつ作りましたか？」は、作った年（例：2020 - 2026）を選べば大丈夫です</li>
+        <li>販売する<b>透過PNGのファイルを添付</b>します（5個まで）。この欄はダウンロード商品にすると出てきます</li>
+        <li>タイトル・詳細・タグに、カード2で作った英語をそのまま貼ります（詳細の最後にAI使用の一文も）</li>
+        <li>「価格&送料」で価格を入れます（最初は3〜6ドル前後の帯が入りやすいです）。個数は1でOK、関税見積もりとSKUは無視して大丈夫です</li>
+        <li>「設定」タブの更新オプションを<b>マニュアル</b>にします（自動のままだと4ヶ月ごとに0.20ドルが自動課金され続けます）</li>
+        <li>公開して、出品完了です</li>
+      </ul>
+      <div class="card-img">
+        <img src="https://instaakiai40s.github.io/img041r.PNG"
+             data-base="https://instaakiai40s.github.io/img041r"
+             data-fail="ph041r"
+             alt="カテゴリーはクリップアート＆画像ファイル（ダウンロード商品）を選ぶ" onerror="imgFB(this)">
+        <div class="img-ph" id="ph041r" data-disp="flex">図解：カテゴリーで『ダウンロード商品』を選ぶ</div>
+      </div>
+
+      <p class="step-lead"><strong>▼ 「商品が出来上がるまで」タブの3つの質問</strong></p>
+      <ul class="setting-list">
+        <li>誰が作りましたか？ → <b>商品情報を作成した</b></li>
+        <li>これは何ですか？ → <b>完成品</b></li>
+        <li>このダウンロード商品はどのように制作されていますか？ → <b>生成AIによる</b></li>
+      </ul>
+      <div class="card-img">
+        <img src="https://instaakiai40s.github.io/img041q.PNG"
+             data-base="https://instaakiai40s.github.io/img041q"
+             data-fail="ph041q"
+             alt="AIを使ったら「生成AIによる」を正直に選ぶ。隠すと削除・停止の対象" onerror="imgFB(this)">
+        <div class="img-ph" id="ph041q" data-disp="flex">図解：AIを使ったら、正直に選ぶ</div>
+      </div>
+      <div class="note-warn">
+        <p class="nw-ttl">⚠ AIの申告は「選択」と「説明欄」の二段構えにしておくと安心です</p>
+        <p>Etsyは<b>AIの使用を禁止していません</b>。上の「生成AIによる」を選べば申告としては十分ですが、<b>購入者は選択項目まで見ない</b>ので、説明欄にも一文入れておくと誠実さが伝わります。逆に、AIを使ったのに「私が制作しています」を選ぶと、商品削除やアカウント停止の対象になります。</p>
+        <p>また、<b>プロンプトを書いて選定・仕上げをするのは自分</b>である必要があります（他人のプロンプトの出力をそのまま転売するのはNGです）。カード4の透過作業も、立派なあなたの仕上げ工程です。</p>
+        <p>短い一文で構いません。下の英文をそのまま説明欄の最後に貼り付けてください。</p>
+      </div>
+      <div class="prompt-card">
+        <div class="prompt-head">
+          <span class="prompt-label">▼ 説明欄の最後に貼るだけ（AI使用の記載）</span>
+          <button class="copy-btn" type="button" onclick="copyPrompt(this)">コピー</button>
+        </div>
+        <div class="prompt-text">This design was created by me with the help of AI image generation. All prompts, selection, and final editing were done by me. Digital download only - no physical item will be shipped.</div>
+        <p class="prompt-note">意味は「AIの力を借りて自分がデザインしました。指示・選定・仕上げはすべて自分で行っています。デジタルデータのみで、現物の発送はありません」です。誠実に書いたほうが、購入者からの評価も安定します。</p>
+      </div>
+
+      <p class="subnote" style="margin-top:16px!important;">※手数料やルールはEtsy側の変更があります。金額は必ず開設時の画面表示をご確認ください。また、売上が一定額を超えた場合は日本での確定申告が必要になります。詳しくは最寄りの税務署や税理士にご相談ください。</p>
+
+      <p>ここまでできれば、動画でお話しした「在庫を持たない自動販売機」の1台目が完成です。お疲れさまでした。</p>
     </div>
 
     <!-- ④-2 ブリッジセクション（パターンB：段階提示型＋ちょい出し） -->
