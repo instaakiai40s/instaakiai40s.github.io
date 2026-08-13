@@ -330,15 +330,16 @@
   }
   .safebox .sb-item:last-child{margin-bottom:0;}
   .safebox .sb-q,.safebox .sb-a{
-    display:flex;gap:9px;align-items:flex-start;
-    font-size:13.5px;line-height:1.8;margin:0!important;
+    position:relative;display:block;padding-left:29px;
+    font-size:13.5px;line-height:1.85;margin:0!important;
   }
   .safebox .sb-q{font-weight:800;color:var(--main-2);margin-bottom:7px!important;}
   .safebox .sb-a{color:var(--ink);}
   .safebox .sb-q::before,.safebox .sb-a::before{
-    flex:0 0 auto;width:20px;height:20px;line-height:20px;
+    position:absolute;left:0;top:2px;
+    width:20px;height:20px;line-height:20px;
     text-align:center;border-radius:50%;
-    font-size:11px;font-weight:800;margin-top:2px;
+    font-size:11px;font-weight:800;
   }
   .safebox .sb-q::before{content:"Q";background:var(--main-2);color:#fff;}
   .safebox .sb-a::before{content:"A";background:#E3F1E6;color:var(--line-d);}
@@ -793,8 +794,8 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
       </div>
       <p class="subnote">なお、自分が<b>払う側</b>（ショップ開設料と1商品0.20ドルの出品料）は、登録したクレジットカードから引き落とされます。カードを1枚登録すれば、そちらは完了です。</p>
 
-      <!-- B-1 -->
-      <p class="step-lead"><strong>▼ B-1：先にPayoneerをつくる（入力10分＋審査）</strong></p>
+      <!-- Payoneer作成 -->
+      <p class="step-lead"><strong>▼ 先にPayoneerをつくる（入力10分＋審査）</strong></p>
       <div class="prep">
         <p class="p-ttl">▼ 手元に用意するもの</p>
         <ul>
@@ -832,8 +833,8 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
         <p>Payoneerの本人確認が終わっていないと、Etsy側のショップが<b>「おやすみモード」になって販売できない</b>ことがあります。審査は数日かかることがあるので、出品の準備より先に、書類だけ出しておいてください。</p>
       </div>
 
-      <!-- B-2 -->
-      <p class="step-lead"><strong>▼ B-2：「入金方法」の画面で、実際にやること</strong></p>
+      <!-- Etsy入金方法の画面 -->
+      <p class="step-lead"><strong>▼ Etsyの「入金方法」の画面でやること</strong></p>
       <p class="step-lead">文字がぎっしりで身構えると思いますが、実際に触るのは<strong>3か所だけ</strong>でした。下の図のとおりに進めてください。</p>
       <!-- 【画像④】Etsy「入金方法」の画面（銀行の所在地＝日本、居住国＝日本、黒い接続ボタンを赤枠で）
            理由：「どれを触るのか分からない」を、1枚で終わらせるため -->
@@ -897,8 +898,8 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
         </div>
       </div>
 
-      <!-- B-3 -->
-      <p class="step-lead"><strong>▼ B-3：売上が手元に届くまで</strong></p>
+      <!-- 入金の流れ -->
+      <p class="step-lead"><strong>▼ 売上が手元に届くまで</strong></p>
       <ul class="steplist">
         <li>Etsyペイメント → Payoneerは、選んだサイクルで<b>自動送金</b>されます（毎日・毎週・隔週・毎月から選べます）</li>
         <li>Payoneer → 銀行口座は、自分で「出金」を押します</li>
@@ -906,8 +907,8 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
       </ul>
 
 
-      <!-- B-4 手数料 -->
-      <p class="step-lead"><strong>▼ B-4：手数料は、結局いくら引かれるのか</strong></p>
+      <!-- 手数料 -->
+      <p class="step-lead"><strong>▼ 手数料は、結局いくら引かれるのか</strong></p>
       <div class="keypoint">
         <p class="k-ttl">▼ 手数料でいちばん多い誤解</p>
         <p>手数料は<b>すべてEtsyペイメントの中で先に差し引かれてから</b>送金されます。あとから請求書が届く仕組みではありません。<br>それと<b>月額の固定費はゼロ</b>です。売れない月に出ていくのは出品料の0.20ドル（30円ほど）くらいで、持っているだけでお金が減っていくタイプのビジネスではないです。</p>
@@ -934,8 +935,8 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
       <p class="subnote">ざっくり<b>売上の2割前後</b>が手数料、と覚えておけば大きくは外れません。デジタル商品は配送料も材料費も在庫もないので、残りはそのまま利益になります。</p>
       <p class="subnote">2割は高いと感じるかもしれません。私も最初はそう思いました。ただこれは、世界中の買い手が集まる場所に自分の店を置かせてもらう場所代です。自分でネットショップを立ち上げると集客が全部自力になるので、最初の1個を売るまでの距離を考えると、ここは払っていい2割だと思っています。</p>
 
-      <!-- B-5 よくあるつまづき -->
-      <p class="step-lead"><strong>▼ B-5：ここでよく出る質問、まとめました</strong></p>
+      <!-- よくある質問 -->
+      <p class="step-lead"><strong>▼ ここでよく出る質問</strong></p>
       <div class="qa">
         <div class="qa-item">
           <p class="q">Q. 銀行口座を入れる欄が見当たりません</p>
