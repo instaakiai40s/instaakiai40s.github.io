@@ -325,10 +325,23 @@
     border-radius:12px;padding:16px 16px 14px;margin:0 0 16px;
   }
   .safebox .sb-ttl{font-size:14px;font-weight:800;color:var(--line-d);margin:0 0 10px!important;}
-  .safebox .sb-item{margin:0 0 12px;}
+  .safebox .sb-item{
+    background:#fff;border-radius:10px;padding:13px 14px;margin:0 0 10px;
+  }
   .safebox .sb-item:last-child{margin-bottom:0;}
-  .safebox .sb-q{font-size:13.5px;font-weight:800;color:var(--ink);margin:0 0 4px!important;}
-  .safebox .sb-a{font-size:13.5px;margin:0!important;line-height:1.85;color:var(--ink);}
+  .safebox .sb-q,.safebox .sb-a{
+    display:flex;gap:9px;align-items:flex-start;
+    font-size:13.5px;line-height:1.8;margin:0!important;
+  }
+  .safebox .sb-q{font-weight:800;color:var(--main-2);margin-bottom:7px!important;}
+  .safebox .sb-a{color:var(--ink);}
+  .safebox .sb-q::before,.safebox .sb-a::before{
+    flex:0 0 auto;width:20px;height:20px;line-height:20px;
+    text-align:center;border-radius:50%;
+    font-size:11px;font-weight:800;margin-top:2px;
+  }
+  .safebox .sb-q::before{content:"Q";background:var(--main-2);color:#fff;}
+  .safebox .sb-a::before{content:"A";background:#E3F1E6;color:var(--line-d);}
   .safebox .sb-a b{color:var(--line-d);}
   .touch3{list-style:none;counter-reset:t3;margin:0 0 12px;padding:0;}
   .touch3 li{
@@ -648,7 +661,7 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
       <ul class="setting-list">
         <li><b>カテゴリー</b>は<b>「クリップアート＆画像ファイル」</b>を選びます（AIに出させる必要はありません）</li>
         <li>【1】→ <b>タイトル</b>欄</li>
-        <li>【2】→ <b>詳細</b>欄。<b>最後にカード5のAI使用の一文を貼り足します</b></li>
+        <li>【2】→ <b>詳細</b>欄</li>
         <li>【3】→ <b>タグ</b>欄（「商品のオプション」タブ）。<b>1個ずつコピーして貼り、そのつど「追加する」を押します</b>。13個まとめて貼るとエラーになります</li>
       </ul>
       <p class="subnote">タグは「商品のオプション」タブにあります。13個まで入れられて、ここが検索で見つけてもらえるかどうかに直結するので、全部埋めてください。<b>1個ずつしか入りません</b>。まとめて貼ると「タグは1文字から20文字の間でなくてはなりません」というエラーが出るので、面倒でも13回に分けて入れてください。同じタブの<b>「クラフトの種類」は必須</b>なので、<b>スクラップブッキング</b>と<b>コラージュ</b>を選んでおけば大丈夫です。</p>
@@ -860,27 +873,27 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
         <p class="sb-ttl">✓ 「海外のサービスって正直こわい」という方へ</p>
         <div class="sb-item">
           <p class="sb-q">Payoneerって、そもそも何者？</p>
-          <p class="sb-a">2005年からある国際送金サービスで、<b>200以上の国と地域</b>で使われています。Etsyが<b>公式に提携している唯一の入金手段</b>で、Etsyの画面の中にPayoneerの名前が出てくるのはそのためです。自分で怪しい業者を探してきたわけではないので、そこは安心してください。</p>
+          <p class="sb-a">2005年からある国際送金サービスで、200以上の国と地域で使われています。<b>Etsyが公式に提携している唯一の入金手段</b>なので、Etsyの画面の中にPayoneerの名前が出てきます。自分で怪しい業者を探してきたわけではありません。</p>
         </div>
         <div class="sb-item">
           <p class="sb-q">本人確認書類を海外に出すのが不安です</p>
-          <p class="sb-a">気持ちはよく分かります。ただPayoneerは米国やEUの<b>金融ライセンスを取得</b>していて、二段階認証やデータの暗号化にも対応しています。身元確認は、銀行で口座を作るときと同じで<b>法律上必要な手続き</b>です。むしろこれを求めてこないサービスのほうが危ないです。</p>
+          <p class="sb-a">気持ちはよく分かります。ただPayoneerは米国やEUの金融ライセンスを取得していて、二段階認証にも対応しています。身元確認は<b>銀行で口座を作るときと同じ手続き</b>で、法律上必要なものです。むしろ求めてこないサービスのほうが危ないです。</p>
         </div>
         <div class="sb-item">
           <p class="sb-q">知らないうちに請求されたりしませんか</p>
-          <p class="sb-a">カードから引き落とされるのは<b>ショップ開設料（初回のみ）と出品料（1商品0.20ドル）だけ</b>です。<b>月額の固定費はありません</b>し、売れたときの手数料は売上から先に引かれてから振り込まれるので、あとから請求書が届くようなこともありません。</p>
+          <p class="sb-a">カードから引き落とされるのは、開設料（初回のみ）と出品料（1商品0.20ドル）だけ。<b>月額の固定費はありません。</b>売れたときの手数料は売上から先に引かれるので、あとから請求書が届くこともありません。</p>
         </div>
         <div class="sb-item">
           <p class="sb-q">ドルで表示されるのが不安です</p>
-          <p class="sb-a">Etsyからの入金は米ドルですが、最終的には<b>日本円になって、いつもの銀行口座に振り込まれます</b>。ドルのまま持っておく必要はありません。買う側にも、それぞれの国の通貨に換算されて表示されます。</p>
+          <p class="sb-a">Etsyからの入金は米ドルですが、<b>最終的には日本円で、いつもの銀行口座に振り込まれます。</b>ドルのまま持っておく必要はありません。買う側にも、それぞれの国の通貨で表示されます。</p>
         </div>
         <div class="sb-item">
           <p class="sb-q">英語でやり取りすることになりませんか</p>
-          <p class="sb-a">Payoneerの登録画面もサポートも<b>日本語対応</b>ですし、Etsyの管理画面も日本語で使えます。英語が必要になるのはお客様に見せる商品説明くらいで、そこはカード2のプロンプトに任せられます。</p>
+          <p class="sb-a"><b>Payoneerの登録画面もサポートも日本語です。</b>Etsyの管理画面も日本語で使えます。英語が必要なのはお客様に見せる商品説明くらいで、そこはカード2のプロンプトに任せられます。</p>
         </div>
         <div class="sb-item">
           <p class="sb-q">それでも途中で分からなくなったら</p>
-          <p class="sb-a">止まった画面のスクリーンショットを送ってください。どこで詰まっているか一緒に見ます。ここまで来て諦めるのがいちばんもったいないので、遠慮しないでください。</p>
+          <p class="sb-a"><b>その画面のスクリーンショットを撮って、ChatGPTに貼って聞いてみてください。</b>「この画面で何をすればいいですか」と添えるだけで、たいていは解決します。私も詰まるたびに、AIに画面を見せて進めました。この進め方自体が、いちばん役に立つ練習になります。</p>
         </div>
       </div>
 
@@ -942,7 +955,7 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
         </div>
         <div class="qa-item">
           <p class="q">Q. 途中で分からなくなったら</p>
-          <p class="a">A. 画面のスクリーンショットを送ってもらえれば、どこで止まっているか一緒に見ます。遠慮なくどうぞ。</p>
+          <p class="a">A. その画面のスクリーンショットを撮って、ChatGPTに貼って聞いてみてください。「Etsyの登録中です。この画面で何を選べばいいですか」と添えるだけで、ほとんどの場面は解決します。</p>
         </div>
       </div>
             <div class="note-warn">
@@ -973,7 +986,7 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
         <li>「商品詳細」タブのカテゴリーで<b>「クリップアート＆画像ファイル」</b>を選びます（<b>「ダウンロード商品」</b>と書かれているもの）</li>
         <li>「いつ作りましたか？」は、作った年（例：2020 - 2026）を選べば大丈夫です</li>
         <li>販売する<b>透過PNGのファイルを添付</b>します（5個まで）。この欄はダウンロード商品にすると出てきます</li>
-        <li>タイトル・詳細・タグに、カード2で作った英語をそのまま貼ります（詳細の最後にAI使用の一文も）</li>
+        <li>タイトル・詳細・タグに、カード2で作った英語をそのまま貼ります</li>
         <li>「価格&送料」で価格を入れます（最初は3〜6ドル前後の帯が入りやすいです）。個数は1でOK、関税見積もりとSKUは無視して大丈夫です</li>
         <li>「設定」タブの更新オプションを<b>マニュアル</b>にします（自動のままだと4ヶ月ごとに0.20ドルが自動課金され続けます）</li>
         <li>公開して、出品完了です</li>
@@ -994,19 +1007,9 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
              alt="AIを使ったら「生成AIによる」を正直に選ぶ。隠すと削除・停止の対象" onerror="imgFB(this)">
         <div class="img-ph" id="ph041q" data-disp="flex">図解：AIを使ったら、正直に選ぶ</div>
       </div>
-      <div class="note-warn">
-        <p class="nw-ttl">⚠ AIの申告は「選択」と「説明欄」の二段構えにしておくと安心です</p>
-        <p>Etsyは<b>AIの使用を禁止していません</b>。上の「生成AIによる」を選べば申告としては十分ですが、<b>購入者は選択項目まで見ない</b>ので、説明欄にも一文入れておくと誠実さが伝わります。逆に、AIを使ったのに「私が制作しています」を選ぶと、商品削除やアカウント停止の対象になります。</p>
-        <p>また、<b>プロンプトを書いて選定・仕上げをするのは自分</b>である必要があります（他人のプロンプトの出力をそのまま転売するのはNGです）。カード4の透過作業も、立派なあなたの仕上げ工程です。</p>
-        <p>短い一文で構いません。下の英文をそのまま説明欄の最後に貼り付けてください。</p>
-      </div>
-      <div class="prompt-card">
-        <div class="prompt-head">
-          <span class="prompt-label">▼ 説明欄の最後に貼るだけ（AI使用の記載）</span>
-          <button class="copy-btn" type="button" onclick="copyPrompt(this)">コピー</button>
-        </div>
-        <div class="prompt-text">This design was created by me with the help of AI image generation. All prompts, selection, and final editing were done by me. Digital download only - no physical item will be shipped.</div>
-        <p class="prompt-note">意味は「AIの力を借りて自分がデザインしました。指示・選定・仕上げはすべて自分で行っています。デジタルデータのみで、現物の発送はありません」です。誠実に書いたほうが、購入者からの評価も安定します。</p>
+      <div class="keypoint">
+        <p class="k-ttl">▼ AIを使うこと自体は問題ありません</p>
+        <p>EtsyはAIの使用を禁止していません。上の<b>「生成AIによる」を選べば申告は完了</b>で、説明欄に書き足す必要もありません。<br>逆に、AIを使ったのに「私が制作しています」を選ぶと、商品削除やアカウント停止の対象になります。なお、<b>プロンプトを書いて選定・仕上げをするのは自分</b>である必要があります（他人のプロンプトの出力をそのまま転売するのはNGです）。カード4の透過作業も、立派なあなたの仕上げ工程です。</p>
       </div>
 
       <p class="subnote" style="margin-top:16px!important;">※手数料やルールはEtsy側の変更があります。金額は必ず開設時の画面表示をご確認ください。また、売上が一定額を超えた場合は日本での確定申告が必要になります。詳しくは最寄りの税務署や税理士にご相談ください。</p>
