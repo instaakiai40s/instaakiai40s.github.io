@@ -265,6 +265,25 @@
   .fee-table th{background:#EAF2FB;color:var(--main-2);font-weight:800;white-space:nowrap;}
   .fee-table td b{color:var(--main-2);}
   .fee-table tr:nth-child(even) td{background:#F8FBFE;}
+  .cost{
+    background:#fff;border:2px solid var(--main);border-radius:12px;
+    padding:16px;margin:0 0 14px;
+  }
+  .cost .c-ttl{font-size:14px;font-weight:800;color:var(--main-2);margin:0 0 12px!important;}
+  .cost .c-row{
+    display:flex;justify-content:space-between;align-items:baseline;gap:10px;
+    padding:10px 0;border-bottom:1px dashed rgba(42,109,176,.22);
+  }
+  .cost .c-row:last-of-type{border-bottom:0;}
+  .cost .c-lbl{font-size:13.5px;line-height:1.6;}
+  .cost .c-lbl small{display:block;font-size:12px;color:var(--ink-soft);margin-top:2px;}
+  .cost .c-val{flex:0 0 auto;font-size:15px;font-weight:800;color:var(--main-2);white-space:nowrap;}
+  .cost .c-zero{color:var(--line-d);}
+  .cost .c-note{
+    background:#FFF8EE;border-radius:8px;padding:12px 13px;margin:12px 0 0!important;
+    font-size:13.5px;line-height:1.8;
+  }
+  .cost .c-note b{color:var(--accent-2);}
   .sim{
     background:#F3F7FC;border:1px solid rgba(42,109,176,.16);
     border-radius:10px;padding:14px 16px;margin:0 0 12px;
@@ -935,6 +954,29 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
       <p class="subnote">ざっくり<b>売上の2割前後</b>が手数料、と覚えておけば大きくは外れません。デジタル商品は配送料も材料費も在庫もないので、残りはそのまま利益になります。</p>
       <p class="subnote">2割は高いと感じるかもしれません。私も最初はそう思いました。ただこれは、世界中の買い手が集まる場所に自分の店を置かせてもらう場所代です。自分でネットショップを立ち上げると集客が全部自力になるので、最初の1個を売るまでの距離を考えると、ここは払っていい2割だと思っています。</p>
 
+      <p class="step-lead"><strong>▼ 結局、1年でいくらかかるのか</strong></p>
+      <div class="cost">
+        <p class="c-ttl">▼ 出ていくお金の全体像（1ドル＝150円で計算）</p>
+        <div class="c-row">
+          <span class="c-lbl">初回だけ<small>Etsyのショップ設立手数料（19ドル）</small></span>
+          <span class="c-val">約2,850円</span>
+        </div>
+        <div class="c-row">
+          <span class="c-lbl">年に1回<small>Payoneerの年間アカウント手数料（29.95ドル）</small></span>
+          <span class="c-val">約4,500円</span>
+        </div>
+        <div class="c-row">
+          <span class="c-lbl">毎月<small>月額の固定費はありません</small></span>
+          <span class="c-val c-zero">0円</span>
+        </div>
+        <div class="c-row">
+          <span class="c-lbl">売れたとき<small>売上から自動で引かれます</small></span>
+          <span class="c-val">売上の約2割</span>
+        </div>
+        <p class="c-note">つまり、<b>1年間まったく売れなかったとしても、出ていくのは7,000円ほど</b>です（初回2,850円＋年間4,500円＋出品料10個で約300円）。<br>裏を返せば、<b>4ドルの商品が年に13個ほど売れれば元が取れる</b>計算になります。月に1個ちょっとです。</p>
+      </div>
+      <p class="subnote">Payoneerの年間手数料は、直近12ヶ月の受取が<b>6,000ドル（約90万円）</b>を超えると免除されます。ただ、始めたばかりでそこに届くことはまずないので、<b>年に4,500円はかかるもの</b>と見ておくのが安全です。月あたりにすれば375円ほどです。</p>
+
       <!-- よくある質問 -->
       <p class="step-lead"><strong>▼ ここでよく出る質問</strong></p>
       <div class="qa">
@@ -948,7 +990,7 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
         </div>
         <div class="qa-item">
           <p class="q">Q. 登録にお金はかかりますか</p>
-          <p class="a">A. 作成も維持も無料です。ただし、年間の受取が2,000ドル未満だと年間手数料29.95ドルがかかります。</p>
+          <p class="a">A. 作成も維持も無料です。ただし、直近12ヶ月の受取が6,000ドル未満だと、年間アカウント手数料29.95ドル（年1回）がかかります。2026年2月に基準が2,000ドルから引き上げられた点にご注意ください。</p>
         </div>
         <div class="qa-item">
           <p class="q">Q. 売れたのに、お金が入ってきません</p>
