@@ -486,7 +486,7 @@
 </style>
 <script>
   /* ===== §8-2 画像の拡張子フォールバック（共通関数） ===== */
-  var IMG_EXTS = [".PNG",".png",".JPG",".jpg",".jpeg"];
+  var IMG_EXTS = [".PNG",".png",".webp",".JPG",".jpg",".jpeg"];
   function imgFB(img){
     var i = parseInt(img.dataset.i || "0", 10) + 1;
     if (i < IMG_EXTS.length) {
@@ -558,7 +558,7 @@
       </div>
 
       <div class="reason-box">
-        <img src="https://instaakiai40s.github.io/reason_banner.PNG"
+        <img loading="lazy" decoding="async" src="https://instaakiai40s.github.io/reason_banner.PNG"
              data-base="https://instaakiai40s.github.io/reason_banner"
              data-fail="reasonAlt"
              alt="このページの最後に、僕がこの発信を始めた“本当の理由”を書きました。特典と合わせて、最後まで読んでもらえたら嬉しいです。"
@@ -682,7 +682,7 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
       <!-- 推奨画像：5テーマそれぞれのステッカー完成イメージを並べたサムネ一覧。
            理由：「これなら自分にも作れそう」という完成イメージを先に見せて着手のハードルを下げるため -->
       <div class="card-img">
-        <img src="https://instaakiai40s.github.io/img041a.PNG"
+        <img loading="lazy" decoding="async" src="https://instaakiai40s.github.io/img041a.PNG"
              data-base="https://instaakiai40s.github.io/img041a"
              data-fail="ph041a"
              alt="5テーマの完成イメージ一覧" onerror="imgFB(this)">
@@ -704,14 +704,14 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
       <!-- 推奨画像2枚：①Canva「背景透過」before→after ②透過PNGのダウンロード設定。
            理由：操作→保存の2段階を実物で見せ「本当に数タップだ」と実感させるため -->
       <div class="card-img">
-        <img src="https://instaakiai40s.github.io/img041b.PNG"
+        <img loading="lazy" decoding="async" src="https://instaakiai40s.github.io/img041b.PNG"
              data-base="https://instaakiai40s.github.io/img041b"
              data-fail="ph041b"
              alt="Canvaの背景透過の操作画面 before→after" onerror="imgFB(this)">
         <div class="img-ph" id="ph041b" data-disp="flex">【画像①】Canva「背景透過」の操作画面（before→after）</div>
       </div>
       <div class="card-img">
-        <img src="https://instaakiai40s.github.io/img041c.PNG"
+        <img loading="lazy" decoding="async" src="https://instaakiai40s.github.io/img041c.PNG"
              data-base="https://instaakiai40s.github.io/img041c"
              data-fail="ph041c"
              alt="透過PNGで保存する方法（ダウンロード設定）" onerror="imgFB(this)">
@@ -751,7 +751,7 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
       <!-- 【画像①】ショップの初期設定画面（言語English／国Japan／通貨USDが見える状態）
            理由：「英語だらけで不安」を、実際の画面で先に潰すため -->
       <div class="card-img">
-        <img src="https://instaakiai40s.github.io/img041d.PNG"
+        <img loading="lazy" decoding="async" src="https://instaakiai40s.github.io/img041d.PNG"
              data-base="https://instaakiai40s.github.io/img041d"
              data-fail="ph041d"
              alt="Etsyショップの初期設定画面（言語・国・通貨の選択）" onerror="imgFB(this)">
@@ -785,7 +785,7 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
       <!-- 【画像②】売上の流れ図：購入者 → Etsyペイメント → Payoneer → 日本の銀行口座
            理由：日本セラー最大のつまずきポイント。図1枚で構造が腹落ちするため -->
       <div class="card-img">
-        <img src="https://instaakiai40s.github.io/img041e.PNG"
+        <img loading="lazy" decoding="async" src="https://instaakiai40s.github.io/img041e.PNG"
              data-base="https://instaakiai40s.github.io/img041e"
              data-fail="ph041e"
              alt="売上の流れ（購入者→Etsyペイメント→Payoneer→日本の銀行口座）" onerror="imgFB(this)">
@@ -814,14 +814,14 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
       <!-- 【画像③】Payoneerの登録画面（日本語表示が見えるスクショ）
            理由：「英語だらけで無理そう」という思い込みを、その場で壊すため -->
       <div class="card-img">
-        <img src="https://instaakiai40s.github.io/img041i.PNG"
+        <img loading="lazy" decoding="async" src="https://instaakiai40s.github.io/img041i.PNG"
              data-base="https://instaakiai40s.github.io/img041i"
              data-fail="ph041i"
              alt="Payoneerの登録画面（日本語表示）" onerror="imgFB(this)">
         <div class="img-ph" id="ph041i" data-disp="flex">図解：登録画面は日本語。英語は不要です</div>
       </div>
       <div class="card-img">
-        <img src="https://instaakiai40s.github.io/img041k.PNG"
+        <img loading="lazy" decoding="async" src="https://instaakiai40s.github.io/img041k.PNG"
              data-base="https://instaakiai40s.github.io/img041k"
              data-fail="ph041k"
              alt="SMS認証はWhatsAppではなくSMSを選び、電話番号は先頭の0を外す" onerror="imgFB(this)">
@@ -838,7 +838,7 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
       <!-- 【画像④】Etsy「入金方法」の画面（銀行の所在地＝日本、居住国＝日本、黒い接続ボタンを赤枠で）
            理由：「どれを触るのか分からない」を、1枚で終わらせるため -->
       <div class="card-img">
-        <img src="https://instaakiai40s.github.io/img041f.PNG"
+        <img loading="lazy" decoding="async" src="https://instaakiai40s.github.io/img041f.PNG"
              data-base="https://instaakiai40s.github.io/img041f"
              data-fail="ph041f"
              alt="Etsyの入金方法の画面（銀行の所在地・居住国・Payoneer接続ボタン）" onerror="imgFB(this)">
@@ -855,7 +855,7 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
         <p>接続の途中で赤いエラーが出ることがあります。私も出ました。サーバー側の一時的な不具合なので、下の図のとおりに対処してください。</p>
       </div>
       <div class="card-img">
-        <img src="https://instaakiai40s.github.io/img041m.PNG"
+        <img loading="lazy" decoding="async" src="https://instaakiai40s.github.io/img041m.PNG"
              data-base="https://instaakiai40s.github.io/img041m"
              data-fail="ph041m"
              alt="赤いエラーは再読み込みで直る。アカウントの作り直しはNG" onerror="imgFB(this)">
@@ -913,7 +913,7 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
         <p>手数料は<b>すべてEtsyペイメントの中で先に差し引かれてから</b>送金されます。あとから請求書が届く仕組みではありません。<br>それと<b>月額の固定費はゼロ</b>です。売れない月に出ていくのは出品料の0.20ドル（30円ほど）くらいで、持っているだけでお金が減っていくタイプのビジネスではないです。</p>
       </div>
       <div class="card-img">
-        <img src="https://instaakiai40s.github.io/img041n.PNG"
+        <img loading="lazy" decoding="async" src="https://instaakiai40s.github.io/img041n.PNG"
              data-base="https://instaakiai40s.github.io/img041n"
              data-fail="ph041n"
              alt="Etsyの手数料一覧。今払うのは19ドルだけで、あとから請求書は届かない" onerror="imgFB(this)">
@@ -963,7 +963,7 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
         <p>カード登録の後に「19ドル分のポイントがもらえる」という案内が出ますが、中身は月額サブスクの勧誘です。商品がまだない段階で入る理由はないので、断ってください。必要になれば、あとからいつでも入れます。</p>
       </div>
       <div class="card-img">
-        <img src="https://instaakiai40s.github.io/img041p.PNG"
+        <img loading="lazy" decoding="async" src="https://instaakiai40s.github.io/img041p.PNG"
              data-base="https://instaakiai40s.github.io/img041p"
              data-fail="ph041p"
              alt="Etsyプラスのオファーは「この限定オファーを希望しない」を選んで断ってよい" onerror="imgFB(this)">
@@ -992,7 +992,7 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
         <li>公開して、出品完了です</li>
       </ul>
       <div class="card-img">
-        <img src="https://instaakiai40s.github.io/img041r.PNG"
+        <img loading="lazy" decoding="async" src="https://instaakiai40s.github.io/img041r.PNG"
              data-base="https://instaakiai40s.github.io/img041r"
              data-fail="ph041r"
              alt="カテゴリーはクリップアート＆画像ファイル（ダウンロード商品）を選ぶ" onerror="imgFB(this)">
@@ -1001,7 +1001,7 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
 
       <p class="step-lead"><strong>▼ 「商品が出来上がるまで」タブの3つの質問</strong></p>
       <div class="card-img">
-        <img src="https://instaakiai40s.github.io/img041q.PNG"
+        <img loading="lazy" decoding="async" src="https://instaakiai40s.github.io/img041q.PNG"
              data-base="https://instaakiai40s.github.io/img041q"
              data-fail="ph041q"
              alt="AIを使ったら「生成AIによる」を正直に選ぶ。隠すと削除・停止の対象" onerror="imgFB(this)">
@@ -1024,7 +1024,7 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
       <p class="b-connect">その“安定させる側”の設計図を、<strong>無料プレゼント</strong>しているのが——LINEの<span class="bookname">『AIマネタイズの教科書』</span>です。</p>
 
       <p class="tease-head">教科書の中身を、少しだけ。</p>
-      <img class="textbook-img"
+      <img loading="lazy" decoding="async" class="textbook-img"
            src="https://instaakiai40s.github.io/textbook.PNG"
            data-base="https://instaakiai40s.github.io/textbook"
            data-fail="textbookList"
@@ -1101,7 +1101,7 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
     <!-- ⑥-0 分かれ道ブロック -->
     <div id="cta">
       <div class="fork-card">
-        <img src="https://instaakiai40s.github.io/fork.PNG"
+        <img loading="lazy" decoding="async" src="https://instaakiai40s.github.io/fork.PNG"
              data-base="https://instaakiai40s.github.io/fork"
              data-fail="forkRows"
              alt="物価は上がるのに給料はほとんど変わらない現実。その一方で、AIを使えば子どもが寝てからの1〜2時間でも本業とは別の収入をつくれる時代になりました。知って動くか、後回しにするかの分かれ道。"
@@ -1130,7 +1130,7 @@ Etsyのタグ欄は1個ずつ入力する仕様なので、13個のタグを
     <!-- ⑥ メインCTA -->
     <div class="cta-card">
       <a class="cta-banner js-line" href="https://utage-system.com/line/open/nj3MC6diybeh?mtid=E3ZSdNvSlw1p">
-        <img src="https://instaakiai40s.github.io/line_banner.PNG"
+        <img loading="lazy" decoding="async" src="https://instaakiai40s.github.io/line_banner.PNG"
              data-base="https://instaakiai40s.github.io/line_banner"
              alt="AIマネタイズの教科書を無料で受け取る" onerror="imgFB(this)">
       </a>
